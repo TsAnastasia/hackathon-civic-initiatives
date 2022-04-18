@@ -1,5 +1,7 @@
 # React Typescript SCSS Template
 
+<!-- TODO: edit -->
+
 This project was created as a template for React projects in Typescript using SASS.\
 Before every commit your app will be checked for lint errors and formatted with Prettier.
 

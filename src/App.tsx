@@ -1,21 +1,35 @@
-import Image from "./assets/images/react.png";
-import Home from "./assets/images/home.svg";
-import ClickCounter from "./components/clickCounter/ClickCounter";
+import AppHeader from "./components/AppHeader/AppHeader";
+import { NavLink } from "react-router-dom";
+import { goToPage } from "./utils/routes";
+import AppRoutes from "./components/AppRouter/AppRouter";
 
 const App = () => {
   return (
-    <main>
-      <h1>
-        React Typescript SCSS Webpack Starter Template - {process.env.NODE_ENV}
-      </h1>
-
-      <p>{process.env.REACT_APP_BASE_URL}</p>
-
-      <img src={Image} alt="React logo" />
-      <img src={Home} alt="React logo" />
-
-      <ClickCounter />
-    </main>
+    <div>
+      <AppHeader />
+      <main>
+        <AppRoutes />
+      </main>
+      <footer>
+        <ul>
+          {(Object.keys(goToPage) as Array<keyof typeof goToPage>).map(
+            (page) => (
+              <li key={`${page}`}>
+                <NavLink
+                  to={
+                    page !== "doc" && page !== "initiative"
+                      ? goToPage[page]
+                      : goToPage[page]("someid")
+                  }
+                >
+                  {page}
+                </NavLink>
+              </li>
+            )
+          )}
+        </ul>
+      </footer>
+    </div>
   );
 };
 
