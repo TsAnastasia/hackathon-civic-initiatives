@@ -2,11 +2,13 @@ import AppHeader from "./components/AppHeader/AppHeader";
 import { NavLink } from "react-router-dom";
 import { goToPage } from "./utils/routes";
 import AppRoutes from "./components/AppRouter/AppRouter";
+import styles from "./app.module.scss";
 
 const App = () => {
   return (
-    <div>
+    <div className={styles.app}>
       <AppHeader />
+      {/* TODO: add lazy loading */}
       <main>
         <AppRoutes />
       </main>
