@@ -2,6 +2,7 @@ declare namespace ModalModuleScssNamespace {
   export interface IModalModuleScss {
     blackout: string;
     content: string;
+    content_open: string;
     root: string;
     root_open: string;
   }

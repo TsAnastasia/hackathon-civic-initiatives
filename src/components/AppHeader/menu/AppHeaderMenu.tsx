@@ -20,7 +20,7 @@ const menuItems: { name: string; link: string; additional?: ReactNode }[] = [
 ];
 
 const AppHeaderMenu = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
     setIsOpen(true);

@@ -10,12 +10,12 @@ const Modal: FC<{
 }> = ({ children, className, isOpen, onClose }) => {
   return (
     <div className={cl(styles.root, isOpen && styles.root_open)}>
+      <div className={styles.blackout} onClick={onClose} aria-hidden="true" />
       <div
-        className={styles.blackout}
-        onClick={onClose}
-        aria-hidden="true"
-      ></div>
-      <div className={cl(styles.content, className)}>{children}</div>
+        className={cl(styles.content, isOpen && styles.content_open, className)}
+      >
+        {children}
+      </div>
     </div>
   );
 };
