@@ -6,7 +6,7 @@ import IconButton from "../../UI/buttons/IconButton/IconButton";
 import styles from "./appHeaderSearch.module.scss";
 
 const AppHeaderSearch = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
 
