@@ -1,0 +1,58 @@
+.button {
+  background-image: url("../../../assets/images/icons/search.svg");
+}
+
+.close {
+  background-image: url("../../../assets/images/icons/close.svg");
+}
+
+.search {
+  visibility: hidden;
+  opacity: 0;
+  // padding: 10px 20px;
+  // height: 100%;
+  // width: 70px;
+  // box-sizing: border-box;
+
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+
+  // position: absolute;
+  // right: 0;
+  // top: 0;
+  // z-index: 1;
+  transition: all 0.5s ease-in-out;
+  // background-color: #ffffff;
+}
+
+.search_open {
+  visibility: visible;
+  opacity: 1;
+}
+
+.blackout {
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(29, 29, 31, 0.4);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.panel {
+  width: 100%;
+  min-height: 100%;
+
+  background-color: #ffffff;
+
+  display: flex;
+  justify-content: stretch;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+}
