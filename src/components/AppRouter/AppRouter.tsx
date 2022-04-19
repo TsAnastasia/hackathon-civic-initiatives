@@ -1,8 +1,8 @@
+import { lazy } from "react";
 import { Navigate, RouteObject, useRoutes } from "react-router-dom";
 import AccountPage from "../../pages/account/AccountPage";
 import CreatePage from "../../pages/create/CreatePage";
 import DocPage from "../../pages/doc/DocPage";
-import InfoPage from "../../pages/info/InfoPage";
 import InitiativePage from "../../pages/initiative/InitiativePage";
 import ListPage from "../../pages/list/ListPage";
 import NotFoundPage from "../../pages/notFound/NotFoundPage";
@@ -10,6 +10,12 @@ import NotificationsPage from "../../pages/notifications/NotificationsPage";
 import SearchPage from "../../pages/search/SearchPage";
 import SettingsPage from "../../pages/settings/SettingsPage";
 import { AppRoutes, goToPage } from "../../utils/routes";
+
+{
+  /* TODO: add lazy loading */
+}
+
+const InfoPage = lazy(() => import("../../pages/info/InfoPage"));
 
 const routes: RouteObject[] = [
   { path: AppRoutes.HOME, element: <ListPage /> },

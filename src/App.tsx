@@ -3,14 +3,17 @@ import { NavLink } from "react-router-dom";
 import { goToPage } from "./utils/routes";
 import AppRoutes from "./components/AppRouter/AppRouter";
 import styles from "./app.module.scss";
+import { Suspense } from "react";
+import AppLoader from "./components/AppLoader/AppLoader";
 
 const App = () => {
   return (
     <div className={styles.app}>
       <AppHeader />
-      {/* TODO: add lazy loading */}
       <main className={styles.main}>
-        <AppRoutes />
+        <Suspense fallback={<AppLoader />}>
+          <AppRoutes />
+        </Suspense>
       </main>
       <footer>
         <ul>
