@@ -3,7 +3,10 @@ declare namespace AppHeaderSearchModuleScssNamespace {
     blackout: string;
     button: string;
     close: string;
+    field: string;
+    input: string;
     panel: string;
+    panel_open: string;
     search: string;
     search_open: string;
   }

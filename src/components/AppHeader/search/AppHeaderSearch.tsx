@@ -1,11 +1,14 @@
 import cl from "classnames";
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { goToPage } from "../../../utils/routes";
 import IconButton from "../../UI/buttons/IconButton/IconButton";
 import styles from "./appHeaderSearch.module.scss";
 
 const AppHeaderSearch = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
   const handleOpen = () => {
     setIsOpen(true);
@@ -21,7 +24,10 @@ const AppHeaderSearch = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(event.target);
+    if (!search) return;
+    setIsOpen(false);
+    setSearch("");
+    navigate(goToPage.search);
   };
 
   return (
@@ -33,14 +39,20 @@ const AppHeaderSearch = () => {
           onClick={handleClose}
           aria-hidden="true"
         />
-        <form className={styles.panel} onSubmit={handleSubmit}>
+        <form
+          className={cl(styles.panel, isOpen && styles.panel_open)}
+          onSubmit={handleSubmit}
+        >
           <IconButton className={styles.button} type="submit" />
-          <label>
+          <label className={styles.field}>
             <input
+              className={styles.input}
               type="text"
               name="search"
               value={search}
               onChange={handleChange}
+              placeholder="Поиск"
+              autoComplete="off"
             />
           </label>
           <IconButton className={styles.close} onClick={handleClose} />
