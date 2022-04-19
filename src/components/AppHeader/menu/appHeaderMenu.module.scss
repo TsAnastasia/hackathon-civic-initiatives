@@ -24,6 +24,10 @@
 .item {
   padding: 8px 0;
 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   transition: all 0.5s ease-in-out;
 
   &:not(:last-child) {
@@ -32,6 +36,7 @@
 }
 
 .link {
+  flex: 1;
   margin: 0;
 
   font-family: "Roboto";
@@ -42,10 +47,6 @@
   text-decoration: none;
 
   color: #737a92;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 
   transition: all 0.5s ease-in-out;
 

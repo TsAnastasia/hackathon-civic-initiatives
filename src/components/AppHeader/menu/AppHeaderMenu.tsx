@@ -45,8 +45,10 @@ const AppHeaderMenu = () => {
                 onClick={handleClose}
               >
                 {name}
-                {additional}
               </NavLink>
+              <span aria-hidden="true" onClick={handleClose}>
+                {additional}
+              </span>
             </li>
           ))}
         </ul>
