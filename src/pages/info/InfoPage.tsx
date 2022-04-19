@@ -1,5 +1,7 @@
+import AppLoader from "../../components/AppLoader/AppLoader";
+
 const InfoPage = () => {
-  return <h1>Info page</h1>;
+  return <AppLoader />;
 };
 
 export default InfoPage;

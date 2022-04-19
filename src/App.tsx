@@ -9,7 +9,7 @@ const App = () => {
     <div className={styles.app}>
       <AppHeader />
       {/* TODO: add lazy loading */}
-      <main>
+      <main className={styles.main}>
         <AppRoutes />
       </main>
       <footer>
