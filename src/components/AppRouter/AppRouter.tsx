@@ -2,7 +2,6 @@ import { lazy } from "react";
 import { Navigate, RouteObject, useRoutes } from "react-router-dom";
 import AccountPage from "../../pages/account/AccountPage";
 import CreatePage from "../../pages/create/CreatePage";
-import DocPage from "../../pages/doc/DocPage";
 import InitiativePage from "../../pages/initiative/InitiativePage";
 import ListPage from "../../pages/list/ListPage";
 import NotFoundPage from "../../pages/notFound/NotFoundPage";
@@ -16,6 +15,7 @@ import { AppRoutes, goToPage } from "../../utils/routes";
 }
 
 const InfoPage = lazy(() => import("../../pages/info/InfoPage"));
+const DocPage = lazy(() => import("../../pages/doc/DocPage"));
 
 const routes: RouteObject[] = [
   { path: AppRoutes.HOME, element: <ListPage /> },
@@ -43,7 +43,7 @@ const routes: RouteObject[] = [
     path: AppRoutes.INFO,
     children: [
       { index: true, element: <InfoPage /> },
-      { path: "*", element: <DocPage /> },
+      { path: AppRoutes.DOC, element: <DocPage /> },
     ],
   },
   { path: "*", element: <NotFoundPage /> },

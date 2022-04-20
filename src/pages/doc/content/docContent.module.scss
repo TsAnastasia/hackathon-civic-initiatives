@@ -1,0 +1,14 @@
+.doc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.page {
+  overflow: auto;
+  // background-color: red;
+  // border: 1px solid black;
+  // overflow: auto;
+}

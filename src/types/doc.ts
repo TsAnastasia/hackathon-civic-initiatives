@@ -1,6 +1,6 @@
 export interface Doc {
   title: string;
-  resource?: string;
+  source: string;
 }
 
 export type Docs = { [key: string]: Doc };
