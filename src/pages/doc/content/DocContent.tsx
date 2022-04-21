@@ -4,6 +4,7 @@ import AppLoader from "../../../components/AppLoader/AppLoader";
 
 import { Doc } from "../../../types/doc";
 import styles from "./docContent.module.scss";
+import DocContentError from "./error/DocContentError";
 import DocContentPanel from "./panel/DocContentPanel";
 
 const WIDHT = Math.min(window.innerWidth, 768);
@@ -47,10 +48,11 @@ const DocContent: FC<{ doc: Doc }> = ({ doc }) => {
         handleZoomOut={handleZoomOut}
       />
       <Document
-        file={doc.source}
-        loading={<AppLoader blackout={false} />}
-        onLoadSuccess={onDocumentLoadSuccess}
         className={styles.doc}
+        file={doc.source}
+        onLoadSuccess={onDocumentLoadSuccess}
+        loading={<AppLoader blackout={false} />}
+        error={<DocContentError />}
       >
         <Page
           className={styles.page}
@@ -61,6 +63,7 @@ const DocContent: FC<{ doc: Doc }> = ({ doc }) => {
           renderTextLayer={false}
           renderInteractiveForms={false}
           loading={<AppLoader blackout={false} />}
+          error={<DocContentError />}
         />
       </Document>
     </>
