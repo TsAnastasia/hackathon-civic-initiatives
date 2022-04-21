@@ -5,7 +5,8 @@ import AppLoader from "../../../components/AppLoader/AppLoader";
 import { Doc } from "../../../types/doc";
 import styles from "./docContent.module.scss";
 import DocContentError from "./error/DocContentError";
-import DocContentPanel from "./panel/DocContentPanel";
+import DocContentPages from "./pages/DocContentPages";
+import DocContentScale from "./scale/DocContentScale";
 
 const WIDHT = Math.min(window.innerWidth, 768);
 const ZOOM_STEP = 0.1;
@@ -37,16 +38,20 @@ const DocContent: FC<{ doc: Doc }> = ({ doc }) => {
 
   return (
     <>
-      <h1>doc page</h1>
-      <DocContentPanel
-        page={page}
-        pages={pages}
-        scale={scale}
-        handleBack={handleBack}
-        handleForward={handleForward}
-        handleZoomIn={handleZoomIn}
-        handleZoomOut={handleZoomOut}
-      />
+      <h1 className={styles.title}>{doc.title}</h1>
+      <div className={styles.panel}>
+        <DocContentScale
+          scale={scale}
+          handleZoomIn={handleZoomIn}
+          handleZoomOut={handleZoomOut}
+        />
+        <DocContentPages
+          page={page}
+          pages={pages}
+          handleBack={handleBack}
+          handleForward={handleForward}
+        />
+      </div>
       <Document
         className={styles.doc}
         file={doc.source}
@@ -66,6 +71,13 @@ const DocContent: FC<{ doc: Doc }> = ({ doc }) => {
           error={<DocContentError />}
         />
       </Document>
+
+      <DocContentPages
+        page={page}
+        pages={pages}
+        handleBack={handleBack}
+        handleForward={handleForward}
+      />
     </>
   );
 };

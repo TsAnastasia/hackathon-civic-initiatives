@@ -1,3 +1,25 @@
+.title {
+  margin: 25px 20px 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+
+  color: #19488e;
+}
+
+.panel {
+  margin: 0 20px;
+
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
 .doc {
   display: flex;
   align-items: center;
@@ -8,7 +30,4 @@
 
 .page {
   overflow: auto;
-  // background-color: red;
-  // border: 1px solid black;
-  // overflow: auto;
 }

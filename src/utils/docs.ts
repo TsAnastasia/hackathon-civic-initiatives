@@ -18,7 +18,7 @@ export const legalDocs: Docs = {
   },
   civil_code: {
     title: "Гражданский кодекс",
-    source: "/docs/civil_cod.pdf",
+    source: "/docs/civil_code.pdf",
   },
   administrative_code: {
     title: "Административный кодекс",

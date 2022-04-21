@@ -1,0 +1,51 @@
+.root {
+  margin: 10px auto;
+  padding: 5px;
+  width: fit-content;
+
+  border-radius: 8px;
+  border: 1px solid #e2e4eb;
+
+  display: inline-grid;
+  grid-auto-flow: column;
+  gap: 5px;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.button {
+  width: 20px;
+  height: 20px;
+
+  border-radius: 4px;
+  background-color: #e2e4eb;
+  background-size: 15px;
+
+  transition: al 0.5s ease-in-out;
+
+  &:disabled {
+    opacity: 0.2;
+  }
+
+  &:hover {
+    background-color: #b6bbcc;
+  }
+}
+
+.zoomin {
+  background-image: url("../../../../assets/images/icons/plus.svg");
+}
+
+.zoomout {
+  background-image: url("../../../../assets/images/icons/minus.svg");
+}
+
+.scale {
+  min-width: 15px;
+  min-height: 15px;
+
+  background-image: url("../../../../assets/images/icons/search.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}

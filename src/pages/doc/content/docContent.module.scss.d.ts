@@ -2,6 +2,8 @@ declare namespace DocContentModuleScssNamespace {
   export interface IDocContentModuleScss {
     doc: string;
     page: string;
+    panel: string;
+    title: string;
   }
 }
 
