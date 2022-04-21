@@ -2,15 +2,32 @@ import { useState } from "react";
 import TextField from "../../../components/UI/inputs/TextField";
 import { useForm } from "../../../hooks/useForm";
 import { validationScheme } from "./accountFormValidate";
+import styles from "./accountForm.module.scss";
 
 // TODO: add app store
-const user = {
+const user: UserData = {
   name: "Василий",
   lastName: "Иванов",
   phone: "8-999-777-66-55",
   email: "some@mail.com",
   area: "Санкт-Петербург, Невский",
 };
+
+type UserData = {
+  name: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  area: string;
+};
+
+const items: { name: keyof UserData; label: string; placeholder?: string }[] = [
+  { name: "name", label: "Имя", placeholder: "Введите имя" },
+  { name: "lastName", label: "Фамилия", placeholder: "Введите фамилию" },
+  { name: "phone", label: "Телефон", placeholder: "8-XXX-XXX-XX-XX" },
+  { name: "email", label: "Почта", placeholder: "Введите почту" },
+  { name: "area", label: "Район" },
+];
 
 const AccountForm = () => {
   const [disabled, setDisabled] = useState(true);
@@ -21,7 +38,7 @@ const AccountForm = () => {
     handleValidate,
     errors,
     isValid,
-  } = useForm({
+  } = useForm<UserData>({
     defaltValues: user,
     onSubmit: (values) => {
       console.log("comp", values);
@@ -38,51 +55,21 @@ const AccountForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={styles.form}>
       <h2>Здравствуйте, {user.name}!</h2>
-      <TextField
-        name="name"
-        value={values.name}
-        onChange={handleChange}
-        label="Имя"
-        placeholder="Введите имя"
-        disabled={disabled}
-        error={errors.name}
-      />
-      <TextField
-        name="lastName"
-        value={values.lastName}
-        onChange={handleChange}
-        label="Фамилия"
-        placeholder="Введите фамилию"
-        disabled={disabled}
-        error={errors.lastName}
-      />
-      <TextField
-        name="phone"
-        value={values.phone}
-        onChange={handleChange}
-        label="Телефон"
-        placeholder="8-XXX-XXX-XX-XX"
-        disabled={disabled}
-        error={errors.phone}
-      />
-      <TextField
-        name="email"
-        value={values.email}
-        onChange={handleChange}
-        label="Почта"
-        placeholder="Введите почту"
-        disabled={disabled}
-        error={errors.email}
-      />
-      <TextField
-        name="area"
-        value={values.area}
-        onChange={handleChange}
-        label="Район"
-        disabled={disabled}
-      />
+
+      {items.map(({ name, label, placeholder }) => (
+        <TextField
+          key={name}
+          name={name}
+          value={values[name]}
+          onChange={handleChange}
+          label={label}
+          placeholder={placeholder}
+          disabled={disabled}
+          error={errors[name]}
+        />
+      ))}
       {disabled ? (
         <button type="button" onClick={handleEdit}>
           Редактировать
