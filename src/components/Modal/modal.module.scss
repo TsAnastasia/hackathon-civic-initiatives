@@ -1,23 +1,22 @@
-.root {
-  visibility: hidden;
-  opacity: 0;
-
-  transition: all 0.5s ease-in-out;
-}
-
-.root_open {
-  visibility: visible;
-  opacity: 1;
-}
-
 .blackout {
   width: 100%;
   height: 100%;
+
   background-color: rgba(29, 29, 31, 0.4);
+
   position: fixed;
   top: 0;
   left: 0;
   z-index: 500;
+
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.blackout_open {
+  visibility: visible;
+  opacity: 1;
 }
 
 .content {
@@ -30,8 +29,13 @@
 
   transform: scale(0);
   transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
 }
 
 .content_open {
   transform: none;
+
+  visibility: visible;
+  opacity: 1;
 }
