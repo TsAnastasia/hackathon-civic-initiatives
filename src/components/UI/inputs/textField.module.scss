@@ -56,6 +56,10 @@
     background: #ffffff;
     color: #737a92;
   }
+
+  &:focus {
+    border-color: #1d1d1f;
+  }
 }
 
 .error {

@@ -1,19 +1,28 @@
+import cl from "classnames";
 import { Link } from "react-router-dom";
 import { goToPage } from "../../utils/routes";
 import AccountForm from "./form/AccountForm";
+import styles from "./accountPage.module.scss";
+import AccountAvatar from "./avatar/AccountAvatar";
 
 const AccountPage = () => {
   return (
     <>
-      <section>
-        <h1>Личный кабинет</h1>
-        <div>
-          <Link to={goToPage.settings}>set</Link>
-          <button>Avatar</button>
-          <Link to={goToPage.notification}>not</Link>
+      <section className={styles.section}>
+        <h1 className={styles.title}>Личный кабинет</h1>
+        <div className={styles.container}>
+          <Link
+            to={goToPage.settings}
+            className={cl(styles.link, styles.settings)}
+          />
+          <AccountAvatar />
+          <Link
+            to={goToPage.notification}
+            className={cl(styles.link, styles.notification)}
+          />
         </div>
       </section>
-      <section>
+      <section className={styles.section}>
         <AccountForm />
       </section>
     </>

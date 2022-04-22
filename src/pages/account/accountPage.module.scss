@@ -1,0 +1,40 @@
+.section {
+  margin: 0 20px;
+}
+
+.title {
+  margin: 25px 0 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+
+  color: #19488e;
+}
+
+.container {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  min-width: 50px;
+  min-height: 50px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &.settings {
+    background-image: url("../../assets/images/icons/setting.svg");
+  }
+
+  &.notification {
+    background-image: url("../../assets/images/icons/notification.svg");
+  }
+}

@@ -91,6 +91,7 @@ const AccountForm = () => {
           error={errors[name]}
         />
       ))}
+      {/* TODO: create select fro area */}
 
       <AppButton className={styles.button} {...buttonProps} />
 
