@@ -4,6 +4,7 @@ declare namespace AppLoaderModuleScssNamespace {
     loader_blackout: string;
     roller: string;
     root: string;
+    root_fixed: string;
   }
 }
 

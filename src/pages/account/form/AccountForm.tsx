@@ -3,6 +3,10 @@ import TextField from "../../../components/UI/inputs/TextField";
 import { useForm } from "../../../hooks/useForm";
 import { validationScheme } from "./accountFormValidate";
 import styles from "./accountForm.module.scss";
+import AppLoader from "../../../components/AppLoader/AppLoader";
+import AppButton, {
+  AppButtonType,
+} from "../../../components/UI/buttons/AppButton/AppButton";
 
 // TODO: add app store
 const user: UserData = {
@@ -31,6 +35,8 @@ const items: { name: keyof UserData; label: string; placeholder?: string }[] = [
 
 const AccountForm = () => {
   const [disabled, setDisabled] = useState(true);
+  const [loaded, setLoaded] = useState(false);
+
   const {
     values,
     handleChange,
@@ -42,7 +48,13 @@ const AccountForm = () => {
     defaltValues: user,
     onSubmit: (values) => {
       console.log("comp", values);
-      setDisabled(true);
+
+      setLoaded(true);
+      setTimeout(() => {
+        // TODO: change user data
+        setDisabled(true);
+        setLoaded(false);
+      }, 500);
     },
     validationScheme,
   });
@@ -54,9 +66,18 @@ const AccountForm = () => {
     });
   };
 
+  const buttonProps: AppButtonType = disabled
+    ? { onClick: handleEdit, children: "Редактировать" }
+    : {
+        isBlue: true,
+        type: "submit",
+        disabled: !isValid,
+        children: "Сохранить",
+      };
+
   return (
     <form onSubmit={handleSubmit} className={styles.form}>
-      <h2>Здравствуйте, {user.name}!</h2>
+      <h2 className={styles.title}>Здравствуйте, {user.name}!</h2>
 
       {items.map(({ name, label, placeholder }) => (
         <TextField
@@ -70,15 +91,10 @@ const AccountForm = () => {
           error={errors[name]}
         />
       ))}
-      {disabled ? (
-        <button type="button" onClick={handleEdit}>
-          Редактировать
-        </button>
-      ) : (
-        <button type="submit" disabled={!isValid}>
-          Сохранить
-        </button>
-      )}
+
+      <AppButton className={styles.button} {...buttonProps} />
+
+      {loaded && <AppLoader fixed={true} />}
     </form>
   );
 };

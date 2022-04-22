@@ -12,6 +12,16 @@
   min-height: 100px;
 }
 
+.root_fixed {
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
 .loader {
   width: 100%;
   height: 100%;
@@ -23,6 +33,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  z-index: 1000;
 }
 
 .loader_blackout {

@@ -8,6 +8,18 @@
   align-items: center;
 }
 
-.item {
-  margin: 8px 0;
+.title {
+  margin: 20px auto;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+
+  color: #1d1d1f;
+}
+
+.button {
+  margin: 4px 0;
 }

@@ -1,7 +1,8 @@
 declare namespace AccountFormModuleScssNamespace {
   export interface IAccountFormModuleScss {
+    button: string;
     form: string;
-    item: string;
+    title: string;
   }
 }
 
