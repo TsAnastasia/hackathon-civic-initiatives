@@ -1,5 +1,4 @@
 import { useState } from "react";
-import TextField from "../../../components/UI/inputs/TextField";
 import { useForm } from "../../../hooks/useForm";
 import { validationScheme } from "./accountFormValidate";
 import styles from "./accountForm.module.scss";
@@ -7,6 +6,7 @@ import AppLoader from "../../../components/AppLoader/AppLoader";
 import AppButton, {
   AppButtonType,
 } from "../../../components/UI/buttons/AppButton/AppButton";
+import TextField from "../../../components/UI/inputs/TextField/TextField";
 
 // TODO: add app store
 const user: UserData = {

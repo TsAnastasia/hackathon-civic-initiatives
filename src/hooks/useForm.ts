@@ -4,23 +4,26 @@ interface Props<T> {
   defaltValues: T;
   onSubmit: (values: T) => void;
   validationScheme?: Partial<{
-    [key in keyof T]: (value: string) => string | undefined;
+    [key in keyof T]: (value: string | boolean) => string | undefined;
   }>;
 }
 
-export const useForm = <T extends { [key: string]: string }>({
+export const useForm = <T extends { [key: string]: string | boolean }>({
   defaltValues,
   onSubmit,
   validationScheme = {},
 }: Props<T>) => {
-  type ErrorsType = Partial<{ [key in keyof T]: string | undefined }>;
+  type ErrorsType = Partial<Record<keyof T, string | undefined>>;
   const [values, setValues] = useState(defaltValues);
   const [errors, setErros] = useState<ErrorsType>({});
   const [isValid, setIsValid] = useState(true);
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setValues((state) => ({ ...state, [name]: value }));
+    const { name, value, type, checked } = event.target;
+    setValues((state) => ({
+      ...state,
+      [name]: type === "checkbox" ? checked : value,
+    }));
     const validateValue = validationScheme[name];
     if (validateValue)
       setErros((state) => ({ ...state, [name]: validateValue(value) }));

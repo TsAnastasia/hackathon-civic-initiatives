@@ -1,4 +1,6 @@
-const checkName = (value: string) => {
+const checkName = (value: string | boolean) => {
+  // TDODO: fix value type problem
+  if (typeof value === "boolean") return;
   if (!value) return "Обязательное поле";
   if (value.length < 2) return "Минимум 2 символа";
   if (value.length > 40) return "Максимум 40 символов";
