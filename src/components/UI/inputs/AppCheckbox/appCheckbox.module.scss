@@ -1,0 +1,93 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  margin: 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #737a92;
+}
+
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  display: none;
+}
+
+.box {
+  margin: 0 0 0 16px;
+  width: 60px;
+  height: 24px;
+
+  border-radius: 8px;
+  background: #e2e4eb;
+
+  display: block;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+
+  &::before {
+    content: "Выкл";
+    width: calc(100% - 24px);
+
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10px;
+    line-height: 12px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    text-align: center;
+
+    color: #737a92;
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 24px;
+    transform: translate(0, -50%);
+
+    transition: all 0.5s ease-in-out;
+  }
+
+  &::after {
+    content: "";
+    width: 24px;
+    height: 100%;
+
+    border-radius: 8px;
+    background: #b6bbcc;
+
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+
+    transition: all 0.5s ease-in-out;
+  }
+
+  &.box_checked {
+    background-color: #b6bbcc;
+
+    &::before {
+      content: "ВКЛ";
+      left: 0;
+    }
+    &::after {
+      background-color: #737a92;
+      left: calc(100% - 24px);
+    }
+  }
+}
