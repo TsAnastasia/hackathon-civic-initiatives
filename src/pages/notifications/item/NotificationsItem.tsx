@@ -1,6 +1,7 @@
 import cl from "classnames";
 import { FC } from "react";
 import { UserNotification } from "../../../types/notification";
+import { formatDateFromString } from "../../../utils/date";
 import styles from "./notificationItem.module.scss";
 
 const NotificationsItem: FC<{
@@ -16,8 +17,7 @@ const NotificationsItem: FC<{
       onMouseEnter={handleRead}
       className={cl(styles.root, readed && styles.root_read)}
     >
-      {/* TODO: format date */}
-      <p className={styles.date}>{date}</p>
+      <p className={styles.date}>{formatDateFromString(date)}</p>
       <h3 className={styles.title}>{comment}</h3>
       <p className={styles.tag}>{title}</p>
     </article>
