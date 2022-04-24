@@ -2,8 +2,10 @@ import { useState } from "react";
 import AppLoader from "../../components/AppLoader/AppLoader";
 import AppButton from "../../components/UI/buttons/AppButton/AppButton";
 import AppCheckbox from "../../components/UI/inputs/AppCheckbox/AppCheckbox";
+import { useDocTitle } from "../../hooks/useDocTitle";
 import { useForm } from "../../hooks/useForm";
 import { TIMEOUT_API } from "../../utils/constants";
+
 import styles from "./settingPage.module.scss";
 
 // TODO: add app storage
@@ -20,6 +22,8 @@ const labels: { [key in keyof typeof settings]: string } = {
 };
 
 const SettingsPage = () => {
+  useDocTitle("Настройки");
+
   const [loaded, setLoaded] = useState(false);
 
   const { values, handleSubmit, handleChange } = useForm({

@@ -4,8 +4,11 @@ import { goToPage } from "../../utils/routes";
 import AccountForm from "./form/AccountForm";
 import styles from "./accountPage.module.scss";
 import AccountAvatar from "./avatar/AccountAvatar";
+import { useDocTitle } from "../../hooks/useDocTitle";
 
 const AccountPage = () => {
+  useDocTitle("Личный кабинет");
+
   return (
     <>
       <section className={styles.section}>

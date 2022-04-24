@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useDocTitle } from "../../hooks/useDocTitle";
 import { UserNotification } from "../../types/notification";
 import NotificationsItem from "./item/NotificationsItem";
 import styles from "./notificationPage.module.scss";
@@ -36,6 +37,8 @@ const defaultNotifications: UserNotification[] = [
 ];
 
 const NotificationsPage = () => {
+  useDocTitle("Уведомления");
+
   const [notifications, setNotifications] = useState(defaultNotifications);
 
   const handleReadNotification = (id: string) => {

@@ -1,8 +1,11 @@
+import { useDocTitle } from "../../hooks/useDocTitle";
 import { legalDocs, serviceDocs } from "../../utils/docs";
 import InfoDocs from "./docs/InfoDocs";
 import styles from "./infoPage.module.scss";
 
 const InfoPage = () => {
+  useDocTitle("Информация");
+
   return (
     <div className={styles.root}>
       <h1 className={styles.title}>Информация</h1>
