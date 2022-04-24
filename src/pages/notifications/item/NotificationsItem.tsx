@@ -14,7 +14,8 @@ const NotificationsItem: FC<{
 
   return (
     <article
-      onMouseEnter={handleRead}
+      aria-hidden
+      onClick={handleRead}
       className={cl(styles.root, readed && styles.root_read)}
     >
       <p className={styles.date}>{formatDateFromString(date)}</p>
