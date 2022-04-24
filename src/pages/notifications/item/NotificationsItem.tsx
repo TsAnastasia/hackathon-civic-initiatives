@@ -1,7 +1,7 @@
-// TODO: add to app store
-
+import cl from "classnames";
 import { FC } from "react";
 import { UserNotification } from "../../../types/notification";
+import styles from "./notificationItem.module.scss";
 
 const NotificationsItem: FC<{
   notification: UserNotification;
@@ -12,11 +12,14 @@ const NotificationsItem: FC<{
   };
 
   return (
-    <article onMouseEnter={handleRead}>
-      <p>{`${readed}`}</p>
-      <p>{date}</p>
-      <h3>{comment}</h3>
-      <p>{title}</p>
+    <article
+      onMouseEnter={handleRead}
+      className={cl(styles.root, readed && styles.root_read)}
+    >
+      {/* TODO: format date */}
+      <p className={styles.date}>{date}</p>
+      <h3 className={styles.title}>{comment}</h3>
+      <p className={styles.tag}>{title}</p>
     </article>
   );
 };
