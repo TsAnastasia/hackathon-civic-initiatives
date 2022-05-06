@@ -3,6 +3,8 @@ declare namespace AccountPageModuleScssNamespace {
     container: string;
     link: string;
     notification: string;
+    ringNotification: string;
+    rotateSettings: string;
     section: string;
     settings: string;
     title: string;

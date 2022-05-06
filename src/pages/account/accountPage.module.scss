@@ -1,3 +1,31 @@
+@keyframes rotateSettings {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ringNotification {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
 .section {
   margin: 0 20px;
 }
@@ -32,9 +60,19 @@
 
   &.settings {
     background-image: url("../../assets/images/icons/setting.svg");
+    transform-origin: center;
+
+    &:hover {
+      animation: rotateSettings 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
   }
 
   &.notification {
     background-image: url("../../assets/images/icons/notification.svg");
+    transform-origin: center top;
+
+    &:hover {
+      animation: ringNotification 0.6s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
   }
 }
