@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { categoriesAPI } from "../../../API-data/categories/categoriesAPI";
 import AppLoader from "../../../components/AppLoader/AppLoader";
-import Breadcrumbs from "../../../components/Breadcrumbs/Breadcrumbs";
 import { Category } from "../../../types/categories";
 import { TIMEOUT_API } from "../../../utils/constants";
 import CreateCategoryCard from "./card/CreateCategoryCard";
@@ -20,7 +19,6 @@ const CreateCategory = () => {
 
   return (
     <>
-      <Breadcrumbs parents={[]} current={"Выбор категории"} />
       <section className={scss.root}>
         <h1 className={scss.title}>Выберите категорию</h1>
         {categories ? (

@@ -7,7 +7,7 @@ const TextField: FC<
     label?: string;
     error?: string | undefined;
   }
-> = ({ className, label, type = "string", error, ...props }) => {
+> = ({ className, label, type = "text", error, ...props }) => {
   return (
     <label className={cl(scss.root, className)}>
       {label && <span className={cl(scss.label)}>{label}</span>}
