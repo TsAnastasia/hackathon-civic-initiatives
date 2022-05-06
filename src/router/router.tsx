@@ -1,26 +1,23 @@
 import { lazy } from "react";
-import { Navigate, RouteObject, useRoutes } from "react-router-dom";
+import { Navigate, RouteObject } from "react-router-dom";
+import { AppRoutes, goToPage } from "./routes";
 
-import CreatePage from "../../pages/create/CreatePage";
-import InitiativePage from "../../pages/initiative/InitiativePage";
-import ListPage from "../../pages/list/ListPage";
-import NotFoundPage from "../../pages/notFound/NotFoundPage";
-import SearchPage from "../../pages/search/SearchPage";
-import { AppRoutes, goToPage } from "../../utils/routes";
+const ListPage = lazy(() => import("../pages/list/ListPage"));
+const CreatePage = lazy(() => import("../pages/create/CreatePage"));
+const InitiativePage = lazy(() => import("../pages/initiative/InitiativePage"));
 
-{
-  /* TODO: add lazy loading */
-}
-
-const AccountPage = lazy(() => import("../../pages/account/AccountPage"));
-const SettingsPage = lazy(() => import("../../pages/settings/SettingsPage"));
+const AccountPage = lazy(() => import("../pages/account/AccountPage"));
+const SettingsPage = lazy(() => import("../pages/settings/SettingsPage"));
 const NotificationsPage = lazy(
-  () => import("../../pages/notifications/NotificationsPage")
+  () => import("../pages/notifications/NotificationsPage")
 );
-const InfoPage = lazy(() => import("../../pages/info/InfoPage"));
-const DocPage = lazy(() => import("../../pages/doc/DocPage"));
+const InfoPage = lazy(() => import("../pages/info/InfoPage"));
+const DocPage = lazy(() => import("../pages/doc/DocPage"));
 
-const routes: RouteObject[] = [
+const SearchPage = lazy(() => import("../pages/search/SearchPage"));
+const NotFoundPage = lazy(() => import("../pages/notFound/NotFoundPage"));
+
+export const router: RouteObject[] = [
   { path: AppRoutes.HOME, element: <ListPage /> },
   { path: AppRoutes.SEARCH, element: <SearchPage /> },
   { path: AppRoutes.CREATE, element: <CreatePage /> },
@@ -51,5 +48,3 @@ const routes: RouteObject[] = [
   },
   { path: "*", element: <NotFoundPage /> },
 ];
-
-export default () => useRoutes(routes);

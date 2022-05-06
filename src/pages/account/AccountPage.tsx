@@ -1,6 +1,6 @@
 import cl from "classnames";
 import { Link } from "react-router-dom";
-import { goToPage } from "../../utils/routes";
+import { goToPage } from "../../router/routes";
 import AccountForm from "./form/AccountForm";
 import styles from "./accountPage.module.scss";
 import AccountAvatar from "./avatar/AccountAvatar";

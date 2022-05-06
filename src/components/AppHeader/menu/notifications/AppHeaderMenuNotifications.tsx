@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { goToPage } from "../../../../utils/routes";
+import { goToPage } from "../../../../router/routes";
 import styles from "./appHeaderMenuNotifications.module.scss";
 
 const AppHeaderMenuNotifications = () => {

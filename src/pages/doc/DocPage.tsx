@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import { useDocTitle } from "../../hooks/useDocTitle";
 import { docs } from "../../utils/docs";
-import { goToPage } from "../../utils/routes";
+import { goToPage } from "../../router/routes";
 import NotFoundPage from "../notFound/NotFoundPage";
 import DocContent from "./content/DocContent";
 

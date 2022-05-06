@@ -1,7 +1,7 @@
 import cl from "classnames";
 import { ReactNode, useState } from "react";
 import { NavLink } from "react-router-dom";
-import { goToPage } from "../../../utils/routes";
+import { goToPage } from "../../../router/routes";
 import Modal from "../../Modal/Modal";
 import IconButton from "../../UI/buttons/IconButton/IconButton";
 import styles from "./appHeaderMenu.module.scss";

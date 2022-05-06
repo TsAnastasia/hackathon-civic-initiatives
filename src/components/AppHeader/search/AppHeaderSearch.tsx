@@ -1,7 +1,7 @@
 import cl from "classnames";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { goToPage } from "../../../utils/routes";
+import { goToPage } from "../../../router/routes";
 import IconButton from "../../UI/buttons/IconButton/IconButton";
 import styles from "./appHeaderSearch.module.scss";
 

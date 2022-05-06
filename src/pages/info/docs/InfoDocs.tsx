@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { Docs } from "../../../types/doc";
-import { goToPage } from "../../../utils/routes";
+import { goToPage } from "../../../router/routes";
 import styles from "./infoDocs.module.scss";
 
 const InfoDocs: FC<{ title: string; docs: Docs }> = ({ title, docs }) => {

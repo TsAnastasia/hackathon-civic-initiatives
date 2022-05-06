@@ -3,7 +3,7 @@ import styles from "./app.module.scss";
 import AppFooter from "./components/AppFooter/AppFooter";
 import AppHeader from "./components/AppHeader/AppHeader";
 import AppLoader from "./components/AppLoader/AppLoader";
-import AppRoutes from "./components/AppRouter/AppRouter";
+import AppRouter from "./router/AppRouter";
 
 const App = () => {
   return (
@@ -11,7 +11,7 @@ const App = () => {
       <AppHeader />
       <main className={styles.main}>
         <Suspense fallback={<AppLoader />}>
-          <AppRoutes />
+          <AppRouter />
         </Suspense>
       </main>
       <AppFooter />
