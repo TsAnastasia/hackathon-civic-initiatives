@@ -2,7 +2,7 @@ import cl from "classnames";
 import { Link } from "react-router-dom";
 import { goToPage } from "../../router/routes";
 import AccountForm from "./form/AccountForm";
-import styles from "./accountPage.module.scss";
+import scss from "./accountPage.module.scss";
 import AccountAvatar from "./avatar/AccountAvatar";
 import { useDocTitle } from "../../hooks/useDocTitle";
 
@@ -11,21 +11,21 @@ const AccountPage = () => {
 
   return (
     <>
-      <section className={styles.section}>
-        <h1 className={styles.title}>Личный кабинет</h1>
-        <div className={styles.container}>
+      <section className={scss.section}>
+        <h1 className={scss.title}>Личный кабинет</h1>
+        <div className={scss.container}>
           <Link
             to={goToPage.settings}
-            className={cl(styles.link, styles.settings)}
+            className={cl(scss.link, scss.settings)}
           />
           <AccountAvatar />
           <Link
             to={goToPage.notification}
-            className={cl(styles.link, styles.notification)}
+            className={cl(scss.link, scss.notification)}
           />
         </div>
       </section>
-      <section className={styles.section}>
+      <section className={scss.section}>
         <AccountForm />
       </section>
     </>

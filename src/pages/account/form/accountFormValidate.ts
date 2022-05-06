@@ -10,10 +10,10 @@ const checkName = (value: string | boolean) => {
 export const validationScheme = {
   name: checkName,
   lastName: checkName,
-  phone: (value: string) => {
+  phone: (value: string | boolean) => {
     if (!value) return "Обязательное поле";
   },
-  email: (value: string) => {
+  email: (value: string | boolean) => {
     if (!value) return "Обязательное поле";
   },
 };

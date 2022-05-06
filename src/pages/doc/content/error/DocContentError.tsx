@@ -1,10 +1,10 @@
 import { FC } from "react";
-import styles from "./docContentError.module.scss";
+import scss from "./docContentError.module.scss";
 
 const DocContentError: FC<{ error?: string }> = ({
   error = "Ошибка загрузки",
 }) => {
-  return <p className={styles.title}>{error}</p>;
+  return <p className={scss.title}>{error}</p>;
 };
 
 export default DocContentError;

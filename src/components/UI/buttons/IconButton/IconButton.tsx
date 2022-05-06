@@ -1,6 +1,6 @@
 import cl from "classnames";
 import { ButtonHTMLAttributes, FC } from "react";
-import styles from "./iconButton.module.scss";
+import scss from "./iconButton.module.scss";
 
 const IconButton: FC<
   ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -9,7 +9,7 @@ const IconButton: FC<
 > = ({ children, className, type = "button", size = "small", ...props }) => {
   return (
     <button
-      className={cl(styles.root, styles[`size_${size}`], className)}
+      className={cl(scss.root, scss[`size_${size}`], className)}
       type={type}
       {...props}
     >

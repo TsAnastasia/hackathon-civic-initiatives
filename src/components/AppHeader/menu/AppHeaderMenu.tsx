@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { goToPage } from "../../../router/routes";
 import Modal from "../../Modal/Modal";
 import IconButton from "../../UI/buttons/IconButton/IconButton";
-import styles from "./appHeaderMenu.module.scss";
+import scss from "./appHeaderMenu.module.scss";
 import AppHeaderMenuNotifications from "./notifications/AppHeaderMenuNotifications";
 
 const menuItems: { name: string; link: string; additional?: ReactNode }[] = [
@@ -32,14 +32,14 @@ const AppHeaderMenu = () => {
 
   return (
     <div>
-      <IconButton className={styles.button} onClick={handleOpen} />
-      <Modal isOpen={isOpen} onClose={handleClose} className={styles.modal}>
-        <ul className={styles.menu}>
+      <IconButton className={scss.button} onClick={handleOpen} />
+      <Modal isOpen={isOpen} onClose={handleClose} className={scss.modal}>
+        <ul className={scss.menu}>
           {menuItems.map(({ name, link, additional }) => (
-            <li className={styles.item} key={link}>
+            <li className={scss.item} key={link}>
               <NavLink
                 className={({ isActive }) =>
-                  cl(styles.link, isActive && styles.active)
+                  cl(scss.link, isActive && scss.active)
                 }
                 to={link}
                 onClick={handleClose}

@@ -1,6 +1,6 @@
 import cl from "classnames";
 import { ButtonHTMLAttributes, FC } from "react";
-import styles from "./appButton.module.scss";
+import scss from "./appButton.module.scss";
 
 export type AppButtonType = ButtonHTMLAttributes<HTMLButtonElement> & {
   isBlue?: boolean;
@@ -15,7 +15,7 @@ const AppButton: FC<AppButtonType> = ({
 }) => {
   return (
     <button
-      className={cl(styles.button, isBlue && styles.button_blue, className)}
+      className={cl(scss.button, isBlue && scss.button_blue, className)}
       type={type}
       {...props}
     >

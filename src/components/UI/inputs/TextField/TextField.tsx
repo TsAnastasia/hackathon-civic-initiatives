@@ -1,6 +1,6 @@
 import cl from "classnames";
 import { FC, InputHTMLAttributes } from "react";
-import styles from "./textField.module.scss";
+import scss from "./textField.module.scss";
 
 const TextField: FC<
   InputHTMLAttributes<HTMLInputElement> & {
@@ -9,16 +9,16 @@ const TextField: FC<
   }
 > = ({ className, label, type = "string", error, ...props }) => {
   return (
-    <label className={cl(styles.root, className)}>
-      {label && <span className={cl(styles.label)}>{label}</span>}
-      <span className={styles.field}>
+    <label className={cl(scss.root, className)}>
+      {label && <span className={cl(scss.label)}>{label}</span>}
+      <span className={scss.field}>
         <input
-          className={cl(styles.input, error && styles.input_error)}
+          className={cl(scss.input, error && scss.input_error)}
           type={type}
           autoComplete="off"
           {...props}
         />
-        <span className={styles.error}>{error}</span>
+        <span className={scss.error}>{error}</span>
       </span>
     </label>
   );

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDocTitle } from "../../hooks/useDocTitle";
 import { UserNotification } from "../../types/notification";
 import NotificationsItem from "./item/NotificationsItem";
-import styles from "./notificationPage.module.scss";
+import scss from "./notificationPage.module.scss";
 
 // TODO: add to app store
 const defaultNotifications: UserNotification[] = [
@@ -52,11 +52,11 @@ const NotificationsPage = () => {
   });
 
   return (
-    <section className={styles.section}>
-      <h1 className={styles.title}>УВЕДОМЛЕНИЯ</h1>
-      <ul className={styles.list}>
+    <section className={scss.section}>
+      <h1 className={scss.title}>УВЕДОМЛЕНИЯ</h1>
+      <ul className={scss.list}>
         {notifications.map((notification) => (
-          <li key={notification.id} className={styles.item}>
+          <li key={notification.id} className={scss.item}>
             <NotificationsItem
               notification={notification}
               onRead={handleReadNotification}

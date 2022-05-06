@@ -1,5 +1,5 @@
 import { FC } from "react";
-import styles from "./notFoundPage.module.scss";
+import scss from "./notFoundPage.module.scss";
 import NotFoundImage from "../../assets/images/notFound.svg";
 import { useDocTitle } from "../../hooks/useDocTitle";
 
@@ -9,9 +9,9 @@ const NotFoundPage: FC<{ title?: string }> = ({
   useDocTitle(title);
 
   return (
-    <section className={styles.root}>
-      <h1 className={styles.title}>{title}</h1>
-      <img src={NotFoundImage} alt="not found" className={styles.image} />
+    <section className={scss.root}>
+      <h1 className={scss.title}>{title}</h1>
+      <img src={NotFoundImage} alt="not found" className={scss.image} />
     </section>
   );
 };

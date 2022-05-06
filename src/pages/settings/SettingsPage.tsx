@@ -6,7 +6,7 @@ import { useDocTitle } from "../../hooks/useDocTitle";
 import { useForm } from "../../hooks/useForm";
 import { TIMEOUT_API } from "../../utils/constants";
 
-import styles from "./settingPage.module.scss";
+import scss from "./settingPage.module.scss";
 
 // TODO: add app storage
 const settings: { [key: string]: boolean } = {
@@ -39,9 +39,9 @@ const SettingsPage = () => {
   });
   // TODO: style
   return (
-    <section className={styles.section}>
-      <h1 className={styles.title}>Настройки</h1>
-      <form onSubmit={handleSubmit} className={styles.form}>
+    <section className={scss.section}>
+      <h1 className={scss.title}>Настройки</h1>
+      <form onSubmit={handleSubmit} className={scss.form}>
         {Object.keys(settings).map((set) => (
           <AppCheckbox
             key={set}
@@ -49,7 +49,7 @@ const SettingsPage = () => {
             name={set}
             checked={values[set]}
             onChange={handleChange}
-            className={styles.item}
+            className={scss.item}
           />
         ))}
         <AppButton

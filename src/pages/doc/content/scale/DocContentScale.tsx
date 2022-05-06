@@ -2,7 +2,7 @@ import cl from "classnames";
 import { FC, useEffect, useState } from "react";
 import IconButton from "../../../../components/UI/buttons/IconButton/IconButton";
 
-import styles from "./docContentScale.module.scss";
+import scss from "./docContentScale.module.scss";
 
 const DocContentScale: FC<{
   scale: number;
@@ -16,14 +16,14 @@ const DocContentScale: FC<{
   }, [scale]);
 
   return (
-    <div className={styles.root}>
-      <span className={styles.scale} />
+    <div className={scss.root}>
+      <span className={scss.scale} />
       <IconButton
-        className={cl(styles.zoomin, styles.button)}
+        className={cl(scss.zoomin, scss.button)}
         onClick={handleZoomIn}
       />
       <IconButton
-        className={cl(styles.zoomout, styles.button)}
+        className={cl(scss.zoomout, scss.button)}
         onClick={handleZoomOut}
         disabled={isZoominDis}
       />

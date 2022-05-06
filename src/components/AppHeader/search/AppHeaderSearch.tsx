@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToPage } from "../../../router/routes";
 import IconButton from "../../UI/buttons/IconButton/IconButton";
-import styles from "./appHeaderSearch.module.scss";
+import scss from "./appHeaderSearch.module.scss";
 
 const AppHeaderSearch = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,21 +32,21 @@ const AppHeaderSearch = () => {
 
   return (
     <div>
-      <IconButton className={styles.button} onClick={handleOpen} />
-      <div className={cl(styles.search, isOpen && styles.search_open)}>
+      <IconButton className={scss.button} onClick={handleOpen} />
+      <div className={cl(scss.search, isOpen && scss.search_open)}>
         <div
-          className={cl(styles.blackout)}
+          className={cl(scss.blackout)}
           onClick={handleClose}
           aria-hidden="true"
         />
         <form
-          className={cl(styles.panel, isOpen && styles.panel_open)}
+          className={cl(scss.panel, isOpen && scss.panel_open)}
           onSubmit={handleSubmit}
         >
-          <IconButton className={styles.button} type="submit" />
-          <label className={styles.field}>
+          <IconButton className={scss.button} type="submit" />
+          <label className={scss.field}>
             <input
-              className={styles.input}
+              className={scss.input}
               type="text"
               name="search"
               value={search}
@@ -55,7 +55,7 @@ const AppHeaderSearch = () => {
               autoComplete="off"
             />
           </label>
-          <IconButton className={styles.close} onClick={handleClose} />
+          <IconButton className={scss.close} onClick={handleClose} />
         </form>
       </div>
     </div>

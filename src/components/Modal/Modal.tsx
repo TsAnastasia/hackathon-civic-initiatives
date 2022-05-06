@@ -1,5 +1,5 @@
 import { FC, ReactNode } from "react";
-import styles from "./modal.module.scss";
+import scss from "./modal.module.scss";
 import cl from "classnames";
 
 const Modal: FC<{
@@ -11,13 +11,11 @@ const Modal: FC<{
   return (
     <>
       <div
-        className={cl(styles.blackout, isOpen && styles.blackout_open)}
+        className={cl(scss.blackout, isOpen && scss.blackout_open)}
         onClick={onClose}
         aria-hidden="true"
       />
-      <div
-        className={cl(styles.content, isOpen && styles.content_open, className)}
-      >
+      <div className={cl(scss.content, isOpen && scss.content_open, className)}>
         {children}
       </div>
     </>

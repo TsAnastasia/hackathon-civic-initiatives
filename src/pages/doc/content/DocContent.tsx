@@ -3,7 +3,7 @@ import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
 import AppLoader from "../../../components/AppLoader/AppLoader";
 
 import { Doc } from "../../../types/doc";
-import styles from "./docContent.module.scss";
+import scss from "./docContent.module.scss";
 import DocContentError from "./error/DocContentError";
 import DocContentPages from "./pages/DocContentPages";
 import DocContentScale from "./scale/DocContentScale";
@@ -38,8 +38,8 @@ const DocContent: FC<{ doc: Doc }> = ({ doc }) => {
 
   return (
     <>
-      <h1 className={styles.title}>{doc.title}</h1>
-      <div className={styles.panel}>
+      <h1 className={scss.title}>{doc.title}</h1>
+      <div className={scss.panel}>
         <DocContentScale
           scale={scale}
           handleZoomIn={handleZoomIn}
@@ -53,14 +53,14 @@ const DocContent: FC<{ doc: Doc }> = ({ doc }) => {
         />
       </div>
       <Document
-        className={styles.doc}
+        className={scss.doc}
         file={doc.source}
         onLoadSuccess={onDocumentLoadSuccess}
         loading={<AppLoader blackout={false} />}
         error={<DocContentError />}
       >
         <Page
-          className={styles.page}
+          className={scss.page}
           width={WIDHT}
           pageNumber={page}
           scale={scale}

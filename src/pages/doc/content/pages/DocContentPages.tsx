@@ -2,7 +2,7 @@ import cl from "classnames";
 import { FC } from "react";
 import IconButton from "../../../../components/UI/buttons/IconButton/IconButton";
 
-import styles from "./docContentPages.module.scss";
+import scss from "./docContentPages.module.scss";
 
 const DocContentPages: FC<{
   page: number;
@@ -11,17 +11,17 @@ const DocContentPages: FC<{
   handleForward: () => void;
 }> = ({ page, pages, handleBack, handleForward }) => {
   return (
-    <div className={styles.root}>
+    <div className={scss.root}>
       <IconButton
-        className={cl(styles.button, styles.back)}
+        className={cl(scss.button, scss.back)}
         onClick={handleBack}
         disabled={page === 1}
       />
 
-      <p className={styles.pages}>{`${page} из ${pages || "?"}`}</p>
+      <p className={scss.pages}>{`${page} из ${pages || "?"}`}</p>
 
       <IconButton
-        className={cl(styles.button, styles.next)}
+        className={cl(scss.button, scss.next)}
         onClick={handleForward}
         disabled={page === pages}
       />

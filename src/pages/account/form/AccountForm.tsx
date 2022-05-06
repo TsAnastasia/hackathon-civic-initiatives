@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm } from "../../../hooks/useForm";
 import { validationScheme } from "./accountFormValidate";
-import styles from "./accountForm.module.scss";
+import scss from "./accountForm.module.scss";
 import AppLoader from "../../../components/AppLoader/AppLoader";
 import AppButton, {
   AppButtonType,
@@ -76,8 +76,8 @@ const AccountForm = () => {
       };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.form}>
-      <h2 className={styles.title}>Здравствуйте, {user.name}!</h2>
+    <form onSubmit={handleSubmit} className={scss.form}>
+      <h2 className={scss.title}>Здравствуйте, {user.name}!</h2>
 
       {items.map(({ name, label, placeholder }) => (
         <TextField
@@ -93,7 +93,7 @@ const AccountForm = () => {
       ))}
       {/* TODO: create select fro area */}
 
-      <AppButton className={styles.button} {...buttonProps} />
+      <AppButton className={scss.button} {...buttonProps} />
 
       {loaded && <AppLoader fixed={true} />}
     </form>

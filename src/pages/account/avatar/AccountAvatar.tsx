@@ -2,7 +2,7 @@ import cl from "classnames";
 import { useState } from "react";
 import Modal from "../../../components/Modal/Modal";
 import AppButton from "../../../components/UI/buttons/AppButton/AppButton";
-import styles from "./accountAvatar.module.scss";
+import scss from "./accountAvatar.module.scss";
 
 const AccountAvatar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,11 +17,11 @@ const AccountAvatar = () => {
 
   return (
     <>
-      <button type="button" onClick={handleOpen} className={styles.avatar} />
+      <button type="button" onClick={handleOpen} className={scss.avatar} />
       <Modal
         isOpen={isOpen}
         onClose={handleClose}
-        className={cl(styles.modal, isOpen && styles.modal_open)}
+        className={cl(scss.modal, isOpen && scss.modal_open)}
       >
         {/* TODO: change avatar */}
         <p>Изменение аватара</p>

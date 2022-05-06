@@ -1,13 +1,13 @@
 import { AUTHOR_LINK } from "../../utils/constants";
-import styles from "./appFooter.module.scss";
+import scss from "./appFooter.module.scss";
 
 const AppFooter = () => {
   return (
-    <footer className={styles.footer}>
-      <p className={styles.copyright}>
+    <footer className={scss.footer}>
+      <p className={scss.copyright}>
         &copy;{" "}
         <a
-          className={styles.link}
+          className={scss.link}
           href={AUTHOR_LINK}
           rel="noreferrer"
           target="_blank"

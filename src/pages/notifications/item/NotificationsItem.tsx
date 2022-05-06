@@ -2,7 +2,7 @@ import cl from "classnames";
 import { FC } from "react";
 import { UserNotification } from "../../../types/notification";
 import { formatDateFromString } from "../../../utils/date";
-import styles from "./notificationItem.module.scss";
+import scss from "./notificationItem.module.scss";
 
 const NotificationsItem: FC<{
   notification: UserNotification;
@@ -16,11 +16,11 @@ const NotificationsItem: FC<{
     <article
       aria-hidden
       onClick={handleRead}
-      className={cl(styles.root, readed && styles.root_read)}
+      className={cl(scss.root, readed && scss.root_read)}
     >
-      <p className={styles.date}>{formatDateFromString(date)}</p>
-      <h3 className={styles.title}>{comment}</h3>
-      <p className={styles.tag}>{title}</p>
+      <p className={scss.date}>{formatDateFromString(date)}</p>
+      <h3 className={scss.title}>{comment}</h3>
+      <p className={scss.tag}>{title}</p>
     </article>
   );
 };
