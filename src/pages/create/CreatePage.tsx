@@ -5,6 +5,7 @@ import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Loader from "../../components/Loader/Loader";
 import { goToPage } from "../../router/routes";
 import { Category } from "../../types/categories";
+import { TIMEOUT_API } from "../../utils/constants";
 import NotFoundPage from "../notFound/NotFoundPage";
 import CreateError from "./error/CreateError";
 import CreateForm from "./form/CreateForm";
@@ -39,6 +40,14 @@ const CreatePage = () => {
     setLoaded(value);
   };
 
+  const handleRepeat = () => {
+    setLoaded(true);
+    setTimeout(() => {
+      setLoaded(false);
+      setResult("success");
+    }, TIMEOUT_API);
+  };
+
   return (
     <>
       {!category ? (
@@ -46,41 +55,51 @@ const CreatePage = () => {
           <Breadcrumbs crumbs={[{ title: "Выбор категории" }]} />
           <CreateCategory />
         </>
-      ) : !result ? (
-        <>
-          <Breadcrumbs
-            crumbs={[
-              { title: "Выбор категории", link: goToPage.create },
-              { title: "Ввод данных" },
-            ]}
-          />
-          {curentCategory ? (
-            <>
-              {loaded && <Loader type="fixed" />}
-              <CreateForm
-                category={curentCategory}
-                onSucess={handleSuccess}
-                onError={handleError}
-                setLoaded={handleSetLoaded}
-              />
-            </>
-          ) : (
-            <NotFoundPage title="Ошибка категории" />
-          )}
-        </>
       ) : (
         <>
-          <Breadcrumbs
-            crumbs={[
-              { title: "Выбор категории", link: goToPage.create },
-              { title: "Ввод данных", onClick: handleResultClear },
-              { title: "Сохранение" },
-            ]}
-          />
-          {result === "error" ? (
-            <CreateError onBack={handleResultClear} />
+          {loaded && <Loader type="fixed" />}
+          {!result ? (
+            <>
+              <Breadcrumbs
+                crumbs={[
+                  { title: "Выбор категории", link: goToPage.create },
+                  { title: "Ввод данных" },
+                ]}
+              />
+              {curentCategory ? (
+                <>
+                  <CreateForm
+                    category={curentCategory}
+                    onSucess={handleSuccess}
+                    onError={handleError}
+                    setLoaded={handleSetLoaded}
+                  />
+                </>
+              ) : (
+                <NotFoundPage title="Ошибка категории" />
+              )}
+            </>
           ) : (
-            result === "success" && <p>success</p>
+            <>
+              <Breadcrumbs
+                crumbs={[
+                  { title: "Выбор категории", link: goToPage.create },
+                  { title: "Ввод данных", onClick: handleResultClear },
+                  { title: "Сохранение" },
+                ]}
+              />
+              {result === "error" ? (
+                <CreateError
+                  onBack={handleResultClear}
+                  onRepeat={handleRepeat}
+                />
+              ) : (
+                result === "success" && (
+                  // TODO: create success
+                  <p>success</p>
+                )
+              )}
+            </>
           )}
         </>
       )}
