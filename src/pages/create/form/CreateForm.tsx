@@ -1,5 +1,5 @@
 import cl from "classnames";
-import { FC } from "react";
+import { FC, useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import AppButton from "../../../components/UI/buttons/AppButton/AppButton";
 import IconButton from "../../../components/UI/buttons/IconButton/IconButton";
@@ -9,11 +9,15 @@ import TextFieldMultiline from "../../../components/UI/inputs/TextFieldMultiline
 import { useForm } from "../../../hooks/useForm";
 import { goToPage } from "../../../router/routes";
 import { Category } from "../../../types/categories";
+import {
+  InitiativeType,
+  initiativeTypeValues,
+} from "../../../types/initiative";
 import scss from "./createForm.module.scss";
 
 const defaltValues = {
   name: "",
-  type: "complain",
+  type: "complain" as InitiativeType,
   description: "",
   adress: "",
 };
@@ -55,6 +59,15 @@ const CreateForm: FC<{
     navigate(goToPage.create);
   };
 
+  const initiativeTypes = useMemo(
+    () =>
+      Object.entries(initiativeTypeValues).map((item) => ({
+        value: item[0],
+        name: item[1],
+      })),
+    []
+  );
+
   return (
     <section className={scss.root}>
       <h1 className={scss.title}>Создание инициативы</h1>
@@ -71,11 +84,7 @@ const CreateForm: FC<{
           name="type"
           value={values.type}
           onChange={handleChange}
-          options={[
-            { value: "complain", name: "Жалоба" },
-            { value: "offer", name: "Предложение" },
-            { value: "gratitude", name: "Благодарность" },
-          ]}
+          options={initiativeTypes}
         />
         <TextFieldMultiline
           name="description"
