@@ -24,23 +24,6 @@
 .field {
   flex: 1;
   position: relative;
-
-  &::after {
-    content: "";
-    width: 18px;
-    height: 18px;
-    position: absolute;
-    top: 50%;
-    right: 8px;
-
-    background-image: url("../../../../assets/images/icons/arrow.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-
-    transition: all 0.5s ease-in-out;
-    transform: translate(0, -50%) rotate(90deg);
-  }
 }
 
 .input {
@@ -57,7 +40,11 @@
   outline: 0;
   border: 1px solid #e2e4eb;
   border-radius: 8px;
-  background: #e2e4eb;
+  background-color: #e2e4eb;
+  background-image: url("../../../../assets/images/icons/caret.svg");
+  background-repeat: no-repeat;
+  background-size: 18px;
+  background-position: calc(100% - 8px) center;
   color: #1d1d1f;
 
   -webkit-appearance: none;
@@ -78,6 +65,10 @@
     border-color: #ffffff;
     background: #ffffff;
     color: #737a92;
+  }
+
+  &:not(:disabled):hover:not(:focus) {
+    border-color: #19488e;
   }
 
   &:focus {

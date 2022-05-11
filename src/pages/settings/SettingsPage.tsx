@@ -1,7 +1,8 @@
 import { useState } from "react";
 import AppLoader from "../../components/AppLoader/AppLoader";
 import AppButton from "../../components/UI/buttons/AppButton/AppButton";
-import AppCheckbox from "../../components/UI/inputs/AppCheckbox/AppCheckbox";
+import Checkbox from "../../components/UI/inputs/Checkbox/Checkbox";
+
 import { useDocTitle } from "../../hooks/useDocTitle";
 import { useForm } from "../../hooks/useForm";
 import { TIMEOUT_API } from "../../utils/constants";
@@ -43,7 +44,7 @@ const SettingsPage = () => {
       <h1 className={scss.title}>Настройки</h1>
       <form onSubmit={handleSubmit} className={scss.form}>
         {Object.keys(settings).map((set) => (
-          <AppCheckbox
+          <Checkbox
             key={set}
             label={labels[set]}
             name={set}

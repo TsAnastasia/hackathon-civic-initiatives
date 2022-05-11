@@ -1,13 +1,16 @@
 import { FC } from "react";
+import AppButton from "../../../components/UI/buttons/AppButton/AppButton";
+import IconButton from "../../../components/UI/buttons/IconButton/IconButton";
 import Select from "../../../components/UI/inputs/Select/Select";
 import TextField from "../../../components/UI/inputs/TextField/TextField";
+import TextFieldMultiline from "../../../components/UI/inputs/TextFieldMultiline/TextFieldMultiline";
 import { useForm } from "../../../hooks/useForm";
 import { Category } from "../../../types/categories";
 import scss from "./createForm.module.scss";
 
 const defaltValues = {
   name: "",
-  type: "",
+  type: "complain",
   description: "",
   adress: "",
 };
@@ -22,6 +25,7 @@ const CreateForm: FC<{ category: Category }> = ({ category }) => {
     // isValid,
   } = useForm({
     defaltValues,
+    // TODO: validate
     onSubmit: (values) => {
       console.log("comp", values);
 
@@ -47,36 +51,25 @@ const CreateForm: FC<{ category: Category }> = ({ category }) => {
           placeholder="Название"
           error={errors.name}
         />
-        {/* TODO: create select */}
         <Select
           name="type"
           value={values.type}
           onChange={handleChange}
-          // label="test"
           options={[
             { value: "complain", name: "Жалоба" },
             { value: "offer", name: "Предложение" },
             { value: "gratitude", name: "Благодарность" },
           ]}
         />
-        {/* <TextField
-          name="type"
-          value={values.type}
-          onChange={handleChange}
-          placeholder="Жалоба"
-          error={errors.name}
-        /> */}
-
-        {/* TODO: create textarea */}
-        <TextField
+        <TextFieldMultiline
           name="description"
           value={values.description}
           onChange={handleChange}
           placeholder="Описание"
           error={errors.description}
-          // multiple
-          // rows={6}
+          rows={6}
         />
+        {/* TODO: chose adress */}
         <TextField
           name="adress"
           value={values.adress}
@@ -84,7 +77,17 @@ const CreateForm: FC<{ category: Category }> = ({ category }) => {
           placeholder="Адрес"
           error={errors.adress}
         />
-        <button type="submit">submit</button>
+        <div>
+          <IconButton />
+          <IconButton />
+        </div>
+        <p>Для продолжения заполните все поля и добавьте фото</p>
+        <div>
+          <AppButton>Назад</AppButton>
+          <AppButton type="submit" isBlue>
+            Создать
+          </AppButton>
+        </div>
       </form>
     </section>
   );

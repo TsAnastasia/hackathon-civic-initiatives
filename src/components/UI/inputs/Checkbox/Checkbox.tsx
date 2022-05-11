@@ -1,8 +1,8 @@
 import cl from "classnames";
 import { FC, InputHTMLAttributes } from "react";
-import scss from "./appCheckbox.module.scss";
+import scss from "./checkbox.module.scss";
 
-const AppCheckbox: FC<
+const Checkbox: FC<
   InputHTMLAttributes<HTMLInputElement> & { label?: string }
 > = ({ className, label, ...props }) => {
   return (
@@ -16,4 +16,4 @@ const AppCheckbox: FC<
   );
 };
 
-export default AppCheckbox;
+export default Checkbox;

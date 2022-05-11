@@ -19,7 +19,9 @@ export const useForm = <T extends { [key: string]: string | boolean }>({
   const [isValid, setIsValid] = useState(true);
 
   const handleChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+    event: ChangeEvent<
+      HTMLInputElement & HTMLSelectElement & HTMLTextAreaElement
+    >
   ) => {
     console.log(event.target);
     const { name, value, type, checked } = event.target;
