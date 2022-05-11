@@ -23,7 +23,7 @@ const CreateForm: FC<{
   onSucess: () => void;
   onError: () => void;
   setLoaded: (v: boolean) => void;
-}> = ({ category, setLoaded }) => {
+}> = ({ category, setLoaded, onError }) => {
   const navigate = useNavigate();
 
   const {
@@ -41,9 +41,9 @@ const CreateForm: FC<{
 
       setLoaded(true);
       setTimeout(() => {
-        // TODO: change user data
+        // TODO: save initiative
         // setDisabled(true);
-
+        onError();
         setLoaded(false);
       }, 500);
     },

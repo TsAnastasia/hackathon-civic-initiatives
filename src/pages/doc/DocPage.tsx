@@ -14,8 +14,7 @@ const DocPage = () => {
   return (
     <>
       <Breadcrumbs
-        parents={[{ title: "Информация", link: goToPage.info }]}
-        current={title}
+        crumbs={[{ title: "Информация", link: goToPage.info }, { title }]}
       />
       {docId && docs[docId] ? (
         <DocContent doc={docs[docId]} />

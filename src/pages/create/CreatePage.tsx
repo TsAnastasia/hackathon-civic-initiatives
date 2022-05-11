@@ -6,6 +6,7 @@ import Loader from "../../components/Loader/Loader";
 import { goToPage } from "../../router/routes";
 import { Category } from "../../types/categories";
 import NotFoundPage from "../notFound/NotFoundPage";
+import CreateError from "./error/CreateError";
 import CreateForm from "./form/CreateForm";
 import CreateCategory from "./intro/CreateCategory";
 
@@ -42,14 +43,16 @@ const CreatePage = () => {
     <>
       {!category ? (
         <>
-          <Breadcrumbs parents={[]} current={"Выбор категории"} />
+          <Breadcrumbs crumbs={[{ title: "Выбор категории" }]} />
           <CreateCategory />
         </>
       ) : !result ? (
         <>
           <Breadcrumbs
-            parents={[{ title: "Выбор категории", link: goToPage.create }]}
-            current={"Ввод данных"}
+            crumbs={[
+              { title: "Выбор категории", link: goToPage.create },
+              { title: "Ввод данных" },
+            ]}
           />
           {curentCategory ? (
             <>
@@ -68,14 +71,14 @@ const CreatePage = () => {
       ) : (
         <>
           <Breadcrumbs
-            parents={[
+            crumbs={[
               { title: "Выбор категории", link: goToPage.create },
-              { title: "Ввод данных", link: goToPage.create },
+              { title: "Ввод данных", onClick: handleResultClear },
+              { title: "Сохранение" },
             ]}
-            current={"Сохранение"}
           />
           {result === "error" ? (
-            <p>error</p>
+            <CreateError onBack={handleResultClear} />
           ) : (
             result === "success" && <p>success</p>
           )}
