@@ -27,7 +27,7 @@ export const router: RouteObject[] = [
       { index: true, element: <Navigate to={goToPage.home} replace={true} /> },
       { path: AppRoutes.PERSONAL, element: <ListPage /> },
       { path: AppRoutes.AREA, element: <ListPage /> },
-      { path: "*", element: <InitiativePage /> },
+      { path: AppRoutes.SINGLE, element: <InitiativePage /> },
     ],
   },
   {
