@@ -18,7 +18,12 @@ const defaltValues = {
   adress: "",
 };
 
-const CreateForm: FC<{ category: Category }> = ({ category }) => {
+const CreateForm: FC<{
+  category: Category;
+  onSucess: () => void;
+  onError: () => void;
+  setLoaded: (v: boolean) => void;
+}> = ({ category, setLoaded }) => {
   const navigate = useNavigate();
 
   const {
@@ -34,11 +39,12 @@ const CreateForm: FC<{ category: Category }> = ({ category }) => {
     onSubmit: (values) => {
       console.log("comp", values);
 
-      // setLoaded(true);
+      setLoaded(true);
       setTimeout(() => {
         // TODO: change user data
         // setDisabled(true);
-        // setLoaded(false);
+
+        setLoaded(false);
       }, 500);
     },
     // validationScheme,

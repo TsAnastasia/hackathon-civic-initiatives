@@ -1,6 +1,6 @@
 import { FC, useState } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
-import AppLoader from "../../../components/AppLoader/AppLoader";
+import Loader from "../../../components/Loader/Loader";
 
 import { Doc } from "../../../types/doc";
 import scss from "./docContent.module.scss";
@@ -56,7 +56,7 @@ const DocContent: FC<{ doc: Doc }> = ({ doc }) => {
         className={scss.doc}
         file={doc.source}
         onLoadSuccess={onDocumentLoadSuccess}
-        loading={<AppLoader blackout={false} />}
+        loading={<Loader blackout={false} />}
         error={<DocContentError />}
       >
         <Page
@@ -67,7 +67,7 @@ const DocContent: FC<{ doc: Doc }> = ({ doc }) => {
           renderAnnotationLayer={false}
           renderTextLayer={false}
           renderInteractiveForms={false}
-          loading={<AppLoader blackout={false} />}
+          loading={<Loader blackout={false} />}
           error={<DocContentError />}
         />
       </Document>

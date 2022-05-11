@@ -1,5 +1,5 @@
 import { useState } from "react";
-import AppLoader from "../../components/AppLoader/AppLoader";
+import Loader from "../../components/Loader/Loader";
 import AppButton from "../../components/UI/buttons/AppButton/AppButton";
 import Checkbox from "../../components/UI/inputs/Checkbox/Checkbox";
 
@@ -60,7 +60,7 @@ const SettingsPage = () => {
         >
           Сохранить изменения
         </AppButton>
-        {loaded && <AppLoader fixed={true} />}
+        {loaded && <Loader type="fixed" />}
       </form>
     </section>
   );

@@ -1,13 +1,13 @@
 import cl from "classnames";
 import { FC } from "react";
-import scss from "./appLoader.module.scss";
+import scss from "./loader.module.scss";
 
-const AppLoader: FC<{ blackout?: boolean; fixed?: boolean }> = ({
-  blackout = true,
-  fixed = false,
-}) => {
+const Loader: FC<{
+  blackout?: boolean;
+  type?: "relative" | "absolute" | "fixed";
+}> = ({ blackout = true, type = "relative" }) => {
   return (
-    <div className={cl(scss.root, fixed && scss.root_fixed)}>
+    <div className={scss.root} style={{ position: type }}>
       <div className={cl(scss.loader, blackout && scss.loader_blackout)}>
         <div className={scss.roller}>
           <div />
@@ -24,4 +24,4 @@ const AppLoader: FC<{ blackout?: boolean; fixed?: boolean }> = ({
   );
 };
 
-export default AppLoader;
+export default Loader;

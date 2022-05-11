@@ -2,11 +2,11 @@ import { useState } from "react";
 import { useForm } from "../../../hooks/useForm";
 import { validationScheme } from "./accountFormValidate";
 import scss from "./accountForm.module.scss";
-import AppLoader from "../../../components/AppLoader/AppLoader";
 import AppButton, {
   AppButtonType,
 } from "../../../components/UI/buttons/AppButton/AppButton";
 import TextField from "../../../components/UI/inputs/TextField/TextField";
+import Loader from "../../../components/Loader/Loader";
 
 // TODO: add app store
 const user: UserData = {
@@ -95,7 +95,7 @@ const AccountForm = () => {
 
       <AppButton className={scss.button} {...buttonProps} />
 
-      {loaded && <AppLoader fixed={true} />}
+      {loaded && <Loader type="fixed" />}
     </form>
   );
 };

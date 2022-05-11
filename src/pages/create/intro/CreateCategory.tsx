@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { categoriesAPI } from "../../../API-data/categories/categoriesAPI";
-import AppLoader from "../../../components/AppLoader/AppLoader";
+import Loader from "../../../components/Loader/Loader";
 import { Category } from "../../../types/categories";
 import { TIMEOUT_API } from "../../../utils/constants";
 import CreateCategoryCard from "./card/CreateCategoryCard";
@@ -30,7 +30,7 @@ const CreateCategory = () => {
             ))}
           </ol>
         ) : (
-          <AppLoader />
+          <Loader blackout={false} />
         )}
       </section>
     </>
