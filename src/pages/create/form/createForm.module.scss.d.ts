@@ -1,7 +1,14 @@
 declare namespace CreateFormModuleScssNamespace {
   export interface ICreateFormModuleScss {
+    add: string;
+    back: string;
+    button: string;
     category: string;
+    file: string;
+    footer: string;
     form: string;
+    image: string;
+    message: string;
     root: string;
     title: string;
   }

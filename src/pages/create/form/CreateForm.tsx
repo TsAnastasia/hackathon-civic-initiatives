@@ -1,10 +1,13 @@
+import cl from "classnames";
 import { FC } from "react";
+import { useNavigate } from "react-router-dom";
 import AppButton from "../../../components/UI/buttons/AppButton/AppButton";
 import IconButton from "../../../components/UI/buttons/IconButton/IconButton";
 import Select from "../../../components/UI/inputs/Select/Select";
 import TextField from "../../../components/UI/inputs/TextField/TextField";
 import TextFieldMultiline from "../../../components/UI/inputs/TextFieldMultiline/TextFieldMultiline";
 import { useForm } from "../../../hooks/useForm";
+import { goToPage } from "../../../router/routes";
 import { Category } from "../../../types/categories";
 import scss from "./createForm.module.scss";
 
@@ -16,6 +19,8 @@ const defaltValues = {
 };
 
 const CreateForm: FC<{ category: Category }> = ({ category }) => {
+  const navigate = useNavigate();
+
   const {
     values,
     handleChange,
@@ -38,6 +43,11 @@ const CreateForm: FC<{ category: Category }> = ({ category }) => {
     },
     // validationScheme,
   });
+
+  const handleBackClick = () => {
+    // navigate(-1);
+    navigate(goToPage.create);
+  };
 
   return (
     <section className={scss.root}>
@@ -77,13 +87,18 @@ const CreateForm: FC<{ category: Category }> = ({ category }) => {
           placeholder="Адрес"
           error={errors.adress}
         />
-        <div>
-          <IconButton />
-          <IconButton />
+        <div className={scss.add}>
+          {/* TODO: add files */}
+          <IconButton className={cl(scss.button, scss.image)} />
+          <IconButton className={cl(scss.button, scss.file)} />
         </div>
-        <p>Для продолжения заполните все поля и добавьте фото</p>
-        <div>
-          <AppButton>Назад</AppButton>
+        <p className={scss.message}>
+          Для продолжения заполните все поля и добавьте фото
+        </p>
+        <div className={scss.footer}>
+          <AppButton className={scss.back} onClick={handleBackClick}>
+            Назад
+          </AppButton>
           <AppButton type="submit" isBlue>
             Создать
           </AppButton>
