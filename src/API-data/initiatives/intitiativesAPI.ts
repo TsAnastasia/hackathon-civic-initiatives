@@ -1,17 +1,22 @@
 import { Initiative } from "../../types/initiative";
 import { users } from "../users/usersAPI";
+import Photo001 from "./photo/image-000001.jpg";
+import Photo002 from "./photo/image-000002.jpg";
+import Photo003 from "./photo/image-000003.jpg";
+import Photo004 from "./photo/image-000004.jpg";
+import Photo005 from "./photo/image-000005.jpg";
 
 const intiatives: Initiative[] = [
   {
     id: "860aa5fb8e09440aa81b679a06e8295f",
     title: "Не убран снег во дворе",
-    date: "2021-04-12T11:40:31.282Z",
+    date: "2021-11-04T11:40:31.282Z",
     author: users[0],
     category: "yard",
     type: "complain",
     status: "closed",
     area: { region: "spb", adress: "Санкт-Петербург, улица Ленина" },
-    images: [],
+    images: [Photo001, Photo002, Photo003],
     description:
       "Мороз и солнце; день чудесный!\nЕще ты дремлешь, друг прелестный\nПора, красавица, проснись:\nОткрой сомкнуты негой взоры ",
     like: { count: 102, active: false },
@@ -21,140 +26,96 @@ const intiatives: Initiative[] = [
         id: "f9668f2db01a4b679870787f2178ebc9",
         author: users[3],
         text: "Ночь, улица, фонарь, аптека,\nБессмысленный и тусклый свет.\nЖиви еще хоть четверть века —\nВсё будет так. Исхода нет.\nУмрешь — начнешь опять сначала\nИ повторится все, как встарь:",
-        date: "2021-05-12T11:40:31.282Z",
+        date: "2021-11-05T11:40:31.282Z",
+      },
+      {
+        id: "92879daf7e134ae08fb52e7ff3e36267",
+        author: users[1],
+        text: "Мороз и солнце; день чудесный!\nЕще ты дремлешь, друг прелестный\nПора, красавица, проснись:\nОткрой сомкнуты негой взоры",
+        date: "2021-11-07T11:40:31.282Z",
+      },
+      {
+        id: "70e607edb6124babb243ee75967f110b",
+        author: users[2],
+        text: "Пусть тени на стене\nРисуют фонари ночные.",
+        date: "2021-11-10T11:40:31.282Z",
       },
     ],
-
-    //   comments: [
-    //     {
-    //       id: "92879daf7e134ae08fb52e7ff3e36267",
-    //       author: {
-    //         id: "4fb32c03c43b4ec7baddf1ef3110cd5a",
-    //         avatar: avatar01,
-    //         fullName: "Укаева Ольга",
-    //       },
-    //       description: {
-    //         qoute:
-    //           "Мороз и солнце; день чудесный!\nЕще ты дремлешь, друг прелестный\nПора, красавица, проснись:\nОткрой сомкнуты негой взоры",
-    //       },
-    //       date: new Date(2020, 0, 14),
-    //     },
-    //     {
-    //       id: "70e607edb6124babb243ee75967f110b",
-    //       author: {
-    //         id: "b8c8e9b7d14745a3a201e2bcc33d771b",
-    //         avatar: avatar02,
-    //         fullName: "Иванов Сергей",
-    //       },
-    //       description: {
-    //         qoute: "Пусть тени на стене\nРисуют фонари ночные.",
-    //       },
-    //       date: new Date(2020, 0, 17),
-    //     },
-    //   ],
   },
-  // {
-  //   id: "0bfd51c1f84242dab4bdce7b892367c7",
-  //   title: "Убрать снег во дворе",
-  //   date: new Date(2020, 0, 12),
-  //   author: {
-  //     id: "b4825178d28e4ddd871754a3763a783f",
-  //     fullName: "Сергеева Анна",
-  //   },
-  //   status: "closed",
-  //   type: "offer",
-  //   category: ["97be86951cc14a2a996954b32a83d807"],
-  //   area: { region: "moscow", adress: "Москва, проспект Бернадского" },
-  //   photos: [photo001],
-  //   description: {
-  //     text: "",
-  //     qoute:
-  //       "Ночь, улица, фонарь, аптека,\nБессмысленный и тусклый свет.\nЖиви еще хоть четверть века —\nВсё будет так. Исхода нет.\nУмрешь — начнешь опять сначала\nИ повторится все, как встарь:",
-  //   },
-  //   files: [
-  //     { name: "Uborka.xlsx", size: "182 KB" },
-  //     { name: "Predlogenie.docx", size: "39 KB" },
-  //   ],
-  //   likes: {
-  //     count: 123,
-  //     active: false,
-  //     users: [],
-  //   },
+  {
+    id: "0bfd51c1f84242dab4bdce7b892367c7",
+    title: "Убрать снег с дороги",
+    date: "2021-11-05T11:40:31.282Z",
+    author: users[4],
+    category: "road",
+    type: "offer",
+    status: "closed",
+    area: { region: "moscow", adress: "Москва, проспект Бернадского" },
+    images: [Photo004, Photo005, Photo001],
+    description:
+      "Ночь, улица, фонарь, аптека,\nБессмысленный и тусклый свет.\nЖиви еще хоть четверть века —\nВсё будет так. Исхода нет.\nУмрешь — начнешь опять сначала\nИ повторится все, как встарь:",
+    like: { count: 123, active: false },
+    files: [
+      { name: "Uborka.xlsx", size: "182 KB" },
+      { name: "Predlogenie.docx", size: "39 KB" },
+    ],
+    comments: [
+      {
+        id: "b8bbddcd469a423092da2a8db615b735",
+        author: users[1],
+        text: "Пусть тени на стене\nРисуют фонари ночные.",
+        date: "2021-11-10T11:40:31.282Z",
+      },
+    ],
+  },
+  {
+    id: "9ae610c3767a4b95aa0707656ebefd9b",
+    title: "Уборка снега",
+    date: "2021-11-15T11:40:31.282Z",
+    author: users[0],
+    category: "yard",
+    type: "gratitude",
+    status: "closed",
+    area: { region: "spb", adress: "Санкт-Петербург, улица Гоголя" },
+    images: [Photo002, Photo003, Photo001],
+    description:
+      "Мороз и солнце; день чудесный!\nЕще ты дремлешь, друг прелестный",
+    like: { count: 56, active: true },
+    files: [{ name: "Predlogenie.docx", size: "39 KB" }],
+    comments: [
+      {
+        id: "b8bbddcd469a432092da2a8db615b735",
+        author: users[1],
+        text: "Пусть тени на стене\nРисуют фонари ночные.",
+        date: "2021-11-10T11:40:31.282Z",
+      },
+    ],
+  },
+  {
+    id: "b3052d0334384af1b2684646e9130ac1",
+    title: "Убрать снег во дворе",
+    date: "2021-11-30T11:40:31.282Z",
+    author: users[5],
+    category: "yard",
+    type: "offer",
+    status: "working",
+    area: { region: "spb", adress: "Санкт-Петербург, улица Яшина" },
+    images: [Photo005, Photo002],
+    description:
+      "Мороз и солнце; день чудесный!\nЕще ты дремлешь, друг прелестный\nПора, красавица, проснись:\nОткрой сомкнуты негой взоры",
+    like: { count: 78, active: true },
+    files: [],
+    comments: [
+      {
+        id: "7823261721994e2faa5cb3cef74b7cac",
+        author: users[3],
+        text: "Пусть тени на стене\nРисуют фонари ночные.",
+        date: "2022-00-10T11:40:31.282Z",
+      },
+    ],
+  },
+
   //   comments: [
-  //     {
-  //       id: "b8bbddcd469a423092da2a8db615b735",
-  //       author: {
-  //         id: "4fb32c03c43b4ec7baddf1ef3110cd5a",
-  //         avatar: avatar01,
-  //         fullName: "Укаева Ольга",
-  //       },
-  //       description: {
-  //         qoute: "Пусть тени на стене\nРисуют фонари ночные.",
-  //       },
-  //       date: new Date(2020, 0, 14),
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: "9ae610c3767a4b95aa0707656ebefd9b",
-  //   title: "Уборка снега",
-  //   date: new Date(2020, 0, 12),
-  //   author: { id: "98cfcd377f1c4b17b1dba9cced6f1e1d", fullName: "Иванов Иван" },
-  //   status: "closed",
-  //   type: "gratitude",
-  //   category: ["5354b05beb9c4a9a9b430dc7490171b8"],
-  //   area: { region: "spb", adress: "Санкт-Петербург, улица Гоголя" },
-  //   photos: [photo002, photo001, photo005],
-  //   description: {
-  //     text: "",
-  //     qoute: "Мороз и солнце; день чудесный!\nЕще ты дремлешь, друг прелестный",
-  //   },
-  //   files: [{ name: "Predlogenie.docx", size: "39 KB" }],
-  //   likes: {
-  //     count: 225,
-  //     active: false,
-  //     users: [],
-  //   },
-  //   comments: [],
-  // },
-  // {
-  //   id: "b3052d0334384af1b2684646e9130ac1",
-  //   title: "Убрать снег во дворе",
-  //   date: new Date(2020, 0, 14),
-  //   author: {
-  //     id: "cb0a52c129ad4043a0f02113a914d052",
-  //     fullName: "Жуков Александр",
-  //   },
-  //   status: "working",
-  //   type: "offer",
-  //   category: ["5354b05beb9c4a9a9b430dc7490171b8"],
-  //   area: { region: "spb", adress: "Санкт-Петербург, улица Яшина" },
-  //   photos: [photo005, photo002],
-  //   description: {
-  //     text: "",
-  //     qoute:
-  //       "Мороз и солнце; день чудесный!\nЕще ты дремлешь, друг прелестный\nПора, красавица, проснись:\nОткрой сомкнуты негой взоры ",
-  //   },
-  //   files: [],
-  //   likes: {
-  //     count: 198,
-  //     active: true,
-  //     users: [],
-  //   },
-  //   comments: [
-  //     {
-  //       id: "7823261721994e2faa5cb3cef74b7cac",
-  //       author: {
-  //         id: "58b8058b7073462bb8a55b8538e6ebc0",
-  //         avatar: avatar03,
-  //         fullName: "Чиновьев Иван",
-  //       },
-  //       description: {
-  //         qoute:
-  //           "Мороз и солнце; день чудесный!\nЕще ты дремлешь, друг прелестный\nПора, красавица, проснись:\nОткрой сомкнуты негой взоры",
-  //       },
-  //       date: new Date(2020, 0, 14),
-  //     },
   //     {
   //       id: "cb146a29cb7c4c5685072b4a73484def",
   //       author: {
