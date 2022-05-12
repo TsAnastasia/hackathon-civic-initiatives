@@ -1,0 +1,12 @@
+.root {
+  position: relative;
+}
+
+.button {
+  background-image: url("../../../../assets/images/icons/file.svg");
+}
+
+.modal {
+  top: calc(100% + 8px);
+  right: 0;
+}

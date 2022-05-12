@@ -26,8 +26,13 @@ export interface Initiative {
   images: string[];
   description: string;
   like: { count: number; active: boolean };
-  files: { name: string; size: string }[];
+  files: InitiativeFile[];
   comments: Comment[];
+}
+
+export interface InitiativeFile {
+  name: string;
+  size: string;
 }
 
 export interface Comment {

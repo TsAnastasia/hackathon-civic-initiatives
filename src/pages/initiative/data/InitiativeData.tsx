@@ -4,6 +4,7 @@ import InitiativeType from "../../../components/InitiativeType/InitiativeType";
 import IconButton from "../../../components/UI/buttons/IconButton/IconButton";
 import { Initiative } from "../../../types/initiative";
 import { formatDateFromString } from "../../../utils/date";
+import InitiativeDataFiles from "./files/InitiativeDataFiles";
 import scss from "./initiativeData.module.scss";
 import InitiativeDataLike from "./like/InitiativeDataLike";
 
@@ -58,10 +59,7 @@ const InitiativeData: FC<{ initiative: Initiative }> = ({ initiative }) => {
           <InitiativeDataLike {...initiative.like} />
         </div>
         <div>
-          <IconButton>files</IconButton>
-          {initiative.files.map((file) => (
-            <li key={file.name}>{file.name}</li>
-          ))}
+          <InitiativeDataFiles files={initiative.files} />
         </div>
       </div>
     </section>
