@@ -5,6 +5,8 @@ import Loader from "../../components/Loader/Loader";
 import { Initiative } from "../../types/initiative";
 import { TIMEOUT_API } from "../../utils/constants";
 import NotFoundPage from "../notFound/NotFoundPage";
+import InitiativeComments from "./comments/InitiativeComments";
+import InitiativeData from "./data/InitiativeData";
 
 const InitiativePage = () => {
   const [loaded, setLoaded] = useState(true);
@@ -30,7 +32,10 @@ const InitiativePage = () => {
     <>
       {loaded && <Loader type="fixed" />}
       {initiative ? (
-        <h1>Initiative page: {initiativeId}</h1>
+        <>
+          <InitiativeData initiative={initiative} />
+          <InitiativeComments comments={initiative.comments} />
+        </>
       ) : (
         !loaded && <NotFoundPage title="Инициатива не найдена" />
       )}

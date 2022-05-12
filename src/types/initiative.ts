@@ -1,3 +1,5 @@
+import { User } from "./users";
+
 const initiativeStatuses = ["considered", "working", "closed"] as const;
 export type InitiativeStatus = typeof initiativeStatuses[number];
 export const initiativeStatusValues: {
@@ -10,25 +12,29 @@ export const initiativeTypeValues: {
   [key in InitiativeType]: string;
 } = { complain: "Жалоба", offer: "Предложение", gratitude: "Благодарность" };
 
+type Regions = "spb" | "moscow";
+
 export interface Initiative {
-  categoty: string;
   id: string;
-  type: InitiativeType;
-  status: InitiativeStatus;
   title: string;
   date: string;
-  author: string;
-  adress: string;
-  area: string;
+  author: User;
+  category: string;
+  type: InitiativeType;
+  status: InitiativeStatus;
+  area: { region?: Regions; adress: string };
   images: string[];
   description: string;
   like: { count: number; active: boolean };
   files: { name: string; size: string }[];
-  comments: {
-    author: { name: string; avatar: string };
-    text: string;
-    date: string;
-  }[];
+  comments: Comment[];
+}
+
+export interface Comment {
+  id: string;
+  author: User;
+  text: string;
+  date: string;
 }
 
 export interface InitiativeCard {
@@ -36,6 +42,6 @@ export interface InitiativeCard {
   title: string;
   description: string;
   date: string;
-  image: string;
+  images: string[];
   type: InitiativeType;
 }
