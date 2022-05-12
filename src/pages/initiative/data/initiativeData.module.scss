@@ -1,0 +1,176 @@
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.section {
+  padding: 20px;
+}
+
+.title {
+  margin: 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+
+  color: #1d1d1f;
+}
+
+.text {
+  margin: 8px 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: #737a92;
+
+  .bold {
+    font-weight: 700;
+  }
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  .type {
+    margin-top: 4px;
+  }
+}
+
+.adress {
+  margin: 0;
+  padding-left: 32px;
+  min-height: 24px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  background-image: url("../../../assets/images/icons/pin.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center left;
+}
+
+.list {
+  margin: 0 -20px;
+  padding: 20px;
+
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: flex-start;
+  gap: 16px;
+
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+    border-radius: 99rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 99rem;
+    background-color: #737a92;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: 20px;
+    border-radius: 99rem;
+  }
+
+  .image {
+    width: 180px;
+    height: 120px;
+
+    border-radius: 8px;
+
+    object-fit: cover;
+    object-position: center;
+
+    &:hover {
+      box-shadow: 0px 0px 15px 5px rgba(0, 75, 118, 0.15);
+    }
+  }
+}
+
+.description {
+  margin: 0;
+  padding: 16px;
+  height: 170px;
+  box-sizing: border-box;
+
+  background: #e2e4eb;
+  border-radius: 8px;
+
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    border-radius: 99rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 99rem;
+    background-color: #737a92;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: 4px;
+    border-radius: 99rem;
+  }
+
+  .text {
+    margin: 8px 0;
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #19488e;
+  }
+}
+
+.buttons {
+  margin: 20px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .social {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 16px;
+  }
+}
+
+.share {
+  width: 24px;
+  height: 24px;
+  background-image: url("../../../assets/images/icons/share.svg");
+
+  &:hover {
+    animation: rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+}

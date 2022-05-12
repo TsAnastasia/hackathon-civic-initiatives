@@ -1,0 +1,51 @@
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #737a92;
+
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+
+  &::before {
+    content: "";
+    width: 28px;
+    height: 24px;
+    margin-right: 8px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    background-image: url("../../../../assets/images/icons/like.svg");
+
+    transition: all 0.5s ease-in-out;
+  }
+
+  &.active::before {
+    background-image: url("../../../../assets/images/icons/like-active.svg");
+  }
+
+  &:hover::before {
+    animation: scale 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+}
