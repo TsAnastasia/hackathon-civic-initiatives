@@ -37,31 +37,25 @@ const AccountForm = () => {
   const [disabled, setDisabled] = useState(true);
   const [loaded, setLoaded] = useState(false);
 
-  const {
-    values,
-    handleChange,
-    handleSubmit,
-    handleValidate,
-    errors,
-    isValid,
-  } = useForm<UserData>({
-    defaltValues: user,
-    onSubmit: (values) => {
-      console.log("comp", values);
+  const { values, handleChange, handleSubmit, errors, isValid } =
+    useForm<UserData>({
+      defaltValues: user,
+      onSubmit: (values) => {
+        console.log("comp", values);
 
-      setLoaded(true);
-      setTimeout(() => {
-        // TODO: change user data
-        setDisabled(true);
-        setLoaded(false);
-      }, 500);
-    },
-    validationScheme,
-  });
+        setLoaded(true);
+        setTimeout(() => {
+          // TODO: change user data
+          setDisabled(true);
+          setLoaded(false);
+        }, 500);
+      },
+      validationScheme,
+    });
 
   const handleEdit = () => {
     setTimeout(() => {
-      handleValidate();
+      // handleValidate();
       setDisabled(false);
     });
   };
