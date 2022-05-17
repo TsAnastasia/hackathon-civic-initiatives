@@ -3,6 +3,7 @@ import { InitiativeFile } from "../../../../types/initiative";
 import IconButton from "../../../../components/UI/buttons/IconButton/IconButton";
 import Modal from "../../../../components/Modal/Modal";
 import scss from "./initaitveDataFiles.module.scss";
+import InitiativeDataFilesItem from "./item/InitiativeDataFilesItem";
 
 const InitiativeDataFiles: FC<{ files: InitiativeFile[] }> = ({ files }) => {
   const [opened, setOpened] = useState(false);
@@ -24,7 +25,7 @@ const InitiativeDataFiles: FC<{ files: InitiativeFile[] }> = ({ files }) => {
         {files.length > 0 ? (
           <ul className={scss.content}>
             {files.map((file) => (
-              <li key={file.name}>{file.name}</li>
+              <InitiativeDataFilesItem key={file.name} file={file} />
             ))}
           </ul>
         ) : (

@@ -1,0 +1,64 @@
+.root {
+  min-height: 40px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &.root:not(:last-child) {
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e2e4eb;
+    margin-bottom: 16px;
+  }
+}
+
+.type {
+  margin-right: 8px;
+  padding-bottom: 10px;
+  min-width: 40px;
+  min-height: 40px;
+  box-sizing: border-box;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: #737a92;
+  background-image: url("../../../../../assets/images/icons/box-file.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.name {
+  margin: 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #1d1d1f;
+}
+
+.size {
+  margin: 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: #b6bbcc;
+}
