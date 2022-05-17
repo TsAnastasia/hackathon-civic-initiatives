@@ -56,7 +56,6 @@ export const useForm = <T extends { [key: string]: string | boolean }>({
       curErrors[v] = validateValue ? validateValue(values[v]) : undefined;
     });
 
-    console.log("handleValidate", curErrors);
     setErros(curErrors);
 
     return curErrors;
@@ -73,10 +72,14 @@ export const useForm = <T extends { [key: string]: string | boolean }>({
     [values, onSubmit, handleValidate]
   );
 
+  const resetForm = useCallback(() => {
+    setValues(defaltValues);
+  }, [defaltValues]);
+
   useEffect(() => {
     if (validateOnMount) handleValidate();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [resetForm]);
 
   return {
     values,
@@ -84,6 +87,7 @@ export const useForm = <T extends { [key: string]: string | boolean }>({
     handleChange,
     handleSubmit,
     handleValidate,
+    resetForm,
     errors,
     isValid,
   };
