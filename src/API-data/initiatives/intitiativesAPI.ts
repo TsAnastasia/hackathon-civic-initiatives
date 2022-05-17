@@ -114,24 +114,24 @@ const intiatives: Initiative[] = [
       },
     ],
   },
+  {
+    id: "ce873b3d0260418c96bc5b56212eb1ac",
+    title: "Сломан светофор",
+    date: "2022-01-15T11:40:31.282Z",
+    author: users[0],
+    category: "road",
+    type: "complain",
+    status: "working",
+    area: { region: "spb", adress: "Санкт-Петербург, улица Гоголя" },
+    images: [],
+    description: "Пусть тени на стене\nРисуют фонари ночные.",
+    like: { count: 12, active: true },
+    files: [],
+    comments: [],
+  },
 
-  //   comments: [
-  //     {
-  //       id: "cb146a29cb7c4c5685072b4a73484def",
-  //       author: {
-  //         id: "b8c8e9b7d14745a3a201e2bcc33d771b",
-  //         avatar: avatar02,
-  //         fullName: "Иванов Сергей",
-  //       },
-  //       description: {
-  //         qoute: "Пусть тени на стене\nРисуют фонари ночные.",
-  //       },
-  //       date: new Date(2020, 0, 14),
-  //     },
-  //   ],
-  // },
   // {
-  //   id: "ce873b3d0260418c96bc5b56212eb1ac",
+  //   id: "",
   //   title: "Не убран снег во дворе",
   //   date: new Date(2020, 0, 14),
   //   author: {
