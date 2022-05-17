@@ -1,5 +1,45 @@
 .root {
   display: flex;
   justify-content: stretch;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.avatar {
+  margin-right: 16px;
+}
+
+.name {
+  margin: 0 0 8px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+
+  color: #737a92;
+}
+
+.text {
+  margin: 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+
+  color: #737a92;
+}
+
+.date {
+  margin: 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 10px;
+
+  color: #b6bbcc;
 }

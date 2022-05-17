@@ -1,6 +1,10 @@
 declare namespace InitiativeCommentsItemModuleScssNamespace {
   export interface IInitiativeCommentsItemModuleScss {
+    avatar: string;
+    date: string;
+    name: string;
     root: string;
+    text: string;
   }
 }
 
