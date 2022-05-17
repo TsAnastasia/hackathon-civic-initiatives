@@ -15,10 +15,23 @@ const InitiativeDataFiles: FC<{ files: InitiativeFile[] }> = ({ files }) => {
     <div className={scss.root}>
       <IconButton onClick={handleOpen} className={scss.button} />
 
-      <Modal isOpen={opened} onClose={handleClose} className={scss.modal}>
-        {files.map((file) => (
-          <li key={file.name}>{file.name}</li>
-        ))}
+      <Modal
+        isOpen={opened}
+        onClose={handleClose}
+        className={scss.modal}
+        hasCloseIcon
+      >
+        {files.length > 0 ? (
+          <ul className={scss.content}>
+            {files.map((file) => (
+              <li key={file.name}>{file.name}</li>
+            ))}
+          </ul>
+        ) : (
+          <div className={scss.content}>
+            <p className={scss.message}>Файлов нет</p>
+          </div>
+        )}
       </Modal>
     </div>
   );

@@ -1,13 +1,15 @@
 import { FC, ReactNode } from "react";
 import scss from "./modal.module.scss";
 import cl from "classnames";
+import IconButton from "../UI/buttons/IconButton/IconButton";
 
 const Modal: FC<{
   children: ReactNode;
   className?: string;
   isOpen: boolean;
   onClose: () => void;
-}> = ({ children, className, isOpen, onClose }) => {
+  hasCloseIcon?: boolean;
+}> = ({ children, className, isOpen, onClose, hasCloseIcon = false }) => {
   return (
     <>
       <div
@@ -15,7 +17,17 @@ const Modal: FC<{
         onClick={onClose}
         aria-hidden="true"
       />
-      <div className={cl(scss.content, isOpen && scss.content_open, className)}>
+      <div
+        className={cl(
+          scss.content,
+          isOpen && scss.content_open,
+          hasCloseIcon && scss.has_icon,
+          className
+        )}
+      >
+        {hasCloseIcon && (
+          <IconButton onClick={onClose} className={scss.close_icon} />
+        )}
         {children}
       </div>
     </>

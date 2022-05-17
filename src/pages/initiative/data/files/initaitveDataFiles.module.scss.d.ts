@@ -1,6 +1,8 @@
 declare namespace InitaitveDataFilesModuleScssNamespace {
   export interface IInitaitveDataFilesModuleScss {
     button: string;
+    content: string;
+    message: string;
     modal: string;
     root: string;
   }

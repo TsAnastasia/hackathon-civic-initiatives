@@ -10,3 +10,28 @@
   top: calc(100% + 8px);
   right: 0;
 }
+
+.content {
+  margin: 0;
+  padding: 0;
+  min-width: 120px;
+
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.message {
+  margin: 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+
+  color: #737a92;
+}

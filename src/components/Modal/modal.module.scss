@@ -33,6 +33,19 @@
   opacity: 0;
 }
 
+.has_icon {
+  padding-top: 22px;
+
+  .close_icon {
+    width: 14px;
+    height: 14px;
+    background-image: url("../../assets/images/icons/close.svg");
+
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+}
 .content_open {
   transform: none;
 
