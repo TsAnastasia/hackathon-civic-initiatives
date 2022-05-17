@@ -1,4 +1,6 @@
+import cl from "classnames";
 import { FC, useState } from "react";
+import IconButton from "../../../../components/UI/buttons/IconButton/IconButton";
 import { useForm } from "../../../../hooks/useForm";
 import { Comment } from "../../../../types/initiative";
 import { TIMEOUT_API } from "../../../../utils/constants";
@@ -10,7 +12,7 @@ const InitiativeCommentsForm: FC<{
 }> = ({ onSubmit }) => {
   const [loaded, setLoaded] = useState(false);
 
-  const { values, setValues, handleChange, handleSubmit } = useForm<{
+  const { values, handleChange, handleSubmit, isValid, resetForm } = useForm<{
     text: string;
   }>({
     defaltValues: { text: "" },
@@ -25,27 +27,34 @@ const InitiativeCommentsForm: FC<{
           date: `${new Date().toJSON()}`,
         });
         setLoaded(false);
-        setValues({ text: "" });
+        resetForm();
       }, TIMEOUT_API);
     },
     validationScheme,
-    // validateOnMount: true,
+    validateOnMount: true,
   });
 
   return (
-    <form onSubmit={handleSubmit} className={scss.root}>
-      <p>add new</p>
-
+    <form
+      onSubmit={handleSubmit}
+      className={cl(scss.root, loaded && scss.loaded)}
+    >
       <input
         type="text"
         name="text"
         value={values.text}
         onChange={handleChange}
+        placeholder="Добавить комментарий"
         disabled={loaded}
+        className={scss.input}
+        multiple
       />
-      <button type="submit" disabled={loaded}>
-        submit
-      </button>
+
+      <IconButton
+        type="submit"
+        disabled={loaded || !isValid}
+        className={scss.submit}
+      />
     </form>
   );
 };

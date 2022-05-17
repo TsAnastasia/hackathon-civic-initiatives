@@ -1,6 +1,10 @@
 declare namespace InitiativeCommentsFormModuleScssNamespace {
   export interface IInitiativeCommentsFormModuleScss {
+    input: string;
+    loaded: string;
     root: string;
+    send: string;
+    submit: string;
   }
 }
 

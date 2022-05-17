@@ -1,3 +1,58 @@
+@keyframes send {
+  from {
+    transform: skew(0deg, 0deg);
+  }
+  to {
+    transform: skew(20deg, 10deg);
+  }
+}
+
 .root {
-  background-color: green;
+  padding: 12px 16px;
+
+  background-color: #e2e4eb;
+  outline: 0;
+  border: 0;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+}
+.input {
+  margin: 0;
+  padding: 0;
+
+  font-size: 16px;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+
+  color: #737a92;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  border-radius: 0;
+
+  flex: 1;
+
+  &::placeholder {
+    color: #b6bbcc;
+  }
+}
+
+.submit {
+  background-image: url("../../../../assets/images/icons/send.svg");
+
+  transform-origin: center;
+
+  &:hover:not(:disabled) {
+    animation: send 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+  }
+}
+
+.loaded {
+  .submit {
+    animation: send 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite alternate;
+  }
 }
