@@ -14,3 +14,11 @@ export interface UserData {
   area: string;
   avatar?: string;
 }
+
+export type UserEditData = {
+  name: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  area: string;
+};

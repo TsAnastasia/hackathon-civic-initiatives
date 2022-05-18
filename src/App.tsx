@@ -4,16 +4,17 @@ import scss from "./app.module.scss";
 import AppFooter from "./components/AppFooter/AppFooter";
 import AppHeader from "./components/AppHeader/AppHeader";
 import Loader from "./components/Loader/Loader";
-import { useAppDispatch } from "./hooks/redux";
+import { useAppDispatch, useAppSelector } from "./hooks/redux";
 import { setUserData } from "./redux/userSlice/userSlice";
 import AppRouter from "./router/AppRouter";
 
 const App = () => {
   const dispatch = useAppDispatch();
+  const { auth } = useAppSelector((state) => state.user);
 
   useEffect(() => {
     // API: get user data
-    dispatch(setUserData(userAPI.getMe()));
+    if (!auth) dispatch(setUserData(userAPI.getMe()));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
