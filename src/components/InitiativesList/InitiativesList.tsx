@@ -6,27 +6,36 @@ import Loader from "../Loader/Loader";
 const InitiativesList: FC<{
   title?: string;
   initiatives: InitiativeCardData[] | undefined;
-}> = ({ title = "Инициативы", initiatives }) => {
+  loaded?: boolean;
+  error?: string;
+}> = ({
+  title = "Инициативы",
+  initiatives,
+  loaded = false,
+  error = undefined,
+}) => {
   return (
     <section>
       <h2>{title}</h2>
-      {initiatives ? (
-        initiatives.length > 0 ? (
-          <ul>
-            {initiatives.map((item) => (
-              <li key={item.id}>
-                <InitiaitveCard intiative={item} />
-              </li>
-            ))}
-          </ul>
+      <div>
+        {error ? (
+          <p>{error}</p>
         ) : (
-          <div>
+          initiatives &&
+          (initiatives.length > 0 ? (
+            <ul>
+              {initiatives.map((item) => (
+                <li key={item.id}>
+                  <InitiaitveCard intiative={item} />
+                </li>
+              ))}
+            </ul>
+          ) : (
             <p>Инициативы не найдены</p>
-          </div>
-        )
-      ) : (
-        <Loader />
-      )}
+          ))
+        )}
+        {loaded && <Loader blackout={!initiatives} />}
+      </div>
     </section>
   );
 };

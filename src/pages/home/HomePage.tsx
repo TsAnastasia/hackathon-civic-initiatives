@@ -12,17 +12,27 @@ const HomePage = () => {
   const [userInitatives, setUserInitatives] = useState<
     InitiativeCardData[] | undefined
   >(undefined);
+  const [allLoaded, setAllLoaded] = useState(false);
+  const [userLoaded, setUserLoaded] = useState(false);
 
   useEffect(() => {
+    // API: get all initiatives
+    setAllLoaded(true);
     setTimeout(() => {
       setAllInitiatives(initiativesAPI.getIntiatives({}));
+      setAllLoaded(false);
     }, TIMEOUT_API * 2);
+
+    // API: get user initiatives
+    setUserLoaded(true);
     setTimeout(() => {
       setUserInitatives(
         initiativesAPI.getIntiatives({
+          // TODO: get from storage
           userId: "98cfcd377f1c4b17b1dba9cced6f1e1d",
         })
       );
+      setUserLoaded(false);
     }, TIMEOUT_API);
   }, []);
 
@@ -31,8 +41,12 @@ const HomePage = () => {
       <section>
         <CategoriesSwitcher />
       </section>
-      <InitiativesList initiatives={allInitiatives} />
-      <InitiativesList initiatives={userInitatives} title="Мои инициативы" />
+      <InitiativesList initiatives={allInitiatives} loaded={allLoaded} />
+      <InitiativesList
+        initiatives={userInitatives}
+        title="Мои инициативы"
+        loaded={userLoaded}
+      />
     </>
   );
 };
