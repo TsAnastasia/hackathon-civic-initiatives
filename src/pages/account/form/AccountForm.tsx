@@ -7,6 +7,7 @@ import AppButton, {
 } from "../../../components/UI/buttons/AppButton/AppButton";
 import TextField from "../../../components/UI/inputs/TextField/TextField";
 import Loader from "../../../components/Loader/Loader";
+import { useAppSelector } from "../../../hooks/redux";
 
 // TODO: add app store
 const user: UserData = {
