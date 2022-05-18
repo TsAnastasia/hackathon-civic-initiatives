@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { intiativesAPI } from "../../API-data/initiatives/intitiativesAPI";
+import { initiativesAPI } from "../../API-data/iniitiatives/inititiativesAPI";
 import Loader from "../../components/Loader/Loader";
 import { Initiative } from "../../types/initiative";
 import { TIMEOUT_API } from "../../utils/constants";
@@ -19,7 +19,7 @@ const InitiativePage = () => {
     if (initiativeId) {
       setLoaded(true);
       setTimeout(() => {
-        setInitiative(intiativesAPI.getIntiative(initiativeId));
+        setInitiative(initiativesAPI.getIntiative(initiativeId));
         setLoaded(false);
       }, TIMEOUT_API);
     } else {

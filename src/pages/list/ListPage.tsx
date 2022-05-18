@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { intiativesAPI } from "../../API-data/initiatives/intitiativesAPI";
+import { initiativesAPI } from "../../API-data/iniitiatives/inititiativesAPI";
 import { goToPage } from "../../router/routes";
 import { InitiativeCard } from "../../types/initiative";
 
@@ -8,7 +8,7 @@ const ListPage = () => {
   const [initiatives, setInitiatives] = useState<InitiativeCard[]>([]);
 
   useEffect(() => {
-    setInitiatives(intiativesAPI.getIntiatives());
+    setInitiatives(initiativesAPI.getIntiatives({}));
   }, []);
 
   return (

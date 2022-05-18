@@ -5,8 +5,10 @@ import Photo002 from "./photo/image-000002.jpg";
 import Photo003 from "./photo/image-000003.jpg";
 import Photo004 from "./photo/image-000004.jpg";
 import Photo005 from "./photo/image-000005.jpg";
+import Photo006 from "./photo/image-000006.jpg";
+import Photo007 from "./photo/image-000007.jpg";
 
-const intiatives: Initiative[] = [
+export const initiatives: Initiative[] = [
   {
     id: "860aa5fb8e09440aa81b679a06e8295f",
     title: "Не убран снег во дворе",
@@ -127,132 +129,66 @@ const intiatives: Initiative[] = [
     author: users[0],
     category: "road",
     type: "complain",
-    status: "working",
+    status: "considered",
     area: { region: "spb", adress: "Санкт-Петербург, улица Гоголя" },
     images: [],
     description: "Пусть тени на стене\nРисуют фонари ночные.",
     like: { count: 12, active: true },
-    files: [],
+    files: [{ name: "Traffic.xlsx", size: "82 KB" }],
     comments: [],
   },
-
-  // {
-  //   id: "",
-  //   title: "Не убран снег во дворе",
-  //   date: new Date(2020, 0, 14),
-  //   author: {
-  //     id: "b4825178d28e4ddd871754a3763a783f",
-  //     fullName: "Сергеева Анна",
-  //   },
-  //   status: "closed",
-  //   type: "complaint",
-  //   category: ["5354b05beb9c4a9a9b430dc7490171b8"],
-  //   area: { region: "moscow", adress: "Москва, ул. Ленина" },
-  //   photos: [photo003, photo005],
-  //   description: {
-  //     text: "",
-  //     qoute: "Пусть тени на стене\nРисуют фонари ночные.",
-  //   },
-  //   files: [{ name: "Uborka.xlsx", size: "182 KB" }],
-  //   likes: {
-  //     count: 176,
-  //     active: false,
-  //     users: [],
-  //   },
-  //   comments: [],
-  // },
-  // {
-  //   id: "5ff3e8f1a04e4ab5902fac9f13453d5b",
-  //   title: "Уборка снега",
-  //   date: new Date(2020, 0, 15),
-  //   author: {
-  //     id: "cb0a52c129ad4043a0f02113a914d052",
-  //     fullName: "Жуков Александр",
-  //   },
-  //   status: "considered",
-  //   type: "complaint",
-  //   category: ["5354b05beb9c4a9a9b430dc7490171b8"],
-  //   area: { region: "moscow", adress: "Москва, ул. Петина" },
-  //   photos: [photo001, photo004, photo005],
-  //   description: {
-  //     text: "",
-  //     qoute:
-  //       "Ночь, улица, фонарь, аптека,\nБессмысленный и тусклый свет.\nЖиви еще хоть четверть века —\nВсё будет так. Исхода нет.\nУмрешь — начнешь опять сначала\nИ повторится все, как встарь:",
-  //   },
-  //   files: [],
-  //   likes: {
-  //     count: 352,
-  //     active: false,
-  //     users: [],
-  //   },
-  //   comments: [
-  //     {
-  //       id: "0ae9eec74d98499d9de38588bd2fa028",
-  //       author: {
-  //         id: "58b8058b7073462bb8a55b8538e6ebc0",
-  //         avatar: avatar03,
-  //         fullName: "Чиновьев Иван",
-  //       },
-  //       description: {
-  //         qoute: "Пусть тени на стене\nРисуют фонари ночные.",
-  //       },
-  //       date: new Date(2020, 0, 17),
-  //     },
-  //   ],
-  // },
-  // {
-  //   id: "3805e2465f814f858d2dba10702af743",
-  //   title: "Не убран снег во дворе",
-  //   date: new Date(2020, 0, 15),
-  //   author: {
-  //     id: "40722ea594ce4ba38e4a0dedfb2266a5",
-  //     fullName: "Якушева Ольга",
-  //   },
-  //   status: "working",
-  //   type: "complaint",
-  //   category: ["5354b05beb9c4a9a9b430dc7490171b8"],
-  //   area: { region: "spb", adress: "Санкт-Петербург, улица Гоголя" },
-  //   photos: [photo004],
-  //   description: {
-  //     text: "",
-  //     qoute:
-  //       "Ночь, улица, фонарь, аптека,\nБессмысленный и тусклый свет.\nЖиви еще хоть четверть века —\nВсё будет так. Исхода нет.\nУмрешь — начнешь опять сначала\nИ повторится все, как встарь:",
-  //   },
-  //   files: [],
-  //   likes: {
-  //     count: 203,
-  //     active: true,
-  //     users: [],
-  //   },
-  //   comments: [
-  //     {
-  //       id: "87492929ad7843989f0a4bd27e5c216e",
-  //       author: {
-  //         id: "58b8058b7073462bb8a55b8538e6ebc0",
-  //         avatar: avatar03,
-  //         fullName: "Чиновьев Иван",
-  //       },
-  //       description: {
-  //         qoute:
-  //           "Ночь, улица, фонарь, аптека,\nБессмысленный и тусклый свет.\nЖиви еще хоть четверть века —\nВсё будет так. Исхода нет.\nУмрешь — начнешь опять сначала\nИ повторится все, как встарь:",
-  //       },
-  //       date: new Date(2020, 0, 15),
-  //     },
-  //     {
-  //       id: "0908ef8729c14b0ea8d3a487aa8733cd",
-  //       author: {
-  //         id: "4fb32c03c43b4ec7baddf1ef3110cd5a",
-  //         avatar: avatar01,
-  //         fullName: "Укаева Ольга",
-  //       },
-  //       description: {
-  //         qoute:
-  //           "Мороз и солнце; день чудесный!\nЕще ты дремлешь, друг прелестный\nПора, красавица, проснись:\nОткрой сомкнуты негой взоры",
-  //       },
-  //       date: new Date(2020, 0, 16),
-  //     },
-  //   ],
-  // },
+  {
+    id: "5ff3e8f1a04e4ab5902fac9f13453d5b",
+    title: "Поликлиника закрыта в рабочий день",
+    date: "2022-01-07T11:40:31.282Z",
+    author: users[5],
+    category: "hospital",
+    type: "complain",
+    status: "considered",
+    area: { region: "moscow", adress: "Москва, ул. Чехова" },
+    images: [Photo006],
+    description:
+      "Ночь, улица, фонарь, аптека,\nБессмысленный и тусклый свет.\nЖиви еще хоть четверть века —\nВсё будет так. Исхода нет.\nУмрешь — начнешь опять сначала\nИ повторится все, как встарь:",
+    like: { count: 320, active: true },
+    files: [],
+    comments: [
+      {
+        id: "0ae9eec74d98499d9de38588bd2fa028",
+        author: users[3],
+        text: "Пусть тени на стене\nРисуют фонари ночные.",
+        date: "2022-01-09T11:40:31.282Z",
+      },
+    ],
+  },
+  {
+    id: "3805e2465f814f858d2dba10702af743",
+    title: "Мусор на улице",
+    date: "2022-01-05T11:40:31.282Z",
+    author: users[1],
+    category: "eco",
+    type: "complain",
+    status: "closed",
+    area: { region: "spb", adress: "Санкт-Петербург, улица Достоевского" },
+    images: [Photo007],
+    description:
+      "Ночь, улица, фонарь, аптека,\nБессмысленный и тусклый свет.\nЖиви еще хоть четверть века —\nВсё будет так. Исхода нет.\nУмрешь — начнешь опять сначала\nИ повторится все, как встарь:",
+    like: { count: 203, active: false },
+    files: [],
+    comments: [
+      {
+        id: "87492929ad7843989f0a4bd27e5c216e",
+        author: users[3],
+        text: "Мороз и солнце; день чудесный!\nЕще ты дремлешь, друг прелестный\nПора, красавица, проснись:\nОткрой сомкнуты негой взоры",
+        date: "2022-01-09T11:40:31.282Z",
+      },
+      {
+        id: "0908ef8729c14b0ea8d3a487aa8733cd",
+        author: users[0],
+        text: "О счастье мы всегда лишь вспоминаем.\nА счастье всюду. Может быть, оно —\nВот этот сад осенний за сараем\nИ чистый воздух, льющийся в окно.",
+        date: "2022-01-15T11:40:31.282Z",
+      },
+    ],
+  },
   // {
   //   id: "50622ea594ce4ba38e4a0dedfb2266a5",
   //   title: "Уборка снега во дворе",
@@ -350,14 +286,3 @@ const intiatives: Initiative[] = [
   //   ],
   // },
 ];
-
-export const intiativesAPI: {
-  getIntiatives: (categories?: string[]) => Initiative[];
-  getIntiative: (id: string) => Initiative | undefined;
-} = {
-  getIntiatives: (categories) =>
-    categories
-      ? intiatives.filter((item) => categories.includes(item.category))
-      : intiatives,
-  getIntiative: (id) => intiatives.find((i) => i.id === id),
-};
