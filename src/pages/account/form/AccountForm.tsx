@@ -7,26 +7,15 @@ import AppButton, {
 } from "../../../components/UI/buttons/AppButton/AppButton";
 import TextField from "../../../components/UI/inputs/TextField/TextField";
 import Loader from "../../../components/Loader/Loader";
-import { useAppSelector } from "../../../hooks/redux";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
+import { UserEditData } from "../../../types/users";
+import { setUserData } from "../../../redux/userSlice/userSlice";
 
-// TODO: add app store
-const user: UserData = {
-  name: "Василий",
-  lastName: "Иванов",
-  phone: "8-999-777-66-55",
-  email: "some@mail.com",
-  area: "Санкт-Петербург, Невский",
-};
-
-type UserData = {
-  name: string;
-  lastName: string;
-  phone: string;
-  email: string;
-  area: string;
-};
-
-const items: { name: keyof UserData; label: string; placeholder?: string }[] = [
+const items: {
+  name: keyof UserEditData;
+  label: string;
+  placeholder?: string;
+}[] = [
   { name: "name", label: "Имя", placeholder: "Введите имя" },
   { name: "lastName", label: "Фамилия", placeholder: "Введите фамилию" },
   { name: "phone", label: "Телефон", placeholder: "8-XXX-XXX-XX-XX" },
@@ -35,18 +24,21 @@ const items: { name: keyof UserData; label: string; placeholder?: string }[] = [
 ];
 
 const AccountForm = () => {
+  const { data } = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
   const [disabled, setDisabled] = useState(true);
   const [loaded, setLoaded] = useState(false);
 
   const { values, handleChange, handleSubmit, errors, isValid } =
-    useForm<UserData>({
-      defaltValues: user,
+    useForm<UserEditData>({
+      defaltValues: data,
       onSubmit: (values) => {
         console.log("comp", values);
 
         setLoaded(true);
         setTimeout(() => {
-          // TODO: change user data
+          // API: change user data
+          dispatch(setUserData({ ...data, ...values }));
           setDisabled(true);
           setLoaded(false);
         }, 500);
@@ -72,7 +64,7 @@ const AccountForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className={scss.form}>
-      <h2 className={scss.title}>Здравствуйте, {user.name}!</h2>
+      <h2 className={scss.title}>Здравствуйте, {data.name}!</h2>
 
       {items.map(({ name, label, placeholder }) => (
         <TextField
