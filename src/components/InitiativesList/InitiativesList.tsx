@@ -2,6 +2,7 @@ import { FC } from "react";
 import { InitiativeCardData } from "../../types/initiative";
 import InitiaitveCard from "../InitiaitveCard/InitiaitveCard";
 import Loader from "../Loader/Loader";
+import scss from "./initiativeList.module.scss";
 
 const InitiativesList: FC<{
   title?: string;
@@ -15,26 +16,26 @@ const InitiativesList: FC<{
   error = undefined,
 }) => {
   return (
-    <section>
-      <h2>{title}</h2>
-      <div>
+    <section className={scss.root}>
+      <h2 className={scss.title}>{title}</h2>
+      <div className={scss.content}>
         {error ? (
-          <p>{error}</p>
+          <p className={scss.message}>{error}</p>
         ) : (
           initiatives &&
           (initiatives.length > 0 ? (
-            <ul>
+            <ul className={scss.list}>
               {initiatives.map((item) => (
                 <li key={item.id}>
-                  <InitiaitveCard intiative={item} />
+                  <InitiaitveCard initiative={item} />
                 </li>
               ))}
             </ul>
           ) : (
-            <p>Инициативы не найдены</p>
+            <p className={scss.message}>Инициативы не найдены</p>
           ))
         )}
-        {loaded && <Loader blackout={!initiatives} />}
+        {loaded && <Loader blackout={!initiatives} type="absolute" />}
       </div>
     </section>
   );

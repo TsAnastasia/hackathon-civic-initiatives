@@ -8,7 +8,7 @@ import DocContentError from "./error/DocContentError";
 import DocContentPages from "./pages/DocContentPages";
 import DocContentScale from "./scale/DocContentScale";
 
-const WIDHT = Math.min(window.innerWidth, 768);
+const WIDHT = Math.min(window.innerWidth, 800);
 const ZOOM_STEP = 0.1;
 
 const DocContent: FC<{ doc: Doc }> = ({ doc }) => {
