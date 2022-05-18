@@ -62,3 +62,7 @@ export const users: UserData[] = [
     area: "Санкт-Петербург, Невский",
   },
 ];
+
+export const userAPI: { getMe: () => UserData } = {
+  getMe: () => users[0],
+};
