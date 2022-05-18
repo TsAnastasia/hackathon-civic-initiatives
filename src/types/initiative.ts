@@ -42,7 +42,7 @@ export interface Comment {
   date: string;
 }
 
-export interface InitiativeCard {
+export interface InitiativeCardData {
   id: string;
   title: string;
   description: string;

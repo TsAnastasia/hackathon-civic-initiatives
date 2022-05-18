@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { initiativesAPI } from "../../API-data/iniitiatives/inititiativesAPI";
 import { goToPage } from "../../router/routes";
-import { InitiativeCard } from "../../types/initiative";
+import { InitiativeCardData } from "../../types/initiative";
 
 const ListPage = () => {
-  const [initiatives, setInitiatives] = useState<InitiativeCard[]>([]);
+  const [initiatives, setInitiatives] = useState<InitiativeCardData[]>([]);
 
   useEffect(() => {
     setInitiatives(initiativesAPI.getIntiatives({}));

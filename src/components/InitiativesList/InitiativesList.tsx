@@ -1,0 +1,34 @@
+import { FC } from "react";
+import { InitiativeCardData } from "../../types/initiative";
+import InitiaitveCard from "../InitiaitveCard/InitiaitveCard";
+import Loader from "../Loader/Loader";
+
+const InitiativesList: FC<{
+  title?: string;
+  initiatives: InitiativeCardData[] | undefined;
+}> = ({ title = "Инициативы", initiatives }) => {
+  return (
+    <section>
+      <h2>{title}</h2>
+      {initiatives ? (
+        initiatives.length > 0 ? (
+          <ul>
+            {initiatives.map((item) => (
+              <li key={item.id}>
+                <InitiaitveCard intiative={item} />
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div>
+            <p>Инициативы не найдены</p>
+          </div>
+        )
+      ) : (
+        <Loader />
+      )}
+    </section>
+  );
+};
+
+export default InitiativesList;

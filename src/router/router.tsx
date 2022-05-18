@@ -2,6 +2,7 @@ import { lazy } from "react";
 import { Navigate, RouteObject } from "react-router-dom";
 import { AppRoutes, goToPage } from "./routes";
 
+const HomePage = lazy(() => import("../pages/home/HomePage"));
 const ListPage = lazy(() => import("../pages/list/ListPage"));
 const CreatePage = lazy(() => import("../pages/create/CreatePage"));
 const InitiativePage = lazy(() => import("../pages/initiative/InitiativePage"));
@@ -18,7 +19,7 @@ const SearchPage = lazy(() => import("../pages/search/SearchPage"));
 const NotFoundPage = lazy(() => import("../pages/notFound/NotFoundPage"));
 
 export const router: RouteObject[] = [
-  { path: AppRoutes.HOME, element: <ListPage /> },
+  { path: AppRoutes.HOME, element: <HomePage /> },
   { path: AppRoutes.SEARCH, element: <SearchPage /> },
   { path: AppRoutes.CREATE, element: <CreatePage /> },
   {
