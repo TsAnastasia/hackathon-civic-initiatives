@@ -2,29 +2,20 @@ import { useState } from "react";
 import Loader from "../../components/Loader/Loader";
 import AppButton from "../../components/UI/buttons/AppButton/AppButton";
 import Checkbox from "../../components/UI/inputs/Checkbox/Checkbox";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 
 import { useDocTitle } from "../../hooks/useDocTitle";
 import { useForm } from "../../hooks/useForm";
+import { setUserSettings } from "../../redux/userSlice/userSlice";
+import { settingNames, UserSetting } from "../../types/settings";
 import { TIMEOUT_API } from "../../utils/constants";
 
 import scss from "./settingPage.module.scss";
 
-// TODO: add app storage
-const settings: { [key: string]: boolean } = {
-  showClosed: false,
-  showOnlyMine: false,
-  searchOnlyOpen: true,
-};
-
-const labels: { [key in keyof typeof settings]: string } = {
-  showClosed: "Показывать закрытые инициативы на главной странице",
-  showOnlyMine: "Показывать только мои инициативы на главной странице",
-  searchOnlyOpen: "Искать только открытые инициативы",
-};
-
 const SettingsPage = () => {
   useDocTitle("Настройки");
-
+  const { settings } = useAppSelector((state) => state.user);
+  const dispatch = useAppDispatch();
   const [loaded, setLoaded] = useState(false);
 
   const { values, handleSubmit, handleChange } = useForm({
@@ -32,21 +23,21 @@ const SettingsPage = () => {
     onSubmit: (values) => {
       setLoaded(true);
       setTimeout(() => {
-        // TODO: save changes in app store
+        // API: change user settings
+        dispatch(setUserSettings(values));
         setLoaded(false);
       }, TIMEOUT_API);
-      console.log(values);
     },
   });
-  // TODO: style
+
   return (
     <section className={scss.section}>
       <h1 className={scss.title}>Настройки</h1>
       <form onSubmit={handleSubmit} className={scss.form}>
-        {Object.keys(settings).map((set) => (
+        {(Object.keys(settings) as [UserSetting]).map((set) => (
           <Checkbox
             key={set}
-            label={labels[set]}
+            label={settingNames[set]}
             name={set}
             checked={values[set]}
             onChange={handleChange}

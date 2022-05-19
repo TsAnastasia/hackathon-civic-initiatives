@@ -1,19 +1,32 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { UserSettings } from "../../types/settings";
 import { UserData } from "../../types/users";
+
+// TODO: change app from settings
+// API: get user settings
+const defaultSettings: UserSettings = {
+  showClosed: false,
+  showOnlyMine: false,
+  searchOnlyOpen: true,
+};
 
 const initialState = {
   auth: false,
   data: {} as UserData,
   user_categories: [] as string[],
+  settings: defaultSettings,
 };
 
-const todoSlice = createSlice({
+const userSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
     setUserData: (state, action: PayloadAction<UserData>) => {
       state.data = action.payload;
       state.auth = true;
+    },
+    setUserSettings: (state, action: PayloadAction<UserSettings>) => {
+      state.settings = action.payload;
     },
     addUserCategory: (state, action: PayloadAction<string>) => {
       if (!state.user_categories.some((item) => item === action.payload)) {
@@ -30,7 +43,11 @@ const todoSlice = createSlice({
   },
 });
 
-export const { setUserData, addUserCategory, deleteUserCategory } =
-  todoSlice.actions;
+export const {
+  setUserData,
+  setUserSettings,
+  addUserCategory,
+  deleteUserCategory,
+} = userSlice.actions;
 
-export default todoSlice.reducer;
+export default userSlice.reducer;
