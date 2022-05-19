@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { InitiativeCardData } from "../../types/initiative";
+import { scrollOnWheel } from "../../utils/scroll";
 import InitiaitveCard from "../InitiaitveCard/InitiaitveCard";
 import Loader from "../Loader/Loader";
 import scss from "./initiativeList.module.scss";
@@ -24,7 +25,7 @@ const InitiativesList: FC<{
         ) : (
           initiatives &&
           (initiatives.length > 0 ? (
-            <ul className={scss.list}>
+            <ul className={scss.list} onWheel={scrollOnWheel}>
               {initiatives.map((item) => (
                 <li key={item.id}>
                   <InitiaitveCard initiative={item} />
