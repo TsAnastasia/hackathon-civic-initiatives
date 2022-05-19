@@ -6,21 +6,13 @@ import IconButton from "../../../components/UI/buttons/IconButton/IconButton";
 import Select from "../../../components/UI/inputs/Select/Select";
 import TextField from "../../../components/UI/inputs/TextField/TextField";
 import TextFieldMultiline from "../../../components/UI/inputs/TextFieldMultiline/TextFieldMultiline";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux";
 import { useForm } from "../../../hooks/useForm";
+import { setCreateData } from "../../../redux/initiativesSlice/initiativesSlice";
 import { goToPage } from "../../../router/routes";
 import { Category } from "../../../types/categories";
-import {
-  InitiativeType,
-  initiativeTypeValues,
-} from "../../../types/initiative";
+import { initiativeTypeValues } from "../../../types/initiative";
 import scss from "./createForm.module.scss";
-
-const defaltValues = {
-  name: "",
-  type: "complain" as InitiativeType,
-  description: "",
-  adress: "",
-};
 
 const CreateForm: FC<{
   category: Category;
@@ -30,6 +22,9 @@ const CreateForm: FC<{
 }> = ({ category, setLoaded, onError }) => {
   const navigate = useNavigate();
 
+  const { create_data } = useAppSelector((state) => state.initiatives);
+  const dispatch = useAppDispatch();
+
   const {
     values,
     handleChange,
@@ -38,15 +33,13 @@ const CreateForm: FC<{
     errors,
     // isValid,
   } = useForm({
-    defaltValues,
+    defaltValues: create_data,
     // TODO: validate
     onSubmit: (values) => {
-      console.log("comp", values);
-
       setLoaded(true);
       setTimeout(() => {
-        // TODO: save initiative
-        // setDisabled(true);
+        // API: create intiative
+        dispatch(setCreateData(values));
         onError();
         setLoaded(false);
       }, 500);
