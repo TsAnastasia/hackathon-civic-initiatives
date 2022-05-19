@@ -2,12 +2,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { UserSettings } from "../../types/settings";
 import { UserData } from "../../types/users";
 
-// TODO: change app from settings
 // API: get user settings
 const defaultSettings: UserSettings = {
-  showClosed: false,
+  showClosed: false, // TODO: change app from settings
   showOnlyMine: false,
-  searchOnlyOpen: true,
+  searchOnlyOpen: true, // TODO: change app from settings
 };
 
 const initialState = {

@@ -3,7 +3,9 @@
 }
 
 .form {
-  margin: 20px 0;
+  margin: 20px auto;
+  max-width: 550px;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -25,5 +27,4 @@
 .item {
   margin: 0 0 16px;
   width: 100%;
-  max-width: 350px;
 }
