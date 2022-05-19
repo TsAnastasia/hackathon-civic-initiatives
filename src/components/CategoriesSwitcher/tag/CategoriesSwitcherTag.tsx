@@ -12,11 +12,11 @@ const CategoriesSwitcherTag: FC<{ category: Category }> = ({ category }) => {
   const { user_categories } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
 
-  const isActive = user_categories.some((item) => item.id === category.id);
+  const isActive = user_categories.some((item) => item === category.id);
 
   const handleClick = useCallback(() => {
-    if (isActive) dispatch(deleteUserCategory(category));
-    else dispatch(addUserCategory(category));
+    if (isActive) dispatch(deleteUserCategory(category.id));
+    else dispatch(addUserCategory(category.id));
   }, [isActive, category, dispatch]);
 
   return (

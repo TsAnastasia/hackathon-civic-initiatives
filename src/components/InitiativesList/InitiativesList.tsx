@@ -36,7 +36,7 @@ const InitiativesList: FC<{
             <p className={scss.message}>Инициативы не найдены</p>
           ))
         )}
-        {loaded && <Loader blackout={!initiatives} type="absolute" />}
+        {loaded && <Loader type="absolute" />}
       </div>
     </section>
   );

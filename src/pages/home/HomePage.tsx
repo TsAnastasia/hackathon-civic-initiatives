@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { initiativesAPI } from "../../API-data/iniitiatives/inititiativesAPI";
 import CategoriesSwitcher from "../../components/CategoriesSwitcher/CategoriesSwitcher";
 import InitiativesList from "../../components/InitiativesList/InitiativesList";
+import { useAppSelector } from "../../hooks/redux";
 import { InitiativeCardData } from "../../types/initiative";
 import { TIMEOUT_API } from "../../utils/constants";
 
@@ -14,12 +15,15 @@ const HomePage = () => {
   >(undefined);
   const [allLoaded, setAllLoaded] = useState(false);
   const [userLoaded, setUserLoaded] = useState(false);
+  const { user_categories, data: user } = useAppSelector((state) => state.user);
 
   useEffect(() => {
     // API: get all initiatives
     setAllLoaded(true);
     setTimeout(() => {
-      setAllInitiatives(initiativesAPI.getIntiatives({}));
+      setAllInitiatives(
+        initiativesAPI.getIntiatives({ categories: user_categories })
+      );
       setAllLoaded(false);
     }, TIMEOUT_API * 2);
 
@@ -28,13 +32,13 @@ const HomePage = () => {
     setTimeout(() => {
       setUserInitatives(
         initiativesAPI.getIntiatives({
-          // TODO: get from storage
-          userId: "98cfcd377f1c4b17b1dba9cced6f1e1d",
+          userId: user.id,
+          categories: user_categories,
         })
       );
       setUserLoaded(false);
     }, TIMEOUT_API);
-  }, []);
+  }, [user_categories, user]);
 
   return (
     <>
