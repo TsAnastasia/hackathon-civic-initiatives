@@ -26,11 +26,12 @@ const HomePage = () => {
         initiativesAPI.getIntiatives({
           userId: user.id,
           categories: user_categories.length > 0 ? user_categories : undefined,
+          has_closed: settings.showClosed,
         })
       );
       setUserLoaded(false);
     }, TIMEOUT_API);
-  }, [user_categories, user]);
+  }, [user_categories, user, settings]);
 
   return (
     <>

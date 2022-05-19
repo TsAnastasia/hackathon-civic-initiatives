@@ -10,7 +10,7 @@ const HomeCommon = () => {
     InitiativeCardData[] | undefined
   >(undefined);
   const [allLoaded, setAllLoaded] = useState(false);
-  const { user_categories } = useAppSelector((state) => state.user);
+  const { user_categories, settings } = useAppSelector((state) => state.user);
 
   useEffect(() => {
     // API: get all initiatives
@@ -19,11 +19,12 @@ const HomeCommon = () => {
       setAllInitiatives(
         initiativesAPI.getIntiatives({
           categories: user_categories.length > 0 ? user_categories : undefined,
+          has_closed: settings.showClosed,
         })
       );
       setAllLoaded(false);
     }, TIMEOUT_API * 2);
-  }, [user_categories]);
+  }, [user_categories, settings]);
 
   return <InitiativesList initiatives={allInitiatives} loaded={allLoaded} />;
 };
