@@ -16,11 +16,6 @@ const InitiaitveCard: FC<{ initiative: InitiativeCardData }> = ({
     navigate(goToPage.initiative(initiative.id));
   }, [initiative, navigate]);
 
-  // TODO: check
-  // useEffect(() => {
-  //   console.log("useCallback", initiative.id);
-  // }, [navigate, initiative]);
-
   return (
     <article onClick={handleCardClick} className={scss.root}>
       <img

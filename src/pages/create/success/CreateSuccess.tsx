@@ -4,8 +4,6 @@ import { InitiativeCardData } from "../../../types/initiative";
 import scss from "./createSuccess.module.scss";
 
 const CreateSuccess = () => {
-  // TODO: create success
-
   const { create_data } = useAppSelector((state) => state.initiatives);
 
   const initiative: InitiativeCardData = {
