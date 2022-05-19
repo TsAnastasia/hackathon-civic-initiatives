@@ -1,6 +1,6 @@
 import { FC, useCallback } from "react";
 import { InitiativeCardData } from "../../types/initiative";
-import defaltImage from "../../assets/images/no-image.png";
+import defaultImage from "../../assets/images/no-image.png";
 import { formatDateFromString } from "../../utils/date";
 import InitiativeType from "../InitiativeType/InitiativeType";
 import { useNavigate } from "react-router-dom";
@@ -24,7 +24,7 @@ const InitiaitveCard: FC<{ initiative: InitiativeCardData }> = ({
   return (
     <article onClick={handleCardClick} className={scss.root}>
       <img
-        src={initiative.images[0] || defaltImage}
+        src={initiative.images[0] || defaultImage}
         alt={initiative.title}
         className={scss.image}
       />

@@ -17,7 +17,7 @@ const InitiativeCommentsForm: FC<{
   const { values, handleChange, handleSubmit, isValid, resetForm } = useForm<{
     text: string;
   }>({
-    defaltValues: { text: "" },
+    defaultValues: { text: "" },
     onSubmit: (values) => {
       setLoaded(true);
       setTimeout(() => {

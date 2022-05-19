@@ -31,7 +31,7 @@ const AccountForm = () => {
 
   const { values, handleChange, handleSubmit, errors, isValid } =
     useForm<UserEditData>({
-      defaltValues: data,
+      defaultValues: data,
       onSubmit: (values) => {
         console.log("comp", values);
 

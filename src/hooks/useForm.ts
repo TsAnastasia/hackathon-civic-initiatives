@@ -9,7 +9,7 @@ import {
 import { isObjEmpty } from "../utils/utils";
 
 interface Props<T> {
-  defaltValues: T;
+  defaultValues: T;
   onSubmit: (values: T) => void;
   validationScheme?: Partial<{
     [key in keyof T]: (value: string | boolean) => string | undefined;
@@ -18,13 +18,13 @@ interface Props<T> {
 }
 
 export const useForm = <T extends { [key: string]: string | boolean }>({
-  defaltValues,
+  defaultValues,
   onSubmit,
   validationScheme = {},
   validateOnMount = false,
 }: Props<T>) => {
   type ErrorsType = Partial<Record<keyof T, string | undefined>>;
-  const [values, setValues] = useState(defaltValues);
+  const [values, setValues] = useState(defaultValues);
   const [errors, setErros] = useState<ErrorsType>({});
 
   const isValid = useMemo(() => isObjEmpty(errors), [errors]);
@@ -73,8 +73,8 @@ export const useForm = <T extends { [key: string]: string | boolean }>({
   );
 
   const resetForm = useCallback(() => {
-    setValues(defaltValues);
-  }, [defaltValues]);
+    setValues(defaultValues);
+  }, [defaultValues]);
 
   useEffect(() => {
     if (validateOnMount) handleValidate();

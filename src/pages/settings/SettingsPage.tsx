@@ -19,7 +19,7 @@ const SettingsPage = () => {
   const [loaded, setLoaded] = useState(false);
 
   const { values, handleSubmit, handleChange } = useForm({
-    defaltValues: settings,
+    defaultValues: settings,
     onSubmit: (values) => {
       setLoaded(true);
       setTimeout(() => {

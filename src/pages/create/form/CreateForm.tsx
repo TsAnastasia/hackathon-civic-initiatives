@@ -33,7 +33,7 @@ const CreateForm: FC<{
     errors,
     // isValid,
   } = useForm({
-    defaltValues: create_data,
+    defaultValues: create_data,
     // TODO: validate
     onSubmit: (values) => {
       setLoaded(true);
