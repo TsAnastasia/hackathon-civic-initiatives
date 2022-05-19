@@ -4,9 +4,9 @@ import { UserData } from "../../types/users";
 
 // API: get user settings
 const defaultSettings: UserSettings = {
-  showClosed: false,
+  showClosed: true,
   showOnlyMine: false,
-  searchOnlyOpen: true, // TODO: change app from settings
+  searchOnlyOpen: false, // TODO: change app from settings
 };
 
 const initialState = {
