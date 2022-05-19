@@ -13,6 +13,7 @@ export interface UserData {
   email: string;
   area: string;
   avatar?: string;
+  notifications_count?: number;
 }
 
 export type UserEditData = {

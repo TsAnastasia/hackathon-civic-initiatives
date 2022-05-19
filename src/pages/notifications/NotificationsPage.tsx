@@ -1,70 +1,51 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { notificationsAPI } from "../../API-data/notifications/notificationsAPI";
+import Loader from "../../components/Loader/Loader";
 import { useDocTitle } from "../../hooks/useDocTitle";
 import { UserNotification } from "../../types/notification";
+import { TIMEOUT_API } from "../../utils/constants";
 import NotificationsItem from "./item/NotificationsItem";
 import scss from "./notificationPage.module.scss";
-
-// TODO: add to app store
-const defaultNotifications: UserNotification[] = [
-  {
-    id: "111-011",
-    date: "2021-12-14T14:57:17.604Z",
-    comment: "Создана инициатива",
-    title: "Уборка снега",
-    readed: false,
-  },
-  {
-    id: "111-004",
-    date: "2021-12-14T14:57:17.604Z",
-    comment: "Добавлен комментарий",
-    title: "Уборка снега во дворе",
-    readed: false,
-  },
-  {
-    id: "111-002",
-    date: "2021-12-13T14:57:17.604Z",
-    comment: "Ваша инициатива понравилась 2 людям",
-    title: "Уборка снега",
-    readed: true,
-  },
-  {
-    id: "111-001",
-    date: "2021-12-12T14:57:17.604Z",
-    comment: "Ваша инициатива взята в работу",
-    title: "Уборка снега",
-    readed: true,
-  },
-];
 
 const NotificationsPage = () => {
   useDocTitle("Уведомления");
 
-  const [notifications, setNotifications] = useState(defaultNotifications);
+  const [notifications, setNotifications] = useState<
+    undefined | UserNotification[]
+  >(undefined);
 
-  const handleReadNotification = (id: string) => {
-    setNotifications((state) =>
-      state.map((item) => (item.id === id ? { ...item, readed: true } : item))
+  const handleReadNotification = useCallback((id: string) => {
+    setNotifications(
+      (state) =>
+        state &&
+        state.map((item) => (item.id === id ? { ...item, readed: true } : item))
     );
-  };
+  }, []);
 
   useEffect(() => {
-    console.log("render notification page");
-  });
+    // API: get user notifications
+    setTimeout(() => {
+      setNotifications(notificationsAPI.getNotifications());
+    }, TIMEOUT_API);
+  }, []);
 
   return (
     <section className={scss.section}>
       <h1 className={scss.title}>УВЕДОМЛЕНИЯ</h1>
-      <ul className={scss.list}>
-        {notifications.map((notification) => (
-          <li key={notification.id} className={scss.item}>
-            <NotificationsItem
-              notification={notification}
-              onRead={handleReadNotification}
-            />
-          </li>
-        ))}
-      </ul>
-      {}
+      {notifications ? (
+        <ul className={scss.list}>
+          {notifications.map((notification) => (
+            <li key={notification.id} className={scss.item}>
+              <NotificationsItem
+                notification={notification}
+                onRead={handleReadNotification}
+              />
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <Loader blackout={false} />
+      )}
     </section>
   );
 };

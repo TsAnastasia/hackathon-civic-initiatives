@@ -1,4 +1,5 @@
 import { UserData } from "../../types/users";
+import { notifications } from "../notifications/notificationsAPI";
 import Avatar01 from "./avatars/avatars-000001.jpg";
 import Avatar02 from "./avatars/avatars-000002.jpg";
 import Avatar03 from "./avatars/avatars-000003.jpg";
@@ -64,5 +65,8 @@ export const users: UserData[] = [
 ];
 
 export const userAPI: { getMe: () => UserData } = {
-  getMe: () => users[0],
+  getMe: () => ({
+    ...users[0],
+    notifications_count: notifications.filter((i) => i.readed).length,
+  }),
 };

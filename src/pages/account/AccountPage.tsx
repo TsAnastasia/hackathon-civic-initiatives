@@ -5,9 +5,11 @@ import AccountForm from "./form/AccountForm";
 import scss from "./accountPage.module.scss";
 import AccountAvatar from "./avatar/AccountAvatar";
 import { useDocTitle } from "../../hooks/useDocTitle";
+import { useAppSelector } from "../../hooks/redux";
 
 const AccountPage = () => {
   useDocTitle("Личный кабинет");
+  const { notifications_count } = useAppSelector((state) => state.user.data);
 
   return (
     <>
@@ -21,7 +23,11 @@ const AccountPage = () => {
           <AccountAvatar />
           <Link
             to={goToPage.notification}
-            className={cl(scss.link, scss.notification)}
+            className={cl(
+              scss.link,
+              scss.notification,
+              notifications_count && scss.active
+            )}
           />
         </div>
       </section>

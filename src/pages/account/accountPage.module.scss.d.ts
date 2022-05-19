@@ -1,5 +1,6 @@
 declare namespace AccountPageModuleScssNamespace {
   export interface IAccountPageModuleScss {
+    active: string;
     container: string;
     link: string;
     notification: string;
