@@ -16,12 +16,24 @@ const todoSlice = createSlice({
       state.data = action.payload;
       state.auth = true;
     },
-    setUserCategories: (state, action: PayloadAction<Category[]>) => {
-      state.user_categories = action.payload;
+    addUserCategory: (state, action: PayloadAction<Category>) => {
+      if (
+        !state.user_categories.some((item) => item.id === action.payload.id)
+      ) {
+        state.user_categories = state.user_categories.concat(action.payload);
+      } else {
+        console.log("user already has this category");
+      }
+    },
+    deleteUserCategory: (state, action: PayloadAction<Category>) => {
+      state.user_categories = state.user_categories.filter(
+        (item) => item.id !== action.payload.id
+      );
     },
   },
 });
 
-export const { setUserData, setUserCategories } = todoSlice.actions;
+export const { setUserData, addUserCategory, deleteUserCategory } =
+  todoSlice.actions;
 
 export default todoSlice.reducer;

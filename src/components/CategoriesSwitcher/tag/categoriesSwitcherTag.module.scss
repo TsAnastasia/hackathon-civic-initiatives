@@ -1,0 +1,28 @@
+.tag {
+  margin: 0;
+  padding: 8px 16px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  white-space: nowrap;
+
+  color: #ffffff;
+  background: #737a92;
+  border-radius: 8px;
+  border: 0;
+  outline: 0;
+
+  transition: all 0.5s ease-in-out;
+
+  &.active {
+    background: #b6bbcc;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.1);
+  }
+}

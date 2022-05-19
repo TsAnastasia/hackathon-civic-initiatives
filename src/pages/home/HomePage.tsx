@@ -38,9 +38,7 @@ const HomePage = () => {
 
   return (
     <>
-      <section>
-        <CategoriesSwitcher />
-      </section>
+      <CategoriesSwitcher />
       <InitiativesList initiatives={allInitiatives} loaded={allLoaded} />
       <InitiativesList
         initiatives={userInitatives}
