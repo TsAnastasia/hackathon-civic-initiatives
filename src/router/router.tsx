@@ -3,6 +3,9 @@ import { Navigate, RouteObject } from "react-router-dom";
 import { AppRoutes, goToPage } from "./routes";
 
 const HomePage = lazy(() => import("../pages/home/HomePage"));
+const UserInitiativePage = lazy(
+  () => import("../pages/userInitiatives/UserInitiativePage")
+);
 const ListPage = lazy(() => import("../pages/list/ListPage"));
 const CreatePage = lazy(() => import("../pages/create/CreatePage"));
 const InitiativePage = lazy(() => import("../pages/initiative/InitiativePage"));
@@ -26,7 +29,7 @@ export const router: RouteObject[] = [
     path: AppRoutes.INITIATIVES,
     children: [
       { index: true, element: <Navigate to={goToPage.home} replace={true} /> },
-      { path: AppRoutes.PERSONAL, element: <ListPage /> },
+      { path: AppRoutes.PERSONAL, element: <UserInitiativePage /> },
       { path: AppRoutes.AREA, element: <ListPage /> },
       { path: AppRoutes.SINGLE, element: <InitiativePage /> },
     ],

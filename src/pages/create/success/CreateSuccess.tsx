@@ -13,6 +13,7 @@ const CreateSuccess = () => {
     date: new Date().toJSON(),
     images: [],
     type: create_data.type,
+    status: "considered",
   };
 
   return (
