@@ -23,7 +23,10 @@ const CategoriesSwitcherTag: FC<{ category: Category }> = ({ category }) => {
     <button
       type="button"
       onClick={handleClick}
-      className={cl(scss.tag, isActive && scss.active)}
+      className={cl(
+        scss.tag,
+        (isActive || user_categories.length === 0) && scss.active
+      )}
     >
       {category.name}
     </button>

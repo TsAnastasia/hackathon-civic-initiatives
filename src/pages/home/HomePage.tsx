@@ -22,7 +22,9 @@ const HomePage = () => {
     setAllLoaded(true);
     setTimeout(() => {
       setAllInitiatives(
-        initiativesAPI.getIntiatives({ categories: user_categories })
+        initiativesAPI.getIntiatives({
+          categories: user_categories.length > 0 ? user_categories : undefined,
+        })
       );
       setAllLoaded(false);
     }, TIMEOUT_API * 2);
@@ -33,7 +35,7 @@ const HomePage = () => {
       setUserInitatives(
         initiativesAPI.getIntiatives({
           userId: user.id,
-          categories: user_categories,
+          categories: user_categories.length > 0 ? user_categories : undefined,
         })
       );
       setUserLoaded(false);
