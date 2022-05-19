@@ -8,7 +8,7 @@ import { useAppSelector } from "../../hooks/redux";
 import { InitiativeCardData } from "../../types/initiative";
 import { TIMEOUT_API } from "../../utils/constants";
 
-const UserInitiativePage = () => {
+const AreaInitiativePage = () => {
   // TODO: add create intitiative button
   const [openInitatives, setOpenInitatives] = useState<
     InitiativeCardData[] | undefined
@@ -20,11 +20,11 @@ const UserInitiativePage = () => {
   const { user_categories, data: user } = useAppSelector((state) => state.user);
 
   useEffect(() => {
-    // API: get user initiatives
+    // API: get user area initiatives
     setLoaded(true);
     setTimeout(() => {
       const res = initiativesAPI.getIntiatives({
-        userId: user.id,
+        region: user.region,
         categories: user_categories.length > 0 ? user_categories : undefined,
         has_closed: true,
       });
@@ -36,7 +36,7 @@ const UserInitiativePage = () => {
 
   return (
     <>
-      <PageTitle>Мои инициативы</PageTitle>
+      <PageTitle>Мой район</PageTitle>
       <CategoriesSwitcher />
       <InitiativesList
         initiatives={openInitatives}
@@ -53,4 +53,4 @@ const UserInitiativePage = () => {
   );
 };
 
-export default UserInitiativePage;
+export default AreaInitiativePage;

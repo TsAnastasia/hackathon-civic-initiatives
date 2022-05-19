@@ -6,7 +6,9 @@ const HomePage = lazy(() => import("../pages/home/HomePage"));
 const UserInitiativePage = lazy(
   () => import("../pages/userInitiatives/UserInitiativePage")
 );
-const ListPage = lazy(() => import("../pages/list/ListPage"));
+const AreaInitiativePage = lazy(
+  () => import("../pages/areaInitiatives/AreaInitiativePage")
+);
 const CreatePage = lazy(() => import("../pages/create/CreatePage"));
 const InitiativePage = lazy(() => import("../pages/initiative/InitiativePage"));
 
@@ -30,7 +32,7 @@ export const router: RouteObject[] = [
     children: [
       { index: true, element: <Navigate to={goToPage.home} replace={true} /> },
       { path: AppRoutes.PERSONAL, element: <UserInitiativePage /> },
-      { path: AppRoutes.AREA, element: <ListPage /> },
+      { path: AppRoutes.AREA, element: <AreaInitiativePage /> },
       { path: AppRoutes.SINGLE, element: <InitiativePage /> },
     ],
   },

@@ -14,6 +14,7 @@ export interface UserData {
   area: string;
   avatar?: string;
   notifications_count?: number;
+  region?: string;
 }
 
 export type UserEditData = {

@@ -67,6 +67,7 @@ export const users: UserData[] = [
 export const userAPI: { getMe: () => UserData } = {
   getMe: () => ({
     ...users[0],
+    region: "spb",
     notifications_count: notifications.filter((i) => i.readed).length,
   }),
 };
