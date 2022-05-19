@@ -1,0 +1,38 @@
+.root {
+  margin: 10px auto;
+
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.button {
+  padding: 14px 36px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+
+  outline: 0;
+  border: 1px solid #19488e;
+  border-radius: 8px;
+  background: #19488e;
+  color: #fff;
+
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    box-shadow: 0px 3px 15px rgba(0, 75, 118, 0.15);
+  }
+
+  &:active {
+    border-color: #97b2df;
+    background-color: #97b2df;
+    color: #ffffff;
+  }
+}

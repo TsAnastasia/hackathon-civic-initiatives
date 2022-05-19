@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { initiativesAPI } from "../../API-data/iniitiatives/inititiativesAPI";
 import CategoriesSwitcher from "../../components/CategoriesSwitcher/CategoriesSwitcher";
+import CreateInitiativeButton from "../../components/CreateInitiativeButton/CreateInitiativeButton";
 import InitiativesList from "../../components/InitiativesList/InitiativesList";
 import { useAppSelector } from "../../hooks/redux";
 import { InitiativeCardData } from "../../types/initiative";
@@ -42,6 +43,7 @@ const HomePage = () => {
         title="Мои инициативы"
         loaded={userLoaded}
       />
+      <CreateInitiativeButton />
     </>
   );
 };
