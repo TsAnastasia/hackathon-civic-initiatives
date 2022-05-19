@@ -40,9 +40,8 @@ const InitiativeData: FC<{ initiative: Initiative }> = ({ initiative }) => {
           ))}
         </ul>
       ) : (
-        // TODO: style
         <div>
-          <p>Нет изображений</p>
+          <p className={scss.message}>Нет изображений</p>
         </div>
       )}
       <div className={scss.description}>

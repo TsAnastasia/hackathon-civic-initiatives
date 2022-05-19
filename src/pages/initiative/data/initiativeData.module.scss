@@ -174,3 +174,15 @@
     animation: rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   }
 }
+
+.message {
+  margin: 20px 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+
+  color: #b6bbcc;
+}

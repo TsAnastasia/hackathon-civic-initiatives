@@ -1,6 +1,7 @@
 import cl from "classnames";
 import { FC, useState } from "react";
 import IconButton from "../../../../components/UI/buttons/IconButton/IconButton";
+import { useAppSelector } from "../../../../hooks/redux";
 import { useForm } from "../../../../hooks/useForm";
 import { Comment } from "../../../../types/initiative";
 import { TIMEOUT_API } from "../../../../utils/constants";
@@ -11,6 +12,7 @@ const InitiativeCommentsForm: FC<{
   onSubmit: (newComment: Comment) => void;
 }> = ({ onSubmit }) => {
   const [loaded, setLoaded] = useState(false);
+  const { data: user } = useAppSelector((state) => state.user);
 
   const { values, handleChange, handleSubmit, isValid, resetForm } = useForm<{
     text: string;
@@ -21,8 +23,7 @@ const InitiativeCommentsForm: FC<{
       setTimeout(() => {
         onSubmit({
           id: `${Math.random()}`,
-          // TODO: from storage
-          author: { id: `${Math.random()}`, fullName: "current user" },
+          author: user,
           text: values.text,
           date: `${new Date().toJSON()}`,
         });
@@ -48,6 +49,7 @@ const InitiativeCommentsForm: FC<{
         disabled={loaded}
         className={scss.input}
         multiple
+        autoComplete="off"
       />
 
       <IconButton

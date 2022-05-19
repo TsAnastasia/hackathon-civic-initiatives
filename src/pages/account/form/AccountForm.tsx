@@ -38,7 +38,13 @@ const AccountForm = () => {
         setLoaded(true);
         setTimeout(() => {
           // API: change user data
-          dispatch(setUserData({ ...data, ...values }));
+          dispatch(
+            setUserData({
+              ...data,
+              ...values,
+              fullName: `${values.name} ${values.lastName}`,
+            })
+          );
           setDisabled(true);
           setLoaded(false);
         }, 500);
