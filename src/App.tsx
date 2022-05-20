@@ -1,8 +1,8 @@
 import { Suspense, useEffect } from "react";
 import { userAPI } from "./API-data/users/usersAPI";
 import scss from "./app.module.scss";
-import AppHeader from "./components/AppHeader/AppHeader";
 import Footer from "./components/Footer/Footer";
+import Header from "./components/header/Header";
 import Loader from "./components/Loader/Loader";
 import { useAppDispatch, useAppSelector } from "./hooks/redux";
 import { setUserData } from "./redux/userSlice/userSlice";
@@ -20,7 +20,7 @@ const App = () => {
 
   return (
     <div className={scss.app}>
-      <AppHeader />
+      <Header />
       <main className={scss.main}>
         <Suspense fallback={<Loader type="absolute" />}>
           <AppRouter />

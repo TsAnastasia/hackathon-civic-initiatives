@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import { useAppSelector } from "../../../../hooks/redux";
 import { goToPage } from "../../../../router/routes";
-import scss from "./appHeaderMenuNotifications.module.scss";
+import scss from "./headerMenuNotifications.module.scss";
 
-const AppHeaderMenuNotifications = () => {
+const HeaderMenuNotifications = () => {
   const { notifications_count } = useAppSelector((state) => state.user.data);
 
   return notifications_count ? (
@@ -15,4 +15,4 @@ const AppHeaderMenuNotifications = () => {
   );
 };
 
-export default AppHeaderMenuNotifications;
+export default HeaderMenuNotifications;

@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 import { goToPage } from "../../../router/routes";
 import Modal from "../../Modal/Modal";
 import IconButton from "../../UI/buttons/IconButton/IconButton";
-import scss from "./appHeaderMenu.module.scss";
-import AppHeaderMenuNotifications from "./notifications/AppHeaderMenuNotifications";
+import scss from "./headerMenu.module.scss";
+import AppHeaderMenuNotifications from "./notifications/HeaderMenuNotifications";
 
 const menuItems: { name: string; link: string; additional?: ReactNode }[] = [
   {
@@ -19,7 +19,7 @@ const menuItems: { name: string; link: string; additional?: ReactNode }[] = [
   { name: "Информация", link: goToPage.info },
 ];
 
-const AppHeaderMenu = () => {
+const HeaderMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
@@ -57,4 +57,4 @@ const AppHeaderMenu = () => {
   );
 };
 
-export default AppHeaderMenu;
+export default HeaderMenu;

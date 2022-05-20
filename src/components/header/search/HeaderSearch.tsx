@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToPage } from "../../../router/routes";
 import IconButton from "../../UI/buttons/IconButton/IconButton";
-import scss from "./appHeaderSearch.module.scss";
+import scss from "./headerSearch.module.scss";
 
-const AppHeaderSearch = () => {
+const HeaderSearch = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [search, setSearch] = useState("");
   const navigate = useNavigate();
@@ -62,4 +62,4 @@ const AppHeaderSearch = () => {
   );
 };
 
-export default AppHeaderSearch;
+export default HeaderSearch;

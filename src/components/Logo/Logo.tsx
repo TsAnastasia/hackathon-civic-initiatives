@@ -1,4 +1,4 @@
-const AppLogo = () => (
+const Logo = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" fill="none">
     <path
       stroke="#092147"
@@ -11,4 +11,4 @@ const AppLogo = () => (
   </svg>
 );
 
-export default AppLogo;
+export default Logo;
