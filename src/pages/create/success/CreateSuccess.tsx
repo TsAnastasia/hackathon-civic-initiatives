@@ -5,6 +5,7 @@ import scss from "./createSuccess.module.scss";
 
 const CreateSuccess = () => {
   const { create_data } = useAppSelector((state) => state.initiatives);
+  const { data: user } = useAppSelector((state) => state.user);
 
   const initiative: InitiativeCardData = {
     id: `new-initiative`,
@@ -14,6 +15,7 @@ const CreateSuccess = () => {
     images: [],
     type: create_data.type,
     status: "considered",
+    author: user,
   };
 
   return (

@@ -50,6 +50,7 @@ export interface InitiativeCardData {
   images: string[];
   type: InitiativeTypeType;
   status: InitiativeStatusType;
+  author: User;
 }
 
 export type InitiativeCreateData = {

@@ -1,0 +1,76 @@
+@keyframes search {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(240deg) scale(1.2);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.root {
+  margin: 25px 20px 0;
+}
+
+.title {
+  margin: 0 0 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+
+  color: #19488e;
+}
+
+.form {
+  padding: 12px 16px;
+
+  background-color: #e2e4eb;
+  outline: 0;
+  border: 0;
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+}
+.input {
+  margin: 0;
+  padding: 0;
+
+  font-size: 16px;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+
+  color: #737a92;
+  outline: 0;
+  border: 0;
+  background-color: transparent;
+  border-radius: 0;
+
+  flex: 1;
+
+  &::placeholder {
+    color: #b6bbcc;
+  }
+}
+
+.submit {
+  background-image: url("../../../assets/images/icons/search.svg");
+  transform-origin: center;
+
+  &:hover:not(:disabled) {
+    animation: search 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+}
+
+.loaded {
+  .submit {
+    animation: search 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  }
+}
