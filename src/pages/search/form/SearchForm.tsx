@@ -1,17 +1,19 @@
 import cl from "classnames";
 import { FC } from "react";
+import { useSearchParams } from "react-router-dom";
 import IconButton from "../../../components/UI/buttons/IconButton/IconButton";
 import { useForm } from "../../../hooks/useForm";
 import scss from "./searchForm.module.scss";
 
 const SearchForm: FC<{ loaded: boolean }> = ({ loaded }) => {
-  const { values, handleChange, handleSubmit, isValid, resetForm } = useForm<{
-    text: string;
-  }>({
-    defaultValues: { text: "" },
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const { values, handleChange, handleSubmit, isValid } = useForm({
+    defaultValues: { text: searchParams.get("text") || "" },
     onSubmit: (values) => {
-      console.log(values);
-      resetForm();
+      // console.log(values);
+      setSearchParams(values);
+      // resetForm();
     },
     // validationScheme,
     // validateOnMount: true,
@@ -37,6 +39,7 @@ const SearchForm: FC<{ loaded: boolean }> = ({ loaded }) => {
           autoComplete="off"
         />
 
+        {/* TODO: create component */}
         <IconButton
           type="submit"
           disabled={loaded || !isValid}

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { initiativesAPI } from "../../API-data/iniitiatives/inititiativesAPI";
 import CategoriesSwitcher from "../../components/CategoriesSwitcher/CategoriesSwitcher";
 import CreateInitiativeButton from "../../components/CreateInitiativeButton/CreateInitiativeButton";
@@ -11,6 +12,8 @@ import SearchForm from "./form/SearchForm";
 
 const SearchPage = () => {
   useDocTitle("Поиск");
+  const [searchParams] = useSearchParams();
+  const searchText = searchParams.get("text");
   const [intiatives, setInitiatives] = useState<
     InitiativeCardData[] | undefined
   >(undefined);
@@ -22,17 +25,20 @@ const SearchPage = () => {
   } = useAppSelector((state) => state.user);
 
   useEffect(() => {
-    setLoaded(true);
-    setTimeout(() => {
-      // TODO: search initiatives
-      const res = initiativesAPI.getIntiatives({
-        categories: user_categories.length > 0 ? user_categories : undefined,
-        has_closed: !settings.searchOnlyOpen,
-      });
-      setInitiatives(res);
-      setLoaded(false);
-    }, TIMEOUT_API);
-  }, [user_categories, settings]);
+    if (searchText) {
+      setLoaded(true);
+      setTimeout(() => {
+        // TODO: search initiatives
+        const res = initiativesAPI.searchInitiatives({
+          categories: user_categories.length > 0 ? user_categories : undefined,
+          has_closed: !settings.searchOnlyOpen,
+          text: searchText,
+        });
+        setInitiatives(res);
+        setLoaded(false);
+      }, TIMEOUT_API);
+    }
+  }, [user_categories, settings, searchText]);
 
   return (
     <>
