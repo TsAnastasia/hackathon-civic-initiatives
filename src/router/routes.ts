@@ -15,7 +15,7 @@ export enum AppRoutes {
 
 export const goToPage = {
   home: AppRoutes.HOME,
-  search: AppRoutes.SEARCH,
+  search: (text: string) => `${AppRoutes.SEARCH}?text=${text}`,
   create: AppRoutes.CREATE,
   initiative: (initiativeId: string) =>
     `${AppRoutes.INITIATIVES}/${initiativeId}`,

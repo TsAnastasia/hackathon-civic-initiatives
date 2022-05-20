@@ -27,7 +27,7 @@ const AppHeaderSearch = () => {
     if (!search) return;
     setIsOpen(false);
     setSearch("");
-    navigate(goToPage.search);
+    navigate(goToPage.search(search));
   };
 
   return (
