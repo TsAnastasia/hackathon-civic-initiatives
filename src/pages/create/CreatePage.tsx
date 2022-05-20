@@ -4,6 +4,7 @@ import { categoriesAPI } from "../../API-data/categories/categoriesAPI";
 import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 import Loader from "../../components/Loader/Loader";
 import { useAppDispatch } from "../../hooks/redux";
+import { useDocTitle } from "../../hooks/useDocTitle";
 import { clearCreateData } from "../../redux/initiativesSlice/initiativesSlice";
 import { goToPage } from "../../router/routes";
 import { Category } from "../../types/categories";
@@ -15,6 +16,7 @@ import CreateCategory from "./intro/CreateCategory";
 import CreateSuccess from "./success/CreateSuccess";
 
 const CreatePage = () => {
+  useDocTitle("Создание инициативы");
   const [params] = useSearchParams();
   const category = params.get("category");
   const dispatch = useAppDispatch();

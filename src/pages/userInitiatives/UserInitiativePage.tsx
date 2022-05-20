@@ -5,11 +5,12 @@ import CreateInitiativeButton from "../../components/CreateInitiativeButton/Crea
 import InitiativesList from "../../components/InitiativesList/InitiativesList";
 import PageTitle from "../../components/PageTitle/PageTitle";
 import { useAppSelector } from "../../hooks/redux";
+import { useDocTitle } from "../../hooks/useDocTitle";
 import { InitiativeCardData } from "../../types/initiative";
 import { TIMEOUT_API } from "../../utils/constants";
 
 const UserInitiativePage = () => {
-  // TODO: add create intitiative button
+  useDocTitle("Мои инициативы");
   const [openInitatives, setOpenInitatives] = useState<
     InitiativeCardData[] | undefined
   >(undefined);
