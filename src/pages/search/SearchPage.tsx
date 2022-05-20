@@ -30,7 +30,7 @@ const SearchPage = () => {
     if (searchText) {
       setLoaded(true);
       setTimeout(() => {
-        // TODO: search initiatives
+        // API: search initiatives
         const res = initiativesAPI.searchInitiatives({
           categories: user_categories.length > 0 ? user_categories : undefined,
           has_closed: !settings.searchOnlyOpen,

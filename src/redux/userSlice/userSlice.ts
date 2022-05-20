@@ -6,7 +6,7 @@ import { UserData } from "../../types/users";
 const defaultSettings: UserSettings = {
   showClosed: true,
   showOnlyMine: false,
-  searchOnlyOpen: false, // TODO: change app from settings
+  searchOnlyOpen: false,
 };
 
 const initialState = {

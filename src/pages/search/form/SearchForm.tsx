@@ -13,11 +13,13 @@ const SearchForm: FC<{ loaded: boolean }> = ({ loaded }) => {
     onSubmit: (values) => {
       // console.log(values);
       setSearchParams(values);
-      // resetForm();
     },
-    // validationScheme,
-    // validateOnMount: true,
-    // TODO: validate
+    validationScheme: {
+      // TODO: fix type problem
+      text: (value: string | boolean) =>
+        !value ? "Обязательное поле" : undefined,
+    },
+    validateOnMount: true,
   });
 
   return (
