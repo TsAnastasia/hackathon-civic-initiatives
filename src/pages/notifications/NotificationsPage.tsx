@@ -1,15 +1,13 @@
 import { useCallback, useEffect, useState } from "react";
 import { notificationsAPI } from "../../API-data/notifications/notificationsAPI";
 import Loader from "../../components/Loader/Loader";
-import { useDocTitle } from "../../hooks/useDocTitle";
+import PageTitle from "../../components/PageTitle/PageTitle";
 import { UserNotification } from "../../types/notification";
 import { TIMEOUT_API } from "../../utils/constants";
 import NotificationsItem from "./item/NotificationsItem";
 import scss from "./notificationPage.module.scss";
 
 const NotificationsPage = () => {
-  useDocTitle("Уведомления");
-
   const [notifications, setNotifications] = useState<
     undefined | UserNotification[]
   >(undefined);
@@ -31,7 +29,7 @@ const NotificationsPage = () => {
 
   return (
     <section className={scss.section}>
-      <h1 className={scss.title}>УВЕДОМЛЕНИЯ</h1>
+      <PageTitle className={scss.title}>УВЕДОМЛЕНИЯ</PageTitle>
       {notifications ? (
         <ul className={scss.list}>
           {notifications.map((notification) => (

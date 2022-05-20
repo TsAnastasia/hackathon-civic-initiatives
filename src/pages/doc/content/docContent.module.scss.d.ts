@@ -3,7 +3,6 @@ declare namespace DocContentModuleScssNamespace {
     doc: string;
     page: string;
     panel: string;
-    title: string;
   }
 }
 

@@ -63,7 +63,7 @@ const CreateForm: FC<{
 
   return (
     <section className={scss.root}>
-      <h1 className={scss.title}>Создание инициативы</h1>
+      <h2 className={scss.title}>Создание инициативы</h2>
       <form onSubmit={handleSubmit} className={scss.form}>
         <p className={scss.category}>{`КАТЕГОРИЯ: ${category.name}`}</p>
         <TextField

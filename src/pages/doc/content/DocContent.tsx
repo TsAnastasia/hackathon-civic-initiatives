@@ -1,6 +1,7 @@
 import { FC, useState } from "react";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack5";
 import Loader from "../../../components/Loader/Loader";
+import PageTitle from "../../../components/PageTitle/PageTitle";
 
 import { Doc } from "../../../types/doc";
 import scss from "./docContent.module.scss";
@@ -38,7 +39,7 @@ const DocContent: FC<{ doc: Doc }> = ({ doc }) => {
 
   return (
     <>
-      <h1 className={scss.title}>{doc.title}</h1>
+      <PageTitle>{doc.title}</PageTitle>
       <div className={scss.panel}>
         <DocContentScale
           scale={scale}

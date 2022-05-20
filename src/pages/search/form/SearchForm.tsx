@@ -1,6 +1,7 @@
 import cl from "classnames";
 import { FC } from "react";
 import { useSearchParams } from "react-router-dom";
+import PageTitle from "../../../components/PageTitle/PageTitle";
 import IconButton from "../../../components/UI/buttons/IconButton/IconButton";
 import { useForm } from "../../../hooks/useForm";
 import scss from "./searchForm.module.scss";
@@ -24,7 +25,7 @@ const SearchForm: FC<{ loaded: boolean }> = ({ loaded }) => {
 
   return (
     <section className={scss.root}>
-      <h1 className={scss.title}>Поиск</h1>
+      <PageTitle className={scss.title}>Поиск</PageTitle>
       <form
         onSubmit={handleSubmit}
         className={cl(scss.form, loaded && scss.loaded)}

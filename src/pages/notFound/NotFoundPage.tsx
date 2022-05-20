@@ -1,16 +1,14 @@
 import { FC } from "react";
 import scss from "./notFoundPage.module.scss";
 import NotFoundImage from "../../assets/images/notFound.svg";
-import { useDocTitle } from "../../hooks/useDocTitle";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const NotFoundPage: FC<{ title?: string }> = ({
   title = "Страница не найдена",
 }) => {
-  useDocTitle(title);
-
   return (
     <section className={scss.root}>
-      <h1 className={scss.title}>{title}</h1>
+      <PageTitle className={scss.title}>{title}</PageTitle>
       <img src={NotFoundImage} alt="not found" className={scss.image} />
     </section>
   );

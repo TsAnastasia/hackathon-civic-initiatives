@@ -1,19 +1,16 @@
 import { useState } from "react";
 import Loader from "../../components/Loader/Loader";
+import PageTitle from "../../components/PageTitle/PageTitle";
 import AppButton from "../../components/UI/buttons/AppButton/AppButton";
 import Checkbox from "../../components/UI/inputs/Checkbox/Checkbox";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-
-import { useDocTitle } from "../../hooks/useDocTitle";
 import { useForm } from "../../hooks/useForm";
 import { setUserSettings } from "../../redux/userSlice/userSlice";
 import { settingNames, UserSetting } from "../../types/settings";
 import { TIMEOUT_API } from "../../utils/constants";
-
 import scss from "./settingPage.module.scss";
 
 const SettingsPage = () => {
-  useDocTitle("Настройки");
   const { settings } = useAppSelector((state) => state.user);
   const dispatch = useAppDispatch();
   const [loaded, setLoaded] = useState(false);
@@ -32,7 +29,7 @@ const SettingsPage = () => {
 
   return (
     <section className={scss.section}>
-      <h1 className={scss.title}>Настройки</h1>
+      <PageTitle className={scss.title}>Настройки</PageTitle>
       <form onSubmit={handleSubmit} className={scss.form}>
         {(Object.keys(settings) as [UserSetting]).map((set) => (
           <Checkbox

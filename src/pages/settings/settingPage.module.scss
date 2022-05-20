@@ -1,5 +1,9 @@
 .section {
   padding: 25px 20px;
+
+  .title {
+    margin: 0;
+  }
 }
 
 .form {
@@ -10,18 +14,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-}
-
-.title {
-  margin: 0;
-
-  font-size: "Roboto";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 28px;
-  line-height: 32px;
-
-  color: #19488e;
 }
 
 .item {

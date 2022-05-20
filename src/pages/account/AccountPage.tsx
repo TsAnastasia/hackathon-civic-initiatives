@@ -4,17 +4,16 @@ import { goToPage } from "../../router/routes";
 import AccountForm from "./form/AccountForm";
 import scss from "./accountPage.module.scss";
 import AccountAvatar from "./avatar/AccountAvatar";
-import { useDocTitle } from "../../hooks/useDocTitle";
 import { useAppSelector } from "../../hooks/redux";
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const AccountPage = () => {
-  useDocTitle("Личный кабинет");
   const { notifications_count } = useAppSelector((state) => state.user.data);
 
   return (
     <>
       <section className={scss.section}>
-        <h1 className={scss.title}>Личный кабинет</h1>
+        <PageTitle className={scss.title}>Личный кабинет</PageTitle>
         <div className={scss.container}>
           <Link
             to={goToPage.settings}

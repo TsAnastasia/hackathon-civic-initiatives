@@ -22,7 +22,7 @@ const CreateCategory: FC<{ onMount: () => void }> = ({ onMount }) => {
   return (
     <>
       <section className={scss.root}>
-        <h1 className={scss.title}>Выберите категорию</h1>
+        <h2 className={scss.title}>Выберите категорию</h2>
         {categories ? (
           <ol className={scss.list}>
             {categories.map((category) => (

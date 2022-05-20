@@ -5,15 +5,12 @@ import CategoriesSwitcher from "../../components/CategoriesSwitcher/CategoriesSw
 import CreateInitiativeButton from "../../components/CreateInitiativeButton/CreateInitiativeButton";
 import InitiativesList from "../../components/InitiativesList/InitiativesList";
 import { useAppSelector } from "../../hooks/redux";
-import { useDocTitle } from "../../hooks/useDocTitle";
 import { InitiativeCardData } from "../../types/initiative";
 import { TIMEOUT_API } from "../../utils/constants";
 import SearchForm from "./form/SearchForm";
-
 import scss from "./searchPage.module.scss";
 
 const SearchPage = () => {
-  useDocTitle("Поиск");
   const [searchParams] = useSearchParams();
   const searchText = searchParams.get("text");
   const [intiatives, setInitiatives] = useState<

@@ -8,7 +8,7 @@ const CreateError: FC<{ onBack: () => void; onRepeat: () => void }> = ({
 }) => {
   return (
     <section className={scss.root}>
-      <h1 className={scss.title}>Что-то пошло не так</h1>
+      <h2 className={scss.title}>Что-то пошло не так</h2>
       <div className={scss.message}>
         <p className={scss.text}>Произошла ошибка при создании инициативы.</p>
         <p className={scss.text}>Попробуйте повторно отправить данные.</p>
