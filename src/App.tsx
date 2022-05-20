@@ -1,8 +1,8 @@
 import { Suspense, useEffect } from "react";
 import { userAPI } from "./API-data/users/usersAPI";
 import scss from "./app.module.scss";
-import AppFooter from "./components/AppFooter/AppFooter";
 import AppHeader from "./components/AppHeader/AppHeader";
+import Footer from "./components/Footer/Footer";
 import Loader from "./components/Loader/Loader";
 import { useAppDispatch, useAppSelector } from "./hooks/redux";
 import { setUserData } from "./redux/userSlice/userSlice";
@@ -26,7 +26,7 @@ const App = () => {
           <AppRouter />
         </Suspense>
       </main>
-      <AppFooter />
+      <Footer />
     </div>
   );
 };

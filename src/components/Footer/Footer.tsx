@@ -1,7 +1,7 @@
 import { AUTHOR_LINK } from "../../utils/constants";
-import scss from "./appFooter.module.scss";
+import scss from "./footer.module.scss";
 
-const AppFooter = () => {
+const Footer = () => {
   return (
     <footer className={scss.footer}>
       <p className={scss.copyright}>
@@ -20,4 +20,4 @@ const AppFooter = () => {
   );
 };
 
-export default AppFooter;
+export default Footer;
