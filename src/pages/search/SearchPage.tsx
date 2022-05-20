@@ -10,6 +10,8 @@ import { InitiativeCardData } from "../../types/initiative";
 import { TIMEOUT_API } from "../../utils/constants";
 import SearchForm from "./form/SearchForm";
 
+import scss from "./searchPage.module.scss";
+
 const SearchPage = () => {
   useDocTitle("Поиск");
   const [searchParams] = useSearchParams();
@@ -44,14 +46,22 @@ const SearchPage = () => {
     <>
       <SearchForm loaded={loaded} />
       <CategoriesSwitcher />
-      <InitiativesList initiatives={intiatives} loaded={loaded} />
-      <InitiativesList
-        initiatives={
-          intiatives?.filter((i) => i.author.id === user.id) || undefined
-        }
-        loaded={loaded}
-        title="Мои инициативы"
-      />
+      {searchText ? (
+        <>
+          <InitiativesList initiatives={intiatives} loaded={loaded} />
+          <InitiativesList
+            initiatives={
+              intiatives?.filter((i) => i.author.id === user.id) || undefined
+            }
+            loaded={loaded}
+            title="Мои инициативы"
+          />
+        </>
+      ) : (
+        <section className={scss.section}>
+          <p className={scss.message}>Введите текст и начните поиск</p>
+        </section>
+      )}
       <CreateInitiativeButton />
     </>
   );

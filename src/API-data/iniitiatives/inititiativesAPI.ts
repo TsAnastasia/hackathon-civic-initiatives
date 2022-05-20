@@ -25,13 +25,16 @@ export const initiativesAPI: {
     ),
   getIntiative: (id) => initiatives.find((i) => i.id === id),
   searchInitiatives: ({ categories, has_closed = false, text }) => {
-    const searchText = text.toLocaleLowerCase();
+    const search = text.toLocaleLowerCase().split(" ");
     return initiatives.filter(
       (item) =>
         ((categories && categories.includes(item.category)) || !categories) &&
         ((!has_closed && item.status !== "closed") || has_closed) &&
-        (item.title.toLocaleLowerCase().includes(searchText) ||
-          item.description.toLocaleLowerCase().includes(searchText))
+        search.some(
+          (word) =>
+            item.title.toLocaleLowerCase().includes(word) ||
+            item.description.toLocaleLowerCase().includes(word)
+        )
     );
   },
 };
