@@ -71,48 +71,6 @@
   background-position: center left;
 }
 
-.list {
-  margin: 0 -20px;
-  padding: 20px;
-
-  list-style: none;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: flex-start;
-  gap: 16px;
-
-  overflow: auto;
-
-  &::-webkit-scrollbar {
-    height: 4px;
-    border-radius: 99rem;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 99rem;
-    background-color: #737a92;
-  }
-
-  &::-webkit-scrollbar-track {
-    margin: 20px;
-    border-radius: 99rem;
-  }
-
-  .image {
-    width: 180px;
-    height: 120px;
-
-    border-radius: 8px;
-
-    object-fit: cover;
-    object-position: center;
-
-    &:hover {
-      box-shadow: 0px 0px 15px 5px rgba(0, 75, 118, 0.15);
-    }
-  }
-}
-
 .description {
   margin: 0;
   padding: 16px;
@@ -173,16 +131,4 @@
   &:hover {
     animation: rotate 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
   }
-}
-
-.message {
-  margin: 20px 0;
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 20px;
-
-  color: #b6bbcc;
 }

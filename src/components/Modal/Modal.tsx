@@ -9,7 +9,15 @@ const Modal: FC<{
   isOpen: boolean;
   onClose: () => void;
   hasCloseIcon?: boolean;
-}> = ({ children, className, isOpen, onClose, hasCloseIcon = false }) => {
+  position?: "absolute" | "center";
+}> = ({
+  children,
+  className,
+  isOpen,
+  onClose,
+  hasCloseIcon = false,
+  position = "absolute",
+}) => {
   return (
     <>
       <div
@@ -22,6 +30,7 @@ const Modal: FC<{
           scss.content,
           isOpen && scss.content_open,
           hasCloseIcon && scss.has_icon,
+          position === "center" && scss.center,
           className
         )}
       >

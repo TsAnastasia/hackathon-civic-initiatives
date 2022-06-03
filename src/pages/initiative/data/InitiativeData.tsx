@@ -5,6 +5,7 @@ import IconButton from "../../../components/UI/buttons/IconButton/IconButton";
 import { Initiative } from "../../../types/initiative";
 import { formatDateFromString } from "../../../utils/date";
 import InitiativeDataFiles from "./files/InitiativeDataFiles";
+import InitiativeDataImages from "./images/InitiativeDataImages";
 import scss from "./initiativeData.module.scss";
 import InitiativeDataLike from "./like/InitiativeDataLike";
 
@@ -30,20 +31,7 @@ const InitiativeData: FC<{ initiative: Initiative }> = ({ initiative }) => {
         </div>
       </div>
       <p className={scss.adress}>{initiative.area.adress}</p>
-      {initiative.images.length > 0 ? (
-        <ul className={scss.list}>
-          {initiative.images.map((image) => (
-            <li key={image}>
-              {/* TODO: open modal */}
-              <img src={image} alt={initiative.title} className={scss.image} />
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <div>
-          <p className={scss.message}>Нет изображений</p>
-        </div>
-      )}
+      <InitiativeDataImages initiative={initiative} />
       <div className={scss.description}>
         {initiative.description.split("\n").map((i) => (
           <p key={i} className={scss.text}>

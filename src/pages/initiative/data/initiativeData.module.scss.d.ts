@@ -4,10 +4,7 @@ declare namespace InitiativeDataModuleScssNamespace {
     bold: string;
     buttons: string;
     description: string;
-    image: string;
     info: string;
-    list: string;
-    message: string;
     rotate: string;
     row: string;
     section: string;
