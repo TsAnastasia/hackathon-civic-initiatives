@@ -1,4 +1,4 @@
-# React Typescript SCSS Template
+# Hackathon Civic Initiative
 
 <!-- TODO: edit -->
 
@@ -6,6 +6,23 @@ This project was created as a template for React projects in Typescript using SA
 Before every commit your app will be checked for lint errors and formatted with Prettier.
 
 Run 'npm i' | 'yarn' to install all dependencies.
+
+## Using techonologies
+
+### Packages
+
+- `React` \
+- `Redux` \
+- `Redux Persist` \
+- `Eslint` & `Prettier` \
+- `Lint-Staged` \
+- `Sass` \
+
+### Tools
+
+- Forms - custom hook `useForm`;
+- Doc title - custom hook `useDocTitle`;
+- Popups - custom component `Modal`;
 
 ## Available Scripts
 
