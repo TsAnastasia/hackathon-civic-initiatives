@@ -39,7 +39,6 @@ const InitiativeDataImages: FC<{ initiative: Initiative }> = ({
           <ul className={scss.list}>
             {initiative.images.map((image, index) => (
               <li key={image}>
-                {/* TODO: open modal */}
                 <img
                   src={image}
                   alt={initiative.title}

@@ -42,7 +42,6 @@ const SearchForm: FC<{ loaded: boolean }> = ({ loaded }) => {
           autoComplete="off"
         />
 
-        {/* TODO: create component */}
         <IconButton
           type="submit"
           disabled={loaded || !isValid}
