@@ -2,7 +2,7 @@ import { Suspense, useEffect } from "react";
 import { userAPI } from "./API-data/users/usersAPI";
 import scss from "./app.module.scss";
 import Footer from "./components/Footer/Footer";
-import Header from "./components/header/Header";
+import Header from "./components/Header/Header";
 import Loader from "./components/Loader/Loader";
 import { useAppDispatch, useAppSelector } from "./hooks/redux";
 import { setUserData } from "./redux/userSlice/userSlice";
