@@ -1,5 +1,6 @@
 import { AUTHOR_LINK } from "../../utils/constants";
 import scss from "./footer.module.scss";
+import FooterInfo from "./info/FooterInfo";
 
 const Footer = () => {
   return (
@@ -16,6 +17,7 @@ const Footer = () => {
         </a>
         {` ${new Date().getFullYear()}`}
       </p>
+      <FooterInfo />
     </footer>
   );
 };

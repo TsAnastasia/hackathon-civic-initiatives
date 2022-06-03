@@ -12,10 +12,12 @@ import {
 import storage from "redux-persist/es/storage";
 import userReducer from "./userSlice/userSlice";
 import initiativesReducer from "./initiativesSlice/initiativesSlice";
+import appReducer from "./app/appSlice";
 
 const rootReducer = combineReducers({
   user: userReducer,
   initiatives: initiativesReducer,
+  app: appReducer,
 });
 
 const persistConfig = {
