@@ -3,8 +3,8 @@
 This project was created as an example of the author's ability to create an application interface.\
 It does not have a server part, all data is stored in local storage.\
 
-**Author**: [Anastasia Tsibernaja](https://github.com/TsAnastasia), 2022г.
-**Maket**: [Figma](https://www.figma.com/file/FOmKehLlw8bP4Jzm3R947E/Hackathon-2025?node-id=852%3A315)
+**Author**: [Anastasia Tsibernaja](https://github.com/TsAnastasia), 2022г.\
+**Maket**: [Figma](https://www.figma.com/file/FOmKehLlw8bP4Jzm3R947E/Hackathon-2025?node-id=852%3A315)\
 **Try**: [Try](https://tsanastasia.github.io/hackathon-civic-initiatives)
 
 ## Using techonologies
