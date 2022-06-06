@@ -1,0 +1,21 @@
+.panel {
+  margin: 0 20px;
+
+  display: grid;
+  grid-auto-flow: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.doc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.page {
+  overflow: auto;
+}

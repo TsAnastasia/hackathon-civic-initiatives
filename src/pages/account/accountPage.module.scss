@@ -1,0 +1,85 @@
+@keyframes rotateSettings {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ringNotification {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg) scale(1.1);
+  }
+  50% {
+    transform: rotate(0deg) scale(1.2);
+  }
+
+  75% {
+    transform: rotate(15deg) scale(1.1);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.section {
+  margin: 0 20px;
+
+  .title {
+    margin: 25px 0 20px;
+  }
+}
+
+.container {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.link {
+  min-width: 50px;
+  min-height: 50px;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  &.settings {
+    background-image: url("../../assets/images/icons/setting.svg");
+    transform-origin: center;
+
+    &:hover {
+      animation: rotateSettings 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+  }
+
+  &.notification {
+    background-image: url("../../assets/images/icons/notification.svg");
+    transform-origin: center top;
+    position: relative;
+
+    &:hover {
+      animation: ringNotification 0.6s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+
+    &.active::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+      border: 1px solid #ffffff;
+      background-color: #ee4266;
+
+      position: absolute;
+      top: 3px;
+      right: 10px;
+    }
+  }
+}

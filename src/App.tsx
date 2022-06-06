@@ -1,34 +1,32 @@
-import AppHeader from "./components/AppHeader/AppHeader";
-import { NavLink } from "react-router-dom";
-import { goToPage } from "./utils/routes";
-import AppRoutes from "./components/AppRouter/AppRouter";
+import { Suspense, useEffect } from "react";
+import { userAPI } from "./API-data/users/usersAPI";
+import scss from "./app.module.scss";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
+import Loader from "./components/Loader/Loader";
+import { useAppDispatch, useAppSelector } from "./hooks/redux";
+import { setUserData } from "./redux/userSlice/userSlice";
+import AppRouter from "./router/AppRouter";
 
 const App = () => {
+  const dispatch = useAppDispatch();
+  const { auth } = useAppSelector((state) => state.user);
+
+  useEffect(() => {
+    // API: get user data
+    if (!auth) dispatch(setUserData(userAPI.getMe()));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
-    <div>
-      <AppHeader />
-      <main>
-        <AppRoutes />
+    <div className={scss.app}>
+      <Header />
+      <main className={scss.main}>
+        <Suspense fallback={<Loader type="absolute" />}>
+          <AppRouter />
+        </Suspense>
       </main>
-      <footer>
-        <ul>
-          {(Object.keys(goToPage) as Array<keyof typeof goToPage>).map(
-            (page) => (
-              <li key={`${page}`}>
-                <NavLink
-                  to={
-                    page !== "doc" && page !== "initiative"
-                      ? goToPage[page]
-                      : goToPage[page]("someid")
-                  }
-                >
-                  {page}
-                </NavLink>
-              </li>
-            )
-          )}
-        </ul>
-      </footer>
+      <Footer />
     </div>
   );
 };

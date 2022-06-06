@@ -1,0 +1,44 @@
+.root {
+  padding: 25px 20px;
+}
+
+.title {
+  margin: 0 0 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+
+  color: #19488e;
+}
+
+.message {
+  margin: 0 auto;
+  max-width: fit-content;
+}
+
+.text {
+  margin: 8px 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  color: #737a92;
+}
+
+.buttons {
+  margin: 30px auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .back {
+    margin-right: 40px;
+  }
+}

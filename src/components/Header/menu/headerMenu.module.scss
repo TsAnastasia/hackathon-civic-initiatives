@@ -1,0 +1,64 @@
+.root {
+  position: relative;
+}
+
+.button {
+  background-image: url("../../../assets/images/icons/menu.svg");
+}
+
+.modal {
+  left: 20px;
+  top: 100%;
+
+  transform-origin: 0 0;
+}
+
+.menu {
+  margin: 0;
+  padding: 0 8px;
+  min-width: 226px;
+
+  list-style: none;
+}
+
+.item {
+  padding: 8px 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: all 0.5s ease-in-out;
+
+  &:not(:last-child) {
+    border-bottom: 0.5px solid #e2e4eb;
+  }
+}
+
+.link {
+  flex: 1;
+  margin: 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-decoration: none;
+
+  color: #737a92;
+
+  transition: all 0.5s ease-in-out;
+
+  &.active {
+    color: #19488e;
+  }
+
+  &:hover {
+    transform: translate(8px, 0);
+
+    &:not(.active) {
+      color: #092147;
+    }
+  }
+}

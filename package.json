@@ -7,12 +7,21 @@
     "start": "webpack serve --config webpack/webpack.config.js --env env=dev",
     "build": "webpack --config webpack/webpack.config.js --env env=prod",
     "lint": "eslint --fix \"./src/**/*.{js,jsx,ts,tsx,json}\"",
-    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+    "format": "prettier --write \"./src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\"",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d prod"
   },
   "dependencies": {
+    "@fontsource/roboto": "^4.5.5",
+    "@reduxjs/toolkit": "^1.8.1",
+    "classnames": "^2.3.1",
+    "gh-pages": "^4.0.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-router-dom": "^6.3.0"
+    "react-pdf": "^5.7.2",
+    "react-redux": "^8.0.1",
+    "react-router-dom": "^6.3.0",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.7",
@@ -22,6 +31,8 @@
     "@teamsupercell/typings-for-css-modules-loader": "^2.5.1",
     "@types/react": "^18.0.5",
     "@types/react-dom": "^18.0.1",
+    "@types/react-pdf": "^5.7.0",
+    "@types/redux-persist": "^4.3.1",
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "babel-loader": "^8.2.3",
@@ -40,6 +51,7 @@
     "husky": "4",
     "lint-staged": "^12.3.6",
     "node-sass": "^7.0.1",
+    "normalize.css": "^8.0.1",
     "prettier": "^2.6.0",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",

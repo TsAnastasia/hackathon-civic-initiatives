@@ -1,3 +1,10 @@
-h1 {
-  color: orange;
+@import "~normalize.css/normalize.css";
+@import "~@fontsource/roboto/400.css";
+@import "~@fontsource/roboto/500.css";
+@import "~@fontsource/roboto/700.css";
+
+body {
+  font-family: "Roboto", "Arial", "Helvetica", sans-serif;
+  color: #737a92;
+  background-color: #f2f4f6;
 }

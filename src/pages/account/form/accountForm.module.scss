@@ -1,0 +1,25 @@
+.form {
+  margin: 0 auto;
+  max-width: 350px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.title {
+  margin: 20px auto;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 22px;
+
+  color: #1d1d1f;
+}
+
+.button {
+  margin: 4px 0;
+}

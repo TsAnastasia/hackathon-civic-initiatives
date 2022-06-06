@@ -1,0 +1,22 @@
+.section {
+  padding: 25px 20px;
+
+  .title {
+    margin: 0;
+  }
+}
+
+.form {
+  margin: 20px auto;
+  max-width: 550px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.item {
+  margin: 0 0 16px;
+  width: 100%;
+}

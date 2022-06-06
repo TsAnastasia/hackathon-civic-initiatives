@@ -1,0 +1,25 @@
+.root {
+  min-height: 20px;
+  min-width: 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 8px;
+  line-height: 10px;
+  text-decoration: none;
+
+  color: #ffffff;
+  border-radius: 99em;
+  background-color: #b6bbcc;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.5s ease-in-out;
+
+  &:hover {
+    color: #19488e;
+  }
+}

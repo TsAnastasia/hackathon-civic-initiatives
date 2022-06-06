@@ -1,0 +1,29 @@
+.root {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: radial-gradient(#737a92, transparent 70%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:disabled {
+    opacity: 0.2;
+  }
+}
+
+.size_small {
+  width: 30px;
+  height: 30px;
+}

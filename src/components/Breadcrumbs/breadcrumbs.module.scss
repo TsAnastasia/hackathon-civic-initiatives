@@ -1,0 +1,45 @@
+.root {
+  padding: 10px 20px;
+
+  background-color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.separator {
+  margin: 0 15px;
+  width: 10px;
+  height: 10px;
+
+  background-image: url("../../assets//images/icons/arrow.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  display: inline-block;
+}
+
+.crumb {
+  margin: 5px 0;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  text-decoration: none;
+
+  color: #19288e;
+
+  transition: all 0.5s ease-in-out;
+
+  &.current {
+    color: #727a92;
+  }
+
+  &:not(.current):hover {
+    color: #97b2df;
+  }
+}

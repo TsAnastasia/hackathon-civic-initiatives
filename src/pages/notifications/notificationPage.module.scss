@@ -1,0 +1,36 @@
+.section {
+  margin: 25px 20px;
+
+  .title {
+    margin: 0 0 20px;
+  }
+}
+
+.title {
+  margin: 0 0 20px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 32px;
+
+  color: #19488e;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.item {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}

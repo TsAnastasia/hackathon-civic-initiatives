@@ -1,0 +1,45 @@
+.root {
+  margin: 10px 20px;
+}
+
+.list {
+  margin: 0 -20px;
+  padding: 10px 20px;
+
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  gap: 8px;
+
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+    border-radius: 99rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 99rem;
+    background-color: #737a92;
+  }
+
+  &::-webkit-scrollbar-track {
+    margin: 4px;
+    border-radius: 99rem;
+    margin: 20px;
+  }
+}
+
+.message {
+  margin: 10px 0;
+  min-height: 34px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+
+  color: #b6bbcc;
+}

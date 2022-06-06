@@ -1,0 +1,42 @@
+.button {
+  padding: 14px 36px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  outline: 0;
+  border: 1px solid #19488e;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #19488e;
+
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+
+  &:hover:not(:disabled) {
+    box-shadow: 0px 3px 15px rgba(0, 75, 118, 0.15);
+  }
+
+  &:active {
+    border-color: #97b2df;
+    background-color: #97b2df;
+    color: #ffffff;
+  }
+
+  &:disabled {
+    border-color: #e2e4eb;
+    color: #b6bbcc;
+  }
+}
+
+.button_blue {
+  background-color: #19488e;
+  color: #fff;
+
+  &:disabled {
+    background-color: #e2e4eb;
+  }
+}
