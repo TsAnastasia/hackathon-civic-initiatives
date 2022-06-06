@@ -5,21 +5,19 @@ It does not have a server part, all data is stored in local storage.\
 
 **Author**: [Anastasia Tsibernaja](https://github.com/TsAnastasia), 2022г.
 **Maket**: [Figma](https://www.figma.com/file/FOmKehLlw8bP4Jzm3R947E/Hackathon-2025?node-id=852%3A315)
-**Try**: []()
-
-<!-- TODO: add app link -->
+**Try**: [Try](https://tsanastasia.github.io/hackathon-civic-initiatives)
 
 ## Using techonologies
 
 ### Packages
 
-- `React` - build user interfaces.\
-- `TypeScript` - strongly typed programming language.\
-- `Redux` - app storage.\
-- `Redux Persist` - save data in session/local storage.\
-- `Sass` - style app.\
-- `Eslint` & `Prettier` - check & formatted app code.\
-- `Lint-Staged` - pre-commit hook.\
+- `React` - build user interfaces.
+- `TypeScript` - strongly typed programming language.
+- `Redux` - app storage.
+- `Redux Persist` - save data in session/local storage.
+- `Sass` - style app.
+- `Eslint` & `Prettier` - check & formatted app code.
+- `Lint-Staged` - pre-commit hook.
 
 ### Tools
 
@@ -31,7 +29,7 @@ It does not have a server part, all data is stored in local storage.\
 
 ## Available Scripts
 
-Run 'npm i' | 'yarn' to install all dependencies.
+Run `npm i` | `yarn` to install all dependencies.
 In the project directory, you can also run:
 
 - `npm start` | `yarn start`\
