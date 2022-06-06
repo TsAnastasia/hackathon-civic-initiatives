@@ -7,7 +7,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "..", "./prod"),
     filename: "bundle.js",
-    publicPath: "/hackathon-civic-initiatives/",
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx", ".css", ".scss"],
