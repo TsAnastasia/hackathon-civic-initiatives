@@ -1,6 +1,7 @@
 declare namespace FooterInfoModuleScssNamespace {
   export interface IFooterInfoModuleScss {
     button: string;
+    info: string;
     modal: string;
     text: string;
     title: string;
