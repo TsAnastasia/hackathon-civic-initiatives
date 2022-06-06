@@ -1,5 +1,7 @@
+export const BASE_URL = "hackathon-civic-initiatives";
+
 export enum AppRoutes {
-  HOME = "/",
+  HOME = "/hackathon-civic-initiatives",
   SEARCH = "/search",
   CREATE = "/create",
   INITIATIVES = "/initiative",
